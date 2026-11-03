@@ -13,7 +13,7 @@
 - `printed_face/mujoco/kobi_scene.xml`, `printed_face/mujoco/kobi_scene_backlash.xml`와 `printed_face/mujoco/assets/`의 뼈대 부품 메시(`body_*.stl`, `trunk_*.stl`, `foot_*.stl`, `head_*.stl`, `*_sheet.stl` 등)
 - `printed_face/urdf/kobi.urdf`, `printed_face/urdf/kobi_gait.urdf`와 `printed_face/urdf/assets/`의 뼈대 부품 메시
 - `printed_face/blender/kobi_v7.blend` 안의 Open Duck 뼈대 물체들
-- `lcd_face/mujoco/kobi_scene.xml`, `lcd_face/mujoco/kobi_scene_backlash.xml`와 `lcd_face/mujoco/assets/`의 뼈대 부품 메시, `lcd_face/blender/kobi_v7_lcd_v6.blend` 안의 Open Duck 뼈대 물체들(LCD 얼굴 판도 같은 뼈대 위에 머리만 바꾼 것이며, 아래 "우리가 바꾼 점"이 그대로 적용됩니다. 머리 몸체, 몸통 본체, 목 링크의 질량 값은 LCD 머리 모델에 맞게 인쇄 얼굴 판과 달라져 있습니다)
+- `lcd_face/mujoco/kobi_scene.xml`, `lcd_face/mujoco/kobi_scene_backlash.xml`와 `lcd_face/mujoco/assets/`의 뼈대 부품 메시, `lcd_face/blender/kobi_v7_lcd_v7b.blend` 안의 Open Duck 뼈대 물체들(LCD 얼굴 판도 같은 뼈대 위에 머리만 바꾼 것이며, 아래 "우리가 바꾼 점"이 그대로 적용됩니다. 머리 몸체, 몸통 본체, 목 링크의 질량 값은 LCD 머리 모델에 맞게 인쇄 얼굴 판과 달라져 있습니다)
 
 ### 우리가 바꾼 점 (Apache-2.0 제4조 (b)에 따른 변경 표시)
 
@@ -44,11 +44,11 @@
 - **환경 거울 코드**: `tools/kobi_env_mirror.py`는 학습 환경의 동작을 NumPy와 MuJoCo로 다시 쓴 우리 코드이고, 업스트림 코드와 같은 긴 줄은 거의 없었습니다. 다만 관측 순서, 행동 크기(0.25), 속도 제한(5.24 rad/s), 잡음 크기 같은 인터페이스 값은 업스트림 학습 환경과 같아야 정책이 맞게 돌기 때문에 같은 값을 씁니다. 이는 사실 정보(상수)라고 판단했습니다.
 - **업스트림 Playground에서 온 메시 파일은 이 저장소에 넣지 않고 내려받습니다 (가장 중요)**: 뼈대 부품 메시 28개(`printed_face/mujoco/assets/`와 `lcd_face/mujoco/assets/`에 같은 28개, 그 가운데 11개는 `printed_face/urdf/assets/`에도 사용)는 Open_Duck_Playground 저장소(`playground/open_duck_mini_v2/xmls/assets/`)의 파일과 바이트 단위로 똑같습니다. 이 파일들은 Apache-2.0인 Open_Duck_Mini 저장소의 원본 메시(28 KB~495 KB)가 아니라 단순화된 작은 메시(각 5,284바이트)이고, 그 저장소에는 라이선스가 없습니다. 그래서 이 저장소에는 **포함하지 않았고** `.gitignore`로 제외했습니다(`lcd_face/` 쪽 경로도 같습니다). `python3 tools/fetch_upstream_meshes.py`가 고정된 업스트림 커밋 `b9be205ac64488c23504ca42e5ec790337adeec3`에서 GitHub raw 주소로 내려받고, 스크립트에 적힌 SHA-256과 맞을 때만 저장합니다(LCD 얼굴 판 장면이 쓰는 업스트림 메시도 이 28개와 이름과 해시가 같아서, 스크립트가 `lcd_face/mujoco/assets/`에도 같은 파일을 내려받습니다). 내려받은 파일은 사용자가 직접 업스트림에서 받은 것이며 이 저장소의 일부로 재배포되지 않습니다. 다만 우리 MJCF와 URDF가 이 파일들을 가리키므로, 장면을 열려면 내려받기가 필요합니다. 근본 해결을 하려면 소유자가 저작자에게 라이선스를 문의하거나, Open_Duck_Mini의 Apache-2.0 원본 메시를 직접 단순화해 바꾸고 모델을 다시 검증해야 합니다. 내려받는 파일 이름과 해시 표는 `tools/fetch_upstream_meshes.py`에 있습니다.
   - `hfield.png`(지형 높이 그림)도 Playground 파일이지만 코비 장면이 쓰지 않아서 내려받기 대상에서도 뺐고, `.gitignore`로 제외했습니다.
-- **블렌더 파일**: `kobi_v7.blend`에는 Open Duck 뼈대 물체 80개 정도가 들어 있습니다. 저장소에 넣기 전에 제작자 컴퓨터의 경로와, 코리 캐릭터 참고 그림을 가리키는 이미지 항목(1개)을 지웠습니다. 그 그림을 보여 주던 빈 물체(`Kori_front_11-09A`)는 그림 없이 남아 있습니다. 나머지 물체, 메시, 재질은 그대로입니다. `lcd_face/blender/kobi_v7_lcd_v6.blend`도 같은 방식으로 코리 참고 그림 이미지 1개와 개인 컴퓨터 경로를 지웠습니다(`lcd_face/README.md` 10절). 이 파일에도 같은 빈 물체(`Kori_front_11-09A`)가 그림 없이 남아 있고, 화면에 띄우는 얼굴 그림(`kori_face_800x480.png`)이 파일 안에 포함되어 있습니다.
+- **블렌더 파일**: `kobi_v7.blend`에는 Open Duck 뼈대 물체 80개 정도가 들어 있습니다. 저장소에 넣기 전에 제작자 컴퓨터의 경로와, 코리 캐릭터 참고 그림을 가리키는 이미지 항목(1개)을 지웠습니다. 그 그림을 보여 주던 빈 물체(`Kori_front_11-09A`)는 그림 없이 남아 있습니다. 나머지 물체, 메시, 재질은 그대로입니다. `lcd_face/blender/kobi_v7_lcd_v7b.blend`도 같은 방식으로 코리 참고 그림 이미지 1개와 개인 컴퓨터 경로를 지웠습니다(`lcd_face/README.md` 10절). 이 파일에도 같은 빈 물체(`Kori_front_11-09A`)가 그림 없이 남아 있고, 화면에 띄우는 얼굴 그림(`kori_face_800x480.png`)이 파일 안에 포함되어 있습니다.
 
 ## 4. 코리 캐릭터
 
-"코리(Kori)" 캐릭터와 그 모양에 대한 권리는 원 소유자(소속 대학교)에게 있습니다. 이 저장소의 외피 부품(`lcd_face/print/`의 머리 껍데기, 흰 얼굴 포함)과 영상에는 그 캐릭터의 모양이 들어 있으므로, 공개나 재사용 전에 소유자의 허락 범위를 확인해야 합니다. 캐릭터 원본 그림 파일은 이 저장소에 넣지 않았습니다.
+"코리(Kori)" 캐릭터와 그 모양에 대한 권리는 원 소유자(소속 대학교)에게 있습니다. 이 저장소의 외피 부품(`lcd_face/print/`의 머리 껍데기, 흰 얼굴 포함)과 영상, 조립 설명서 PDF와 조립 영상(`lcd_face/manual/`)에는 그 캐릭터의 모양이 들어 있으므로, 공개나 재사용 전에 소유자의 허락 범위를 확인해야 합니다. 캐릭터 원본 그림 파일은 이 저장소에 넣지 않았습니다.
 
 ## 5. 우리가 만든 파일의 권리
 

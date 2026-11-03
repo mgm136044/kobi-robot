@@ -1,5 +1,5 @@
 ﻿part,file,material/colour,model solid g,P1 g,P2 g,P1/solid,P2/solid,support g (P1),notes,sim_body,sim solid g (parts.json)
-A_HeadShell,A_HeadShell_L.stl (v6 print); A_HeadShell_R.stl (v6 print),PLA / 노랑(머리·얼굴 노랑),280.984,248.828,253.633,0.886,0.903,504.899,"반쪽 두 개를 따로 잘라 합침: A_HeadShell_L 124.57 g(보통), A_HeadShell_R 124.26 g(보통) | 받침이 부품 무게의 2.0배 필요(모델 방향 그대로, 자동 받침)",kobi_head,280.984
+A_HeadShell,A_HeadShell_L.stl (7b print); A_HeadShell_R.stl (7b print),PLA / 노랑(머리·얼굴 노랑),237.571,206.308,211.139,0.868,0.889,519.519,"반쪽 두 개를 따로 잘라 합침: A_HeadShell_L 103.05 g(보통), A_HeadShell_R 103.26 g(보통) | 안쪽 피부 0.9 mm, 특징 둘레 5 mm와 이음 둘레 5 mm는 1.2 mm 그대로 | 받침이 부품 무게의 2.5배 필요(모델 방향 그대로, 자동 받침, 세운 방향 때문)",kobi_head,237.571
 Face_Blush_R,Face_Blush_R.stl (print_v8),PLA / 분홍(볼터치),5.375,5.038,5.038,0.937,0.937,0.361,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,5.375
 Face_Blush_L,Face_Blush_L.stl (print_v8),PLA / 분홍(볼터치),5.309,4.971,4.971,0.936,0.936,0.402,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,5.309
 Face_WhiteFace,Face_WhiteFace_L.stl (v6 print); Face_WhiteFace_R.stl (v6 print),PLA / 흰색,45.512,42.788,42.777,0.940,0.940,50.562,"반쪽 두 개를 따로 잘라 합침: Face_WhiteFace_L 21.61 g(보통), Face_WhiteFace_R 21.18 g(보통) | 얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.2배 필요(모델 방향 그대로, 자동 받침)",kobi_head,45.513
@@ -58,7 +58,7 @@ Neck_yaw_yoke,Neck_yaw_yoke.stl (print_v8),PLA / 회색(색 미지정),22.278,18
 Neck_gap_shield,Neck_gap_shield.stl (v6 print),PLA / 회색(색 미지정),1.620,1.781,1.780,1.099,1.099,0.000,벽이 얇아 사실상 통으로 인쇄됨 | 두께가 층 높이 0.2 mm 단위로 올림되어 솔리드 계산보다 무거움,kobi_neck_link,1.620
 Board_keeper_pin,Board_keeper_pin.stl (print_v8),PLA / 회색(색 미지정),0.062,0.056,0.056,0.902,0.904,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.062
 Speaker_bracket,Speaker_bracket.stl (print_v8),PLA / 회색(색 미지정),12.795,8.748,10.028,0.684,0.784,8.418,"받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,12.795
-LCD_mount,LCD_mount.stl (v6 print),PLA / 회색(색 미지정),17.362,15.893,16.126,0.915,0.929,27.926,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.8배 필요(모델 방향 그대로, 자동 받침)",kobi_head,17.362
+LCD_mount,LCD_mount.stl (7b print),PLA / 회색(색 미지정),14.970,13.625,13.858,0.910,0.926,29.340,"가운데 판에 창 3개 | 얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 2.2배 필요(모델 방향 그대로, 자동 받침)",kobi_head,14.970
 LCD_mount_pin,LCD_mount_pin.stl (v6 print),PLA / 회색(색 미지정),0.075,0.067,0.069,0.903,0.931,0.000,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,0.075
-Head_frame_LCD,Head_frame_LCD.stl (v6 print),PLA / 회색(색 미지정),32.559,25.838,28.092,0.794,0.863,36.010,"받침이 부품 무게의 1.4배 필요(모델 방향 그대로, 자동 받침)",kobi_head,32.559
-Pi4_head_bracket,Pi4_head_bracket.stl (v6 print),PLA / 회색(색 미지정),22.236,15.557,17.413,0.700,0.783,0.094,,kobi_head,22.236
+Head_frame_LCD,Head_frame_LCD.stl (7b print),PLA / 회색(색 미지정),30.936,25.244,27.218,0.816,0.880,36.010,"가로판 구멍 4개(55 x 2 mm, 팔 구멍 없음) | 받침이 부품 무게의 1.4배 필요(모델 방향 그대로, 자동 받침)",kobi_head,30.935
+Pi4_head_bracket,Pi4_head_bracket.stl (7b print),PLA / 회색(색 미지정),19.687,15.316,16.743,0.778,0.850,1.008,"쟁반 밑면 구멍 1개(64 x 23 mm, 깊이 1.4 mm)",kobi_head,19.687

@@ -1,17 +1,17 @@
-﻿body,xml mass g,n kobi printed parts,printed share solid g,printed share P1 g,printed share P2 g,body mass P1 g,body mass P2 g,change P1 g,change P2 g,"skeleton printed P1 g (reference, not applied)","skeleton printed P2 g (reference, not applied)",mapped parts
-trunk_assembly,1237.710,36,636.552,521.541,547.830,1122.698,1148.988,-115.012,-88.722,104.563,135.134,Neck;Collar_ring;Foot_L_dowel_a;Foot_L_dowel_b;Foot_R_dowel_a;Foot_R_dowel_b;Tail_body;Wing_R;Wing_L;Jacket_button_0;Jacket_button_1;Jacket_button_2;Jacket_K;Jacket_pocket_R0;Jacket_pocket_R1;Jacket_pocket_L0;Jacket_pocket_L1;Jacket_placket;Jacket_hem_stripe_front;Jacket_hem_stripe_back;Jacket_front;Jacket_back;Jacket_raglan_L_front;Jacket_raglan_L_back;Jacket_raglan_R_front;Jacket_raglan_R_back;Seam_pin_L_round;Seam_pin_L_slot;Seam_pin_R_round;Seam_pin_R_slot;Top_plate;Yaw_lock_pin;Plate_leg_R;Plate_leg_L;Board_keeper_pin;Speaker_bracket
-hip_roll_assembly,66.480,0,0.000,0.000,0.000,66.480,66.480,0.000,0.000,14.459,16.549,
-left_roll_to_pitch_assembly,80.708,0,0.000,0.000,0.000,80.708,80.708,0.000,0.000,28.795,34.157,
-knee_and_ankle_assembly,72.570,0,0.000,0.000,0.000,72.570,72.570,0.000,0.000,20.042,23.300,
-knee_and_ankle_assembly_2,98.123,1,5.533,5.173,5.206,97.763,97.796,-0.360,-0.327,20.042,23.300,Leg_L_guard
-foot_assembly,113.809,1,38.569,34.721,35.104,109.960,110.344,-3.849,-3.465,63.483,77.734,Foot_L_cover
-hip_roll_assembly_2,66.480,0,0.000,0.000,0.000,66.480,66.480,0.000,0.000,14.459,16.549,
-right_roll_to_pitch_assembly,80.708,0,0.000,0.000,0.000,80.708,80.708,0.000,0.000,29.209,34.603,
-knee_and_ankle_assembly_3,72.570,0,0.000,0.000,0.000,72.570,72.570,0.000,0.000,20.042,23.300,
-knee_and_ankle_assembly_4,98.093,1,5.503,5.152,5.207,97.742,97.797,-0.350,-0.295,20.042,23.300,Leg_R_guard
-foot_assembly_2,114.296,1,39.056,35.128,35.514,110.368,110.754,-3.928,-3.542,63.483,77.734,Foot_R_cover
-kobi_neck_link,81.897,2,23.897,20.681,21.926,78.681,79.926,-3.216,-1.972,0.000,0.000,Neck_yaw_yoke;Neck_gap_shield
-kobi_head,686.214,9,418.292,367.145,376.460,635.068,644.383,-51.146,-41.831,0.000,0.000,A_HeadShell;Face_Blush_R;Face_Blush_L;Face_WhiteFace;Face_LCD_bezel;LCD_mount;LCD_mount_pin;Head_frame_LCD;Pi4_head_bracket
-kobi_arm_left,71.240,6,71.240,62.484,64.900,62.484,64.900,-8.755,-6.339,0.000,0.000,Arm_L_sleeve;Arm_L_cuff;Arm_L_cuff_stripe;Arm_L_cuff_top;Arm_L_mitten;Shoulder_coupler_L
-kobi_arm_right,71.210,6,71.210,62.404,64.961,62.404,64.961,-8.807,-6.249,0.000,0.000,Arm_R_sleeve;Arm_R_cuff;Arm_R_cuff_stripe;Arm_R_cuff_top;Arm_R_mitten;Shoulder_coupler_R
-TOTAL (whole robot),3012.108,63,1309.852,1114.429,1157.108,2816.685,2859.364,-195.423,-152.744,398.621,485.660,
+﻿body,7b판 XML mass g,n printed parts,printed share solid g,printed share P1 g,printed share P2 g,7b판 body mass P1 g,7b판 body mass P2 g,7판 body mass P1 g,7판 body mass P2 g,7판 XML mass g,6판 body mass P1 g,6판 body mass P2 g,6판 XML mass g,affected by 7b판 (vs 7판)
+trunk_assembly,1237.710,36,636.552,521.541,547.830,1122.698,1148.988,1122.698,1148.988,1237.710,1122.698,1148.988,1237.710,no
+hip_roll_assembly,66.480,0,0.000,0.000,0.000,66.480,66.480,66.480,66.480,66.480,66.480,66.480,66.480,no
+left_roll_to_pitch_assembly,80.708,0,0.000,0.000,0.000,80.708,80.708,80.708,80.708,80.708,80.708,80.708,80.708,no
+knee_and_ankle_assembly,72.570,0,0.000,0.000,0.000,72.570,72.570,72.570,72.570,72.570,72.570,72.570,72.570,no
+knee_and_ankle_assembly_2,98.123,1,5.533,5.173,5.206,97.763,97.796,97.763,97.796,98.123,97.763,97.796,98.123,no
+foot_assembly,113.809,1,38.569,34.721,35.104,109.960,110.344,109.960,110.344,113.809,109.960,110.344,113.809,no
+hip_roll_assembly_2,66.480,0,0.000,0.000,0.000,66.480,66.480,66.480,66.480,66.480,66.480,66.480,66.480,no
+right_roll_to_pitch_assembly,80.708,0,0.000,0.000,0.000,80.708,80.708,80.708,80.708,80.708,80.708,80.708,80.708,no
+knee_and_ankle_assembly_3,72.570,0,0.000,0.000,0.000,72.570,72.570,72.570,72.570,72.570,72.570,72.570,72.570,no
+knee_and_ankle_assembly_4,98.093,1,5.503,5.152,5.207,97.742,97.797,97.742,97.797,98.093,97.742,97.797,98.093,no
+foot_assembly_2,114.296,1,39.056,35.128,35.514,110.368,110.754,110.368,110.754,114.296,110.368,110.754,114.296,no
+kobi_neck_link,81.897,2,23.897,20.681,21.926,78.681,79.926,78.681,79.926,81.897,78.681,79.926,81.897,no
+kobi_head,636.237,9,368.315,321.521,330.155,589.443,598.077,582.740,591.249,628.824,635.068,644.383,686.214,yes
+kobi_arm_left,71.240,6,71.240,62.484,64.900,62.484,64.900,62.484,64.900,71.240,62.484,64.900,71.240,no
+kobi_arm_right,71.210,6,71.210,62.404,64.961,62.404,64.961,62.404,64.961,71.210,62.404,64.961,71.210,no
+TOTAL (whole robot),2962.131,63,1259.875,1068.805,1110.803,2771.059,2813.059,2764.356,2806.231,2954.718,2816.684,2859.365,3012.108,

@@ -276,7 +276,7 @@
           <inertial pos="-1.2055e-09 -2.53493e-12 0.0692632" quat="0.707107 -1.63136e-10 -0.707107 -1.85085e-11" mass="0.0818974" diaginertia="1.49178e-05 8.30985e-05 8.79073e-05"/>
           <joint name="neck_yaw" range="-0.5236 0.5236" armature="0.027" damping="0.56" frictionloss="0.068" limited="true"/>
           <body name="kobi_head" pos="0 0 0.0997">
-            <inertial pos="0.0159627 0.00244772 0.0288828" quat="0.419167 0.579244 -0.567308 -0.408579" mass="0.686214" diaginertia="0.00250739 0.00450911 0.00511675"/>
+            <inertial pos="0.0175271 0.00231551 0.0282727" quat="0.409342 0.587418 -0.573387 -0.398254" mass="0.636237" diaginertia="0.00222063 0.00399645 0.00454531"/>
             <joint name="neck_pitch" range="-0.1745 0.1745" armature="0.027" damping="0.56" frictionloss="0.068" axis="0 1 0" limited="true"/>
             <geom name="v_kobi_A_HeadShell" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_A_HeadShell"/>
             <geom name="v_kobi_Face_Blush_R" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.96 0.66 0.55 1" mass="0" mesh="kobi_Face_Blush_R"/>
@@ -360,6 +360,6 @@
   </sensor>
 
   <keyframe>
-    <key name="home" qpos="0.0329738 0 0.206902 1 0 0 0 0.002 0.053 -0.910589 1.38216 -0.502193 -0.003 -0.065 0.915589 1.39316 -0.507802 0 0 0 0" ctrl="0.002 0.053 -0.910589 1.38216 -0.502193 -0.003 -0.065 0.915589 1.39316 -0.507802 0 0 0 0"/>
+    <key name="home" qpos="0.0328278 0 0.206941 1 0 0 0 0.002 0.053 -0.909286 1.38204 -0.503379 -0.003 -0.065 0.914286 1.39304 -0.508988 0 0 0 0" ctrl="0.002 0.053 -0.909286 1.38204 -0.503379 -0.003 -0.065 0.914286 1.39304 -0.508988 0 0 0 0"/>
   </keyframe>
 </mujoco>

@@ -1,6 +1,6 @@
 {
  "note": "new and changed printed parts only against the ORIGINAL project's print_v8 (v3, v4 and v5 changes all show); sizes in mm, masses in g (PLA 1.24 g/cm3, solid); print_up points up while printing. A row with is_half_file true is a half (_L, _R) of a part that also has a whole file: it carries the half's own mass and counts_in_total false; the total counts each part once. parts_table_full.json lists every whole part once (63 parts).",
- "total_g_new_or_changed_counted_once": 630.3,
+ "total_g_new_or_changed_counted_once": 580.3,
  "parts_counted": 12,
  "files": {
   "changed": [
@@ -235,8 +235,8 @@
     233.9
    ],
    "is_half_file": true,
-   "mass_g": 140.71,
-   "whole_part_mass_g": 281.1,
+   "mass_g": 118.74,
+   "whole_part_mass_g": 237.7,
    "counts_in_total": false,
    "fits_256_bed": true
   },
@@ -250,8 +250,8 @@
     233.9
    ],
    "is_half_file": true,
-   "mass_g": 140.28,
-   "whole_part_mass_g": 281.1,
+   "mass_g": 118.83,
+   "whole_part_mass_g": 237.7,
    "counts_in_total": false,
    "fits_256_bed": true
   },
@@ -265,7 +265,7 @@
     233.9
    ],
    "is_half_file": false,
-   "mass_g": 281.1,
+   "mass_g": 237.7,
    "counts_in_total": true,
    "fits_256_bed": false
   },
@@ -362,11 +362,11 @@
     33.0
    ],
    "is_half_file": false,
-   "mass_g": 32.6,
+   "mass_g": 30.9,
    "counts_in_total": true,
    "print_up": "+z",
    "print_up_from": "builder",
-   "support_cm2": 57.1,
+   "support_cm2": 52.7,
    "support_on_visible_cm2": 0.2,
    "min_wall_mm": 0.99,
    "knife_area_mm2": 0,
@@ -382,12 +382,12 @@
     99.7
    ],
    "is_half_file": false,
-   "mass_g": 17.4,
+   "mass_g": 15.0,
    "counts_in_total": true,
    "print_up": "-y",
    "print_up_from": "search",
-   "support_cm2": 42.3,
-   "support_on_visible_cm2": 0.2,
+   "support_cm2": 34.2,
+   "support_on_visible_cm2": 0.3,
    "min_wall_mm": 0.99,
    "knife_area_mm2": 0,
    "fits_256_bed": true
@@ -442,12 +442,12 @@
     7.4
    ],
    "is_half_file": false,
-   "mass_g": 22.2,
+   "mass_g": 19.7,
    "counts_in_total": true,
    "print_up": "+z",
    "print_up_from": "builder",
-   "support_cm2": 1.0,
-   "support_on_visible_cm2": 0.1,
+   "support_cm2": 15.7,
+   "support_on_visible_cm2": 0.0,
    "min_wall_mm": 0.99,
    "knife_area_mm2": 0,
    "fits_256_bed": true
