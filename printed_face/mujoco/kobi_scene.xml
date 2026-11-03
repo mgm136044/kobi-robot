@@ -1,0 +1,371 @@
+<mujoco model="scene">
+  <compiler angle="radian" meshdir="assets/"/>
+
+  <option iterations="1" ls_iterations="5">
+    <flag eulerdamp="disable"/>
+  </option>
+
+  <size nkey="2"/>
+
+  <visual>
+    <global azimuth="160" elevation="-20"/>
+    <headlight ambient="0.3 0.3 0.3" diffuse="0.6 0.6 0.6" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+
+  <default>
+    <default class="open_duck_mini_v2">
+      <joint armature="0.005" frictionloss="0.1"/>
+      <general biastype="affine" gainprm="50" biasprm="0 -50 1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+      </default>
+    </default>
+    <default class="sts3215">
+      <joint armature="0.027" damping="0.56" frictionloss="0.068"/>
+      <geom contype="0" conaffinity="0"/>
+      <general forcerange="-3.23 3.23" biastype="affine" gainprm="13.37" biasprm="0 -13.37"/>
+    </default>
+    <default class="backlash">
+      <joint range="-0.00872665 0.00872665" armature="0.01" damping="0.01" limited="true"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="800" height="4800"/>
+    <texture type="2d" colorspace="auto" name="groundplane" builtin="checker" mark="edge" rgb1="1 1 1" rgb2="1 1 1" width="300" height="300"/>
+    <material name="body_front_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="body_back_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="body_middle_bottom_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="body_middle_top_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="trunk_bottom_material" rgba="0.180392 0.180392 0.180392 1"/>
+    <material name="trunk_top_material" rgba="0.180392 0.180392 0.180392 1"/>
+    <material name="roll_motor_bottom_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="roll_motor_top_material" rgba="0.901961 0.901961 0.901961 1"/>
+    <material name="left_roll_to_pitch_material" rgba="0.909804 0.572549 0.164706 1"/>
+    <material name="left_cache_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="leg_spacer_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="left_knee_to_ankle_right_sheet_material" rgba="0.223529 0.219608 0.219608 1"/>
+    <material name="left_knee_to_ankle_left_sheet_material" rgba="0.223529 0.219608 0.219608 1"/>
+    <material name="foot_side_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="foot_bottom_tpu_material" rgba="0.305882 0.298039 0.278431 1"/>
+    <material name="foot_bottom_pla_material" rgba="0.305882 0.298039 0.278431 1"/>
+    <material name="foot_top_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="neck_left_sheet_material" rgba="0.223529 0.219608 0.219608 1"/>
+    <material name="neck_right_sheet_material" rgba="0.223529 0.219608 0.219608 1"/>
+    <material name="head_pitch_to_yaw_material" rgba="0.4 0.4 0.4 1"/>
+    <material name="head_yaw_to_roll_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="right_antenna_holder_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="antenna_material" rgba="0.647059 0.647059 0.647059 1"/>
+    <material name="left_antenna_holder_material" rgba="0.980392 0.713725 0.00392157 1"/>
+    <material name="head_bot_sheet_material" rgba="0.411765 0.411765 0.411765 1"/>
+    <material name="head_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="right_roll_to_pitch_material" rgba="0.909804 0.572549 0.164706 1"/>
+    <material name="right_cache_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="groundplane" texture="groundplane" texrepeat="5 5" texuniform="true"/>
+    <mesh name="body_back" file="body_back.stl"/>
+    <mesh name="foot_bottom_pla" file="foot_bottom_pla.stl"/>
+    <mesh name="neck_left_sheet" file="neck_left_sheet.stl"/>
+    <mesh name="right_roll_to_pitch" file="right_roll_to_pitch.stl"/>
+    <mesh name="trunk_bottom" file="trunk_bottom.stl"/>
+    <mesh name="body_middle_bottom" file="body_middle_bottom.stl"/>
+    <mesh name="antenna" file="antenna.stl"/>
+    <mesh name="foot_side" file="foot_side.stl"/>
+    <mesh name="left_roll_to_pitch" file="left_roll_to_pitch.stl"/>
+    <mesh name="foot_top" file="foot_top.stl"/>
+    <mesh name="head" file="head.stl"/>
+    <mesh name="foot_bottom_tpu" file="foot_bottom_tpu.stl"/>
+    <mesh name="neck_right_sheet" file="neck_right_sheet.stl"/>
+    <mesh name="head_yaw_to_roll" file="head_yaw_to_roll.stl"/>
+    <mesh name="roll_motor_top" file="roll_motor_top.stl"/>
+    <mesh name="left_knee_to_ankle_left_sheet" file="left_knee_to_ankle_left_sheet.stl"/>
+    <mesh name="body_middle_top" file="body_middle_top.stl"/>
+    <mesh name="left_antenna_holder" file="left_antenna_holder.stl"/>
+    <mesh name="head_pitch_to_yaw" file="head_pitch_to_yaw.stl"/>
+    <mesh name="right_antenna_holder" file="right_antenna_holder.stl"/>
+    <mesh name="roll_motor_bottom" file="roll_motor_bottom.stl"/>
+    <mesh name="right_cache" file="right_cache.stl"/>
+    <mesh name="left_knee_to_ankle_right_sheet" file="left_knee_to_ankle_right_sheet.stl"/>
+    <mesh name="body_front" file="body_front.stl"/>
+    <mesh name="leg_spacer" file="leg_spacer.stl"/>
+    <mesh name="trunk_top" file="trunk_top.stl"/>
+    <mesh name="head_bot_sheet" file="head_bot_sheet.stl"/>
+    <mesh name="left_cache" file="left_cache.stl"/>
+    <mesh name="kori_roll_to_pitch_left" file="kori_roll_to_pitch_left.stl"/>
+    <mesh name="kori_roll_to_pitch_right" file="kori_roll_to_pitch_right.stl"/>
+    <mesh name="kobi_A_HeadShell" file="kobi_A_HeadShell.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Eye_R" file="kobi_Face_Eye_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Eye_L" file="kobi_Face_Eye_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Brow_R" file="kobi_Face_Brow_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Brow_L" file="kobi_Face_Brow_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Mouth_R" file="kobi_Face_Mouth_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Mouth_L" file="kobi_Face_Mouth_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Fang" file="kobi_Face_Fang.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Blush_R" file="kobi_Face_Blush_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_Blush_L" file="kobi_Face_Blush_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Face_WhiteFace" file="kobi_Face_WhiteFace.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Neck" file="kobi_Neck.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Collar_ring" file="kobi_Collar_ring.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_L_cover" file="kobi_Foot_L_cover.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_L_dowel_a" file="kobi_Foot_L_dowel_a.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_L_dowel_b" file="kobi_Foot_L_dowel_b.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_R_cover" file="kobi_Foot_R_cover.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_R_dowel_a" file="kobi_Foot_R_dowel_a.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Foot_R_dowel_b" file="kobi_Foot_R_dowel_b.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Leg_L_guard" file="kobi_Leg_L_guard.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Leg_R_guard" file="kobi_Leg_R_guard.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Tail_body" file="kobi_Tail_body.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Wing_R" file="kobi_Wing_R.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Wing_L" file="kobi_Wing_L.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_button_0" file="kobi_Jacket_button_0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_button_1" file="kobi_Jacket_button_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_button_2" file="kobi_Jacket_button_2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_K" file="kobi_Jacket_K.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_pocket_R0" file="kobi_Jacket_pocket_R0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_pocket_R1" file="kobi_Jacket_pocket_R1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_pocket_L0" file="kobi_Jacket_pocket_L0.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_pocket_L1" file="kobi_Jacket_pocket_L1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_placket" file="kobi_Jacket_placket.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_hem_stripe_front" file="kobi_Jacket_hem_stripe_front.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_hem_stripe_back" file="kobi_Jacket_hem_stripe_back.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_front" file="kobi_Jacket_front.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_back" file="kobi_Jacket_back.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_raglan_L_front" file="kobi_Jacket_raglan_L_front.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_raglan_L_back" file="kobi_Jacket_raglan_L_back.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_raglan_R_front" file="kobi_Jacket_raglan_R_front.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Jacket_raglan_R_back" file="kobi_Jacket_raglan_R_back.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Seam_pin_L_round" file="kobi_Seam_pin_L_round.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Seam_pin_L_slot" file="kobi_Seam_pin_L_slot.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Seam_pin_R_round" file="kobi_Seam_pin_R_round.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Seam_pin_R_slot" file="kobi_Seam_pin_R_slot.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Fabric_L_legging" file="kobi_Fabric_L_legging.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Fabric_R_legging" file="kobi_Fabric_R_legging.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_R_sleeve" file="kobi_Arm_R_sleeve.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_R_cuff" file="kobi_Arm_R_cuff.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_R_cuff_stripe" file="kobi_Arm_R_cuff_stripe.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_R_cuff_top" file="kobi_Arm_R_cuff_top.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_R_mitten" file="kobi_Arm_R_mitten.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_L_sleeve" file="kobi_Arm_L_sleeve.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_L_cuff" file="kobi_Arm_L_cuff.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_L_cuff_stripe" file="kobi_Arm_L_cuff_stripe.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_L_cuff_top" file="kobi_Arm_L_cuff_top.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Arm_L_mitten" file="kobi_Arm_L_mitten.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="kobi_Camera_lens" file="kobi_Camera_lens.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <body name="base" pos="0 0 0.22">
+      <joint name="floating_base" type="free"/>
+      <site name="imu" pos="-0.08 0 0.05"/>
+      <body name="trunk_assembly" childclass="open_duck_mini_v2">
+        <inertial pos="-0.0625077 0.00268046 0.050866" quat="0.751795 0.274084 -0.554703 -0.228008" mass="1.28934" diaginertia="0.00753704 0.00812044 0.00911296"/>
+        <geom class="visual" pos="-0.019 0 0.0648909" quat="1 0 0 0" material="trunk_bottom_material" mesh="trunk_bottom"/>
+        <geom class="visual" pos="-0.019 0 0.0648909" quat="1 0 0 0" material="trunk_top_material" mesh="trunk_top"/>
+        <geom name="v_kobi_Neck" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Neck"/>
+        <geom name="v_kobi_Collar_ring" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Collar_ring"/>
+        <geom name="v_kobi_Foot_L_dowel_a" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Foot_L_dowel_a"/>
+        <geom name="v_kobi_Foot_L_dowel_b" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Foot_L_dowel_b"/>
+        <geom name="v_kobi_Foot_R_dowel_a" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Foot_R_dowel_a"/>
+        <geom name="v_kobi_Foot_R_dowel_b" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Foot_R_dowel_b"/>
+        <geom name="v_kobi_Tail_body" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Tail_body"/>
+        <geom name="v_kobi_Wing_R" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Wing_R"/>
+        <geom name="v_kobi_Wing_L" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Wing_L"/>
+        <geom name="v_kobi_Jacket_button_0" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_button_0"/>
+        <geom name="v_kobi_Jacket_button_1" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_button_1"/>
+        <geom name="v_kobi_Jacket_button_2" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_button_2"/>
+        <geom name="v_kobi_Jacket_K" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_K"/>
+        <geom name="v_kobi_Jacket_pocket_R0" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_pocket_R0"/>
+        <geom name="v_kobi_Jacket_pocket_R1" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_pocket_R1"/>
+        <geom name="v_kobi_Jacket_pocket_L0" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_pocket_L0"/>
+        <geom name="v_kobi_Jacket_pocket_L1" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_pocket_L1"/>
+        <geom name="v_kobi_Jacket_placket" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.09 0.25 1" mass="0" mesh="kobi_Jacket_placket"/>
+        <geom name="v_kobi_Jacket_hem_stripe_front" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_hem_stripe_front"/>
+        <geom name="v_kobi_Jacket_hem_stripe_back" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_hem_stripe_back"/>
+        <geom name="v_kobi_Jacket_front" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Jacket_front"/>
+        <geom name="v_kobi_Jacket_back" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Jacket_back"/>
+        <geom name="v_kobi_Jacket_raglan_L_front" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_raglan_L_front"/>
+        <geom name="v_kobi_Jacket_raglan_L_back" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_raglan_L_back"/>
+        <geom name="v_kobi_Jacket_raglan_R_front" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_raglan_R_front"/>
+        <geom name="v_kobi_Jacket_raglan_R_back" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Jacket_raglan_R_back"/>
+        <geom name="v_kobi_Seam_pin_L_round" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Seam_pin_L_round"/>
+        <geom name="v_kobi_Seam_pin_L_slot" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Seam_pin_L_slot"/>
+        <geom name="v_kobi_Seam_pin_R_round" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Seam_pin_R_round"/>
+        <geom name="v_kobi_Seam_pin_R_slot" pos="0 0 -0.211516" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.7 0.7 0.7 1" mass="0" mesh="kobi_Seam_pin_R_slot"/>
+        <geom name="c_jacket" size="0.094 0.114 0.117" pos="-0.057 0 0.0134844" type="box" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+        <geom name="c_tail" size="0.014 0.0738664" pos="-0.13 0.0975 -0.0515156" quat="0.544914 0.838492 0 0" type="capsule" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+        <site name="trunk" pos="-0.024 0 0.0881909"/>
+        <body name="hip_roll_assembly" pos="-0.019 0.035 0.0459409">
+          <inertial pos="0.000795081 -5.46541e-06 -0.03306" quat="0.70723 0.0130259 0.0134112 0.706737" mass="0.06648" diaginertia="2.81818e-05 2.44554e-05 1.42544e-05"/>
+          <joint name="left_hip_yaw" class="sts3215" range="-0.523599 0.523599"/>
+          <geom class="visual" pos="0 -0.035 0.01905" quat="1 0 0 0" material="roll_motor_bottom_material" mesh="roll_motor_bottom"/>
+          <geom class="visual" pos="0 -0.035 0.01905" quat="1 0 0 0" material="roll_motor_top_material" mesh="roll_motor_top"/>
+          <body name="left_roll_to_pitch_assembly" pos="0.01905 0 -0.046015" quat="0.5 -0.5 -0.5 0.5">
+            <inertial pos="0.0184606 0.042301 0.0203549" quat="0.976983 -0.136243 0.0455531 -0.157693" mass="0.0807079" diaginertia="4.12125e-05 3.14387e-05 2.99125e-05"/>
+            <joint name="left_hip_roll" class="sts3215" range="-0.436332 0.436332"/>
+            <geom class="visual" quat="1 0 0 0" material="left_roll_to_pitch_material" mesh="kori_roll_to_pitch_left"/>
+            <body name="knee_and_ankle_assembly" pos="0.03915 0.047 0.03511" quat="0 -0.707107 0 0.707107">
+              <inertial pos="3.76952e-06 -0.0577561 0.0181195" quat="0.500931 0.499363 -0.500618 -0.499085" mass="0.07257" diaginertia="1.87015e-05 4.23318e-05 4.98974e-05"/>
+              <joint name="left_hip_pitch" class="sts3215" range="-1.22173 0.523599"/>
+              <geom class="visual" pos="0.01606 0.14365 0.10925" quat="0.707107 -0.707107 0 0" material="leg_spacer_material" mesh="leg_spacer"/>
+              <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_right_sheet_material" mesh="left_knee_to_ankle_right_sheet"/>
+              <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_left_sheet_material" mesh="left_knee_to_ankle_left_sheet"/>
+              <body name="knee_and_ankle_assembly_2" pos="0 -0.07865 0.0001">
+                <inertial pos="0.00115301 -0.0493688 0.0192712" quat="0.493559 0.520887 -0.476546 -0.507917" mass="0.098123" diaginertia="3.77897e-05 8.097e-05 9.38649e-05"/>
+                <joint name="left_knee" class="sts3215" range="-1.5708 1.5708"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10925" quat="0.707107 -0.707107 0 0" material="leg_spacer_material" mesh="leg_spacer"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_right_sheet_material" mesh="left_knee_to_ankle_right_sheet"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_left_sheet_material" mesh="left_knee_to_ankle_left_sheet"/>
+                <geom name="v_kobi_Leg_L_guard" pos="-0.00876255 -0.130511 0.0628376" quat="0.663887 -0.278953 0.629045 0.292817" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Leg_L_guard"/>
+                <geom name="v_kobi_Fabric_L_legging" pos="-0.00876255 -0.130511 0.0628376" quat="0.663887 -0.278953 0.629045 0.292817" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Fabric_L_legging"/>
+                <body name="foot_assembly" pos="0 -0.07865 0.0001">
+                  <inertial pos="0.0113236 -0.019557 0.018746" quat="0.729878 -0.683476 -0.00894411 0.00761468" mass="0.113809" diaginertia="6.49858e-05 0.000147952 0.000169905"/>
+                  <joint name="left_ankle" class="sts3215" range="-1.5708 1.5708"/>
+                  <geom class="visual" pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" material="foot_side_material" mesh="foot_side"/>
+                  <geom class="visual" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" material="foot_bottom_tpu_material" mesh="foot_bottom_tpu"/>
+                  <geom name="left_foot_bottom_tpu" class="collision" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" material="foot_bottom_tpu_material" mesh="foot_bottom_tpu"/>
+                  <geom class="visual" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" material="foot_bottom_pla_material" mesh="foot_bottom_pla"/>
+                  <geom class="visual" pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" material="foot_top_material" mesh="foot_top"/>
+                  <geom name="v_kobi_Foot_L_cover" pos="0.030415 -0.0429097 0.0627376" quat="0.501662 -0.498113 0.474759 0.524235" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Foot_L_cover"/>
+                  <geom name="c_cover_L" size="0.0319236 0.0609012 0.026813" pos="0.0113646 -0.00753171 0.0183259" quat="0.501662 -0.498113 0.474759 0.524235" type="box" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+                  <site name="left_foot" pos="0.0005 -0.036225 0.01955" quat="0.707107 -0.707107 0 0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="hip_roll_assembly_2" pos="-0.019 -0.035 0.0459409">
+          <inertial pos="0.000795081 -5.46541e-06 -0.03306" quat="0.70723 0.0130259 0.0134112 0.706737" mass="0.06648" diaginertia="2.81818e-05 2.44554e-05 1.42544e-05"/>
+          <joint name="right_hip_yaw" class="sts3215" range="-0.523599 0.523599"/>
+          <geom class="visual" pos="0 -0.035 0.01905" quat="1 0 0 0" material="roll_motor_bottom_material" mesh="roll_motor_bottom"/>
+          <geom class="visual" pos="0 -0.035 0.01905" quat="1 0 0 0" material="roll_motor_top_material" mesh="roll_motor_top"/>
+          <body name="right_roll_to_pitch_assembly" pos="0.01905 0 -0.046015" quat="0.5 -0.5 -0.5 0.5">
+            <inertial pos="-0.0184606 0.042292 0.0203549" quat="0.977597 -0.134028 -0.0452713 0.155854" mass="0.0807079" diaginertia="4.12431e-05 3.14545e-05 2.99716e-05"/>
+            <joint name="right_hip_roll" class="sts3215" range="-0.436332 0.436332"/>
+            <geom class="visual" quat="1 0 0 0" material="right_roll_to_pitch_material" mesh="kori_roll_to_pitch_right"/>
+            <body name="knee_and_ankle_assembly_3" pos="-0.03915 0.047 0.03511" quat="0.707107 0 0.707107 0">
+              <inertial pos="3.84267e-06 0.057755 0.0189927" quat="0.501102 0.498618 -0.501047 -0.499228" mass="0.07257" diaginertia="1.87007e-05 4.23382e-05 4.99022e-05"/>
+              <joint name="right_hip_pitch" class="sts3215" range="-0.523599 1.22173"/>
+              <geom class="visual" pos="0.01606 -0.14365 -0.07215" quat="0.707107 0.707107 0 0" material="leg_spacer_material" mesh="leg_spacer"/>
+              <geom class="visual" pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" material="left_knee_to_ankle_right_sheet_material" mesh="left_knee_to_ankle_right_sheet"/>
+              <geom class="visual" pos="0.01606 -0.14365 -0.07205" quat="0.707107 0.707107 0 0" material="left_knee_to_ankle_left_sheet_material" mesh="left_knee_to_ankle_left_sheet"/>
+              <body name="knee_and_ankle_assembly_4" pos="0 0.07865 0.037" quat="0 1 0 0">
+                <inertial pos="0.00119435 -0.0491325 0.0172761" quat="0.519397 0.490792 -0.502308 -0.486864" mass="0.0980927" diaginertia="3.71621e-05 8.23054e-05 9.48851e-05"/>
+                <joint name="right_knee" class="sts3215" range="-1.5708 1.5708"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10925" quat="0.707107 -0.707107 0 0" material="leg_spacer_material" mesh="leg_spacer"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_right_sheet_material" mesh="left_knee_to_ankle_right_sheet"/>
+                <geom class="visual" pos="0.01606 0.14365 0.10915" quat="0.707107 -0.707107 0 0" material="left_knee_to_ankle_left_sheet_material" mesh="left_knee_to_ankle_left_sheet"/>
+                <geom name="v_kobi_Leg_R_guard" pos="-0.00967907 -0.131018 -0.0233988" quat="0.625745 -0.292139 0.668679 0.27562" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Leg_R_guard"/>
+                <geom name="v_kobi_Fabric_R_legging" pos="-0.00967907 -0.131018 -0.0233988" quat="0.625745 -0.292139 0.668679 0.27562" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Fabric_R_legging"/>
+                <body name="foot_assembly_2" pos="0 -0.07865 0.0001">
+                  <inertial pos="0.0112842 -0.0195427 0.0189918" quat="0.688641 -0.724976 -0.00836716 0.0106188" mass="0.114296" diaginertia="6.60796e-05 0.000149426 0.00017163"/>
+                  <joint name="right_ankle" class="sts3215" range="-1.5708 1.5708"/>
+                  <geom class="visual" pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" material="foot_side_material" mesh="foot_side"/>
+                  <geom class="visual" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" material="foot_bottom_tpu_material" mesh="foot_bottom_tpu"/>
+                  <geom name="right_foot_bottom_tpu" class="collision" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" type="mesh" material="foot_bottom_tpu_material" mesh="foot_bottom_tpu"/>
+                  <geom class="visual" pos="0.01656 0.2228 0.10955" quat="0.707107 -0.707107 0 0" material="foot_bottom_pla_material" mesh="foot_bottom_pla"/>
+                  <geom class="visual" pos="0.01606 0.2223 0.10905" quat="0.707107 -0.707107 0 0" material="foot_top_material" mesh="foot_top"/>
+                  <geom name="v_kobi_Foot_R_cover" pos="0.0306487 -0.0435511 -0.0234988" quat="-0.470012 0.528469 -0.503188 -0.4966" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Foot_R_cover"/>
+                  <geom name="c_cover_R" size="0.0321334 0.0608895 0.027142" pos="0.0112318 -0.00755624 0.018614" quat="-0.470012 0.528469 -0.503188 -0.4966" type="box" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+                  <site name="right_foot" pos="0.0005 -0.036225 0.01955" quat="0.707107 -0.707107 0 0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="kobi_neck_link" pos="-0.057 0 0.123784">
+          <inertial pos="-1.22705e-09 -1.77851e-12 0.0704035" quat="0.707107 -1.31967e-10 -0.707107 -1.51128e-11" mass="0.0802777" diaginertia="1.43204e-05 7.75222e-05 8.23309e-05"/>
+          <joint name="neck_yaw" range="-0.5236 0.5236" armature="0.027" damping="0.56" frictionloss="0.068" limited="true"/>
+          <body name="kobi_head" pos="0 0 0.0997">
+            <inertial pos="0.00910942 -0.000563872 0.0320893" quat="0.453693 0.54436 -0.540525 -0.453507" mass="0.403074" diaginertia="0.00201388 0.00394392 0.00451348"/>
+            <joint name="neck_pitch" range="-0.1745 0.1745" armature="0.027" damping="0.56" frictionloss="0.068" axis="0 1 0" limited="true"/>
+            <geom name="v_kobi_A_HeadShell" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_A_HeadShell"/>
+            <geom name="v_kobi_Face_Eye_R" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Eye_R"/>
+            <geom name="v_kobi_Face_Eye_L" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Eye_L"/>
+            <geom name="v_kobi_Face_Brow_R" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Brow_R"/>
+            <geom name="v_kobi_Face_Brow_L" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Brow_L"/>
+            <geom name="v_kobi_Face_Mouth_R" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Mouth_R"/>
+            <geom name="v_kobi_Face_Mouth_L" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.05 0.04 0.04 1" mass="0" mesh="kobi_Face_Mouth_L"/>
+            <geom name="v_kobi_Face_Fang" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Face_Fang"/>
+            <geom name="v_kobi_Face_Blush_R" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.96 0.66 0.55 1" mass="0" mesh="kobi_Face_Blush_R"/>
+            <geom name="v_kobi_Face_Blush_L" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.96 0.66 0.55 1" mass="0" mesh="kobi_Face_Blush_L"/>
+            <geom name="v_kobi_Face_WhiteFace" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Face_WhiteFace"/>
+            <geom name="v_kobi_Camera_lens" pos="0.057 0 -0.435" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.03 0.03 0.03 1" mass="0" mesh="kobi_Camera_lens"/>
+            <geom name="c_head" size="0.07 0.17 0.115" pos="0 0 0.038" type="ellipsoid" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+            <site name="head" pos="0.087 0 0.025" group="5"/>
+          </body>
+        </body>
+        <body name="kobi_arm_left" pos="-0.051 0.1195 0.0954844">
+          <inertial pos="0.00428363 0.0207285 -0.0607075" quat="-0.431994 0.51525 0.35416 0.649976" mass="0.0712396" diaginertia="3.30136e-05 0.000232211 0.000234104"/>
+          <joint name="shoulder_left" range="-2.356 0.4363" armature="0.0005" damping="0.01" frictionloss="0.005" axis="0 1 0" limited="true"/>
+          <geom name="v_kobi_Arm_L_sleeve" pos="0.051 -0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Arm_L_sleeve"/>
+          <geom name="v_kobi_Arm_L_cuff" pos="0.051 -0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.09 0.17 0.42 1" mass="0" mesh="kobi_Arm_L_cuff"/>
+          <geom name="v_kobi_Arm_L_cuff_stripe" pos="0.051 -0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Arm_L_cuff_stripe"/>
+          <geom name="v_kobi_Arm_L_cuff_top" pos="0.051 -0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.09 0.17 0.42 1" mass="0" mesh="kobi_Arm_L_cuff_top"/>
+          <geom name="v_kobi_Arm_L_mitten" pos="0.051 -0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Arm_L_mitten"/>
+          <geom name="c_arm_L" size="0.026 0.0669403" pos="0.005 0.0205 -0.066" quat="0.996482 0.0749571 -0.0374786 0" type="capsule" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+        </body>
+        <body name="kobi_arm_right" pos="-0.051 -0.1195 0.0954844">
+          <inertial pos="0.00427901 -0.0207285 -0.0606837" quat="0.515021 -0.432296 -0.649795 -0.354457" mass="0.0712104" diaginertia="3.29986e-05 0.000232103 0.000233996"/>
+          <joint name="shoulder_right" range="-2.356 0.4363" armature="0.0005" damping="0.01" frictionloss="0.005" axis="0 1 0" limited="true"/>
+          <geom name="v_kobi_Arm_R_sleeve" pos="0.051 0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Arm_R_sleeve"/>
+          <geom name="v_kobi_Arm_R_cuff" pos="0.051 0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.09 0.17 0.42 1" mass="0" mesh="kobi_Arm_R_cuff"/>
+          <geom name="v_kobi_Arm_R_cuff_stripe" pos="0.051 0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.95 0.95 0.93 1" mass="0" mesh="kobi_Arm_R_cuff_stripe"/>
+          <geom name="v_kobi_Arm_R_cuff_top" pos="0.051 0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.09 0.17 0.42 1" mass="0" mesh="kobi_Arm_R_cuff_top"/>
+          <geom name="v_kobi_Arm_R_mitten" pos="0.051 0.1195 -0.307" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="2" rgba="0.99 0.84 0.54 1" mass="0" mesh="kobi_Arm_R_mitten"/>
+          <geom name="c_arm_R" size="0.026 0.0669403" pos="0.005 -0.0205 -0.066" quat="0.996482 -0.0749571 -0.0374786 0" type="capsule" contype="0" conaffinity="2" group="3" rgba="1 0 0 0.2" mass="0"/>
+        </body>
+      </body>
+    </body>
+    <body name="floor">
+      <geom name="floor" size="0 0 0.01" type="plane" contype="3" conaffinity="0" priority="1" friction="0.6" material="groundplane"/>
+    </body>
+  </worldbody>
+
+  <contact>
+    <pair geom1="c_cover_L" geom2="c_cover_R" name="covers"/>
+    <pair geom1="c_cover_L" geom2="right_foot_bottom_tpu" name="cover_L_vs_right_foot_bottom_tpu"/>
+    <pair geom1="left_foot_bottom_tpu" geom2="c_cover_R" name="cover_R_vs_left_foot_bottom_tpu"/>
+  </contact>
+
+  <actuator>
+    <general name="left_hip_yaw" class="sts3215" joint="left_hip_yaw" ctrlrange="-0.523599 0.523599"/>
+    <general name="left_hip_roll" class="sts3215" joint="left_hip_roll" ctrlrange="-0.436332 0.436332"/>
+    <general name="left_hip_pitch" class="sts3215" joint="left_hip_pitch" ctrlrange="-1.22173 0.523599"/>
+    <general name="left_knee" class="sts3215" joint="left_knee" ctrlrange="-1.5708 1.5708"/>
+    <general name="left_ankle" class="sts3215" joint="left_ankle" ctrlrange="-1.5708 1.5708"/>
+    <general name="right_hip_yaw" class="sts3215" joint="right_hip_yaw" ctrlrange="-0.523599 0.523599"/>
+    <general name="right_hip_roll" class="sts3215" joint="right_hip_roll" ctrlrange="-0.436332 0.436332"/>
+    <general name="right_hip_pitch" class="sts3215" joint="right_hip_pitch" ctrlrange="-0.523599 1.22173"/>
+    <general name="right_knee" class="sts3215" joint="right_knee" ctrlrange="-1.5708 1.5708"/>
+    <general name="right_ankle" class="sts3215" joint="right_ankle" ctrlrange="-1.5708 1.5708"/>
+    <general name="neck_yaw" joint="neck_yaw" ctrlrange="-0.5236 0.5236" ctrllimited="true" forcelimited="true" forcerange="-3.23 3.23" biastype="affine" gainprm="13.37" biasprm="0 -13.37"/>
+    <general name="neck_pitch" joint="neck_pitch" ctrlrange="-0.1745 0.1745" ctrllimited="true" forcelimited="true" forcerange="-3.23 3.23" biastype="affine" gainprm="13.37" biasprm="0 -13.37"/>
+    <general name="shoulder_left" joint="shoulder_left" ctrlrange="-2.356 0.4363" ctrllimited="true" forcelimited="true" forcerange="-0.2 0.2" biastype="affine" biasprm="0 -1 -0.03"/>
+    <general name="shoulder_right" joint="shoulder_right" ctrlrange="-2.356 0.4363" ctrllimited="true" forcelimited="true" forcerange="-0.2 0.2" biastype="affine" biasprm="0 -1 -0.03"/>
+  </actuator>
+
+  <sensor>
+    <gyro site="imu" name="gyro"/>
+    <velocimeter site="imu" name="local_linvel"/>
+    <accelerometer site="imu" name="accelerometer"/>
+    <framezaxis objtype="site" objname="imu" name="upvector"/>
+    <framexaxis objtype="site" objname="imu" name="forwardvector"/>
+    <framelinvel objtype="site" objname="imu" name="global_linvel"/>
+    <frameangvel objtype="site" objname="imu" name="global_angvel"/>
+    <framepos objtype="site" objname="imu" name="position"/>
+    <framequat objtype="site" objname="imu" name="orientation"/>
+    <framelinvel objtype="site" objname="right_foot" name="right_foot_global_linvel"/>
+    <framelinvel objtype="site" objname="left_foot" name="left_foot_global_linvel"/>
+    <framexaxis objtype="site" objname="left_foot" name="left_foot_upvector"/>
+    <framexaxis objtype="site" objname="right_foot" name="right_foot_upvector"/>
+    <framepos objtype="site" objname="left_foot" name="left_foot_pos"/>
+    <framepos objtype="site" objname="right_foot" name="right_foot_pos"/>
+  </sensor>
+
+  <keyframe>
+    <key name="home" qpos="0.0353725 0 0.206397 1 0 0 0 0.002 0.053 -0.930325 1.38118 -0.48148 -0.003 -0.065 0.935325 1.39218 -0.487089 0 0 0 0" ctrl="0.002 0.053 -0.930325 1.38118 -0.48148 -0.003 -0.065 0.935325 1.39218 -0.487089 0 0 0 0"/>
+  </keyframe>
+</mujoco>

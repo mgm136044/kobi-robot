@@ -1,0 +1,728 @@
+[
+{
+"part": "A_HeadShell",
+"size_mm": [
+348.1,
+139.4,
+233.9
+],
+"g": 298.7,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Eye_R",
+"size_mm": [
+17.2,
+7.4,
+17.1
+],
+"g": 0.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Eye_L",
+"size_mm": [
+17.2,
+6.8,
+17.1
+],
+"g": 0.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Brow_R",
+"size_mm": [
+16.5,
+7.2,
+6.9
+],
+"g": 0.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Brow_L",
+"size_mm": [
+16.6,
+7.2,
+6.9
+],
+"g": 0.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Mouth_R",
+"size_mm": [
+24.6,
+6.2,
+7.1
+],
+"g": 0.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Mouth_L",
+"size_mm": [
+23.3,
+6.7,
+14.9
+],
+"g": 0.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Fang",
+"size_mm": [
+4.7,
+5.5,
+3.3
+],
+"g": 0.0,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Blush_R",
+"size_mm": [
+55.7,
+26.0,
+52.0
+],
+"g": 5.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_Blush_L",
+"size_mm": [
+55.7,
+24.7,
+52.0
+],
+"g": 5.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Face_WhiteFace",
+"size_mm": [
+351.7,
+59.6,
+144.4
+],
+"g": 46.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Neck",
+"size_mm": [
+160.0,
+140.0,
+45.5
+],
+"g": 78.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Collar_ring",
+"size_mm": [
+163.0,
+143.0,
+18.7
+],
+"g": 23.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_L_cover",
+"size_mm": [
+69.4,
+132.4,
+57.6
+],
+"g": 38.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_L_dowel_a",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_L_dowel_b",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_R_cover",
+"size_mm": [
+69.9,
+132.4,
+58.3
+],
+"g": 39.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_R_dowel_a",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Foot_R_dowel_b",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Leg_L_guard",
+"size_mm": [
+52.7,
+66.9,
+19.5
+],
+"g": 5.5,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Leg_R_guard",
+"size_mm": [
+53.0,
+65.7,
+19.5
+],
+"g": 5.5,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Tail_body",
+"size_mm": [
+146.9,
+58.7,
+98.9
+],
+"g": 25.9,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Wing_R",
+"size_mm": [
+114.3,
+45.6,
+71.7
+],
+"g": 22.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Wing_L",
+"size_mm": [
+114.3,
+45.6,
+71.7
+],
+"g": 22.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_button_0",
+"size_mm": [
+19.2,
+6.9,
+19.0
+],
+"g": 1.0,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_button_1",
+"size_mm": [
+19.2,
+6.9,
+19.0
+],
+"g": 1.0,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_button_2",
+"size_mm": [
+19.2,
+6.9,
+19.0
+],
+"g": 1.0,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_K",
+"size_mm": [
+38.9,
+10.1,
+46.4
+],
+"g": 2.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_pocket_R0",
+"size_mm": [
+20.0,
+9.5,
+6.0
+],
+"g": 0.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_pocket_R1",
+"size_mm": [
+20.8,
+13.0,
+6.0
+],
+"g": 0.5,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_pocket_L0",
+"size_mm": [
+20.0,
+9.5,
+6.0
+],
+"g": 0.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_pocket_L1",
+"size_mm": [
+20.8,
+13.0,
+6.0
+],
+"g": 0.5,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_placket",
+"size_mm": [
+4.1,
+7.2,
+204.0
+],
+"g": 1.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_hem_stripe_front",
+"size_mm": [
+232.1,
+90.1,
+3.9
+],
+"g": 3.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_hem_stripe_back",
+"size_mm": [
+232.4,
+102.1,
+3.9
+],
+"g": 3.6,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_front",
+"size_mm": [
+230.7,
+97.6,
+230.4
+],
+"g": 133.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_back",
+"size_mm": [
+231.0,
+101.4,
+230.4
+],
+"g": 143.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_raglan_L_front",
+"size_mm": [
+39.5,
+75.5,
+68.1
+],
+"g": 9.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_raglan_L_back",
+"size_mm": [
+39.6,
+79.2,
+68.1
+],
+"g": 9.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_raglan_R_front",
+"size_mm": [
+39.5,
+75.5,
+68.1
+],
+"g": 9.4,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Jacket_raglan_R_back",
+"size_mm": [
+39.6,
+79.2,
+68.1
+],
+"g": 9.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Seam_pin_L_round",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Seam_pin_L_slot",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Seam_pin_R_round",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Seam_pin_R_slot",
+"size_mm": [
+3.0,
+6.3,
+3.0
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_R_sleeve",
+"size_mm": [
+53.9,
+60.6,
+153.9
+],
+"g": 45.7,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_R_cuff",
+"size_mm": [
+47.2,
+46.8,
+15.3
+],
+"g": 1.9,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_R_cuff_stripe",
+"size_mm": [
+48.2,
+47.5,
+13.4
+],
+"g": 1.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_R_cuff_top",
+"size_mm": [
+47.2,
+46.9,
+15.5
+],
+"g": 1.9,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_R_mitten",
+"size_mm": [
+48.5,
+51.1,
+53.7
+],
+"g": 13.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_L_sleeve",
+"size_mm": [
+53.9,
+60.6,
+153.9
+],
+"g": 45.7,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_L_cuff",
+"size_mm": [
+47.2,
+46.8,
+15.3
+],
+"g": 1.9,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_L_cuff_stripe",
+"size_mm": [
+48.2,
+47.5,
+13.4
+],
+"g": 1.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_L_cuff_top",
+"size_mm": [
+47.2,
+46.9,
+15.5
+],
+"g": 1.9,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Arm_L_mitten",
+"size_mm": [
+48.5,
+51.1,
+53.7
+],
+"g": 13.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Shoulder_coupler_R",
+"size_mm": [
+9.8,
+38.0,
+38.0
+],
+"g": 7.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Shoulder_coupler_L",
+"size_mm": [
+9.8,
+38.0,
+38.0
+],
+"g": 7.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Top_plate",
+"size_mm": [
+207.0,
+175.0,
+50.2
+],
+"g": 116.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Yaw_lock_pin",
+"size_mm": [
+31.2,
+5.0,
+5.0
+],
+"g": 0.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Plate_leg_R",
+"size_mm": [
+7.0,
+12.0,
+32.5
+],
+"g": 3.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Plate_leg_L",
+"size_mm": [
+7.0,
+12.0,
+32.5
+],
+"g": 3.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Neck_yaw_yoke",
+"size_mm": [
+37.0,
+32.0,
+73.5
+],
+"g": 22.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Head_frame",
+"size_mm": [
+240.0,
+117.5,
+33.0
+],
+"g": 37.3,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Board_keeper_pin",
+"size_mm": [
+3.0,
+3.0,
+7.2
+],
+"g": 0.1,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Pi4_bracket",
+"size_mm": [
+27.0,
+65.0,
+63.3
+],
+"g": 13.2,
+"open_edges": 0,
+"over_bed": false
+},
+{
+"part": "Speaker_bracket",
+"size_mm": [
+45.4,
+56.2,
+60.6
+],
+"g": 12.8,
+"open_edges": 0,
+"over_bed": false
+}
+]
