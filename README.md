@@ -21,6 +21,7 @@
 11. 학습 환경은 어떻게 다른가
 12. LCD 얼굴 판(예정)
 13. 라이선스와 출처
+14. 애니메이션용 스켈레톤(리그) 파일
 
 ## 1. 용어 풀이
 
@@ -59,11 +60,13 @@ kobi-robot/
     mujoco/                    kobi_scene.xml, kobi_scene_backlash.xml(학습용), assets/(STL 80개 + 내려받는 28개)
     print/                     3D 프린트용 STL 96개(body, face, head, mech 폴더)와 parts_table.json, fit_coupon.stl
     blender/kobi_v7.blend      블렌더 모델(61 MB, 코리 참고 그림 이미지와 개인 경로를 지움)
+    skeleton/                  애니메이션용 스켈레톤: kobi_rig.blend/.fbx/.glb, kobi_skeleton.bvh, skeleton.json, README.md(14절)
   policy/
     kobi_v2_final_151M.onnx              최종 정책
     polynomial_coefficients_kobi.pkl     기준 걸음 데이터(학습 때 모방 대상)
     kobi_gestures.py                     몸짓 14가지(거울 대칭 포함 22개) 정의
   tools/                     정책 재생기, 평가기, URDF 생성기와 검사기
+    skeleton/                  스켈레톤 추출, 리그 생성(Blender), 검증 도구(14절)
   media/                     시연 영상 MP4 2개와 정지화면 8장
   lcd_face/                  LCD 얼굴 판 자리(아직 비어 있음, README만 있음)
 ```
@@ -439,3 +442,12 @@ LCD 판 학습 장면의 머리 질량은 543.9 g으로 계획되어 있습니�
 - 뼈대 부품 메시 일부(`printed_face/mujoco/assets/`의 28개)는 라이선스가 없는 Playground 저장소의 파일이라 이 저장소에 담지 않았고, `tools/fetch_upstream_meshes.py`로 내려받습니다(`NOTICE.md` 3절).
 - 우리가 만든 파일에는 별도 오픈소스 라이선스를 붙이지 않았습니다. 따로 밝히지 않은 한 모든 권리가 유보됩니다. 이는 임시 표시이며 소유자가 바꿀 수 있습니다.
 - 라이선스가 없는 업스트림 저장소(Open_Duck_Playground, Open_Duck_reference_motion_generator, Open_Duck_Mini_Runtime)의 코드는 넣지 않았습니다.
+
+## 14. 애니메이션용 스켈레톤(리그) 파일
+
+리타게팅과 애니메이션 팀을 위해, MuJoCo 모델에서 자동으로 뽑은 뼈대 파일을 `printed_face/skeleton/`에 넣었습니다. Blender 원본(`kobi_rig.blend`), FBX(`kobi_rig.fbx`), glTF 바이너리(`kobi_rig.glb`), 뼈대만 있는 BVH(`kobi_skeleton.bvh`), 숫자 원본(`skeleton.json`)입니다. 관절 14개는 정책 행동 번호 0~13과 같은 이름의 뼈에 대응하고, 각 관절은 자기 뼈의 로컬 Z축을 중심으로 돌며, 모든 각도가 0인 자세가 기준 자세입니다. 홈 자세는 `home` 동작에 따로 들어 있습니다.
+
+- 파일별 사용처, 뼈 이름과 부모 구조, 좌표축 규칙(Blender는 Z 위, glTF는 Y 위, FBX 설정), 단위, 동작, 검증 오차, 다시 만드는 명령은 `printed_face/skeleton/README.md`에 있습니다.
+- 우리가 만든 겉모양 메시 60개만 넣었습니다. 라이선스가 없는 업스트림 메시 28개(13절)의 모양은 어느 파일에도 들어 있지 않습니다.
+- 만든 파일은 Blender 5.2.2에서 다시 읽어 MuJoCo 계산과 비교해 검증했습니다(뼈 머리 위치 최대 오차 7e-7 m 이하). Maya, Unity, MotionBuilder에서 직접 열어 본 것은 아닙니다.
+- 도구는 `tools/skeleton/`(`extract_skeleton.py`, `build_rig.py`, `verify_rig.py`)에 있습니다. LCD 얼굴 판 MJCF가 생기면 같은 도구에 그 MJCF 경로만 주어 같은 방식으로 스켈레톤을 만들 수 있습니다(12절).
