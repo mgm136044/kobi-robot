@@ -9,7 +9,8 @@ Run once after cloning, from anywhere:
     python3 tools/fetch_upstream_meshes.py            # download missing files
     python3 tools/fetch_upstream_meshes.py --check    # only verify what is on disk
 
-Targets: printed_face/mujoco/assets/ (all 28 files) and printed_face/urdf/assets/ (the 11 files listed in URDF_ALSO).
+Targets: printed_face/mujoco/assets/ and lcd_face/mujoco/assets/ (all 28 files in each; the LCD scene uses the same 28 meshes), and
+printed_face/urdf/assets/ (the 11 files listed in URDF_ALSO).
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ UPSTREAM_COMMIT = "b9be205ac64488c23504ca42e5ec790337adeec3"
 RAW_URL = ("https://raw.githubusercontent.com/apirrone/Open_Duck_Playground/{commit}/"
            "playground/open_duck_mini_v2/xmls/assets/{name}")
 MUJOCO_DIR = REPO_ROOT / "printed_face" / "mujoco" / "assets"
+LCD_MUJOCO_DIR = REPO_ROOT / "lcd_face" / "mujoco" / "assets"
 URDF_DIR = REPO_ROOT / "printed_face" / "urdf" / "assets"
 TIMEOUT_S = 60
 
@@ -88,7 +90,7 @@ def download(name: str) -> bytes:
 
 
 def targets(name: str) -> list[Path]:
-    dirs = [MUJOCO_DIR] + ([URDF_DIR] if name in URDF_ALSO else [])
+    dirs = [MUJOCO_DIR, LCD_MUJOCO_DIR] + ([URDF_DIR] if name in URDF_ALSO else [])
     return [d / name for d in dirs]
 
 

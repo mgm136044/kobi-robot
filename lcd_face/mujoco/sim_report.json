@@ -1,0 +1,42 @@
+{
+ "blender_head_mass_g": 686.2,
+ "blender_head_com_mm": [
+  2.4,
+  41.0,
+  463.9
+ ],
+ "blender_robot_g": 3012.1,
+ "v1": {
+  "head_g": 543.9,
+  "head_com_mm": [
+   0.4,
+   37.7,
+   462.8
+  ],
+  "robot_g": 2924.7
+ },
+ "scenes": {
+  "kobi_scene.xml": {
+   "total_mass_g": 3012.1,
+   "nbody": 18,
+   "head_body": "kobi_head",
+   "head_subtree_mass_g": 686.2,
+   "head_subtree_com_world_mm": [
+    -41.0,
+    2.4,
+    472.4
+   ]
+  },
+  "kobi_scene_backlash.xml": {
+   "total_mass_g": 3012.1,
+   "nbody": 18,
+   "head_body": "kobi_head",
+   "head_subtree_mass_g": 686.2,
+   "head_subtree_com_world_mm": [
+    -41.0,
+    2.4,
+    472.4
+   ]
+  }
+ }
+}

@@ -1,0 +1,14 @@
+﻿part,file,material,qty in sim,CAD solid g,P1 g,P2 g,P1/solid,P2/solid,support g (P1),sim bodies
+trunk_bottom,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/trunk_bottom.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,1,102.373,37.455,48.799,0.366,0.477,0.272,trunk_assembly
+trunk_top,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/trunk_top.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,1,179.400,67.108,86.335,0.374,0.481,16.528,trunk_assembly
+roll_motor_bottom,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/roll_motor_bottom.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,2,10.536,7.334,8.276,0.696,0.786,1.770,hip_roll_assembly;hip_roll_assembly_2
+roll_motor_top,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/roll_motor_top.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,2,11.377,7.126,8.273,0.626,0.727,2.736,hip_roll_assembly;hip_roll_assembly_2
+kori_roll_to_pitch_left,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/kori_roll_to_pitch_left.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,1,48.720,28.795,34.157,0.591,0.701,12.672,left_roll_to_pitch_assembly
+kori_roll_to_pitch_right,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/kori_roll_to_pitch_right.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,1,48.720,29.209,34.603,0.600,0.710,12.853,right_roll_to_pitch_assembly
+leg_spacer,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/leg_spacer.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,4,8.743,5.723,6.884,0.655,0.787,0.872,knee_and_ankle_assembly;knee_and_ankle_assembly_2;knee_and_ankle_assembly_3;knee_and_ankle_assembly_4
+left_knee_to_ankle_left_sheet,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/left_knee_to_ankle_left_sheet.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,4,10.243,7.566,8.802,0.739,0.859,1.755,knee_and_ankle_assembly;knee_and_ankle_assembly_2;knee_and_ankle_assembly_3;knee_and_ankle_assembly_4
+left_knee_to_ankle_right_sheet,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/left_knee_to_ankle_right_sheet.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,4,8.112,6.754,7.614,0.833,0.939,2.498,knee_and_ankle_assembly;knee_and_ankle_assembly_2;knee_and_ankle_assembly_3;knee_and_ankle_assembly_4
+foot_side,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/foot_side.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,2,26.598,15.044,18.319,0.566,0.689,2.712,foot_assembly;foot_assembly_2
+foot_top,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/foot_top.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,2,49.172,25.088,31.118,0.510,0.633,5.660,foot_assembly;foot_assembly_2
+foot_bottom_pla,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/foot_bottom_pla.stl (RESEARCH 복제본, 미터->mm 변환)",PLA,2,19.697,9.650,11.620,0.490,0.590,1.816,foot_assembly;foot_assembly_2
+foot_bottom_tpu,"Open_Duck_Mini/mini_bdx/robots/open_duck_mini_v2/foot_bottom_tpu.stl (RESEARCH 복제본, 미터->mm 변환)",TPU,2,28.555,13.701,16.677,0.480,0.584,0.745,foot_assembly;foot_assembly_2

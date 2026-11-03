@@ -1,0 +1,20 @@
+{
+ "camera_mount_coupon": {
+  "triangles": 2938,
+  "size_mm": [
+   25.0,
+   35.0,
+   35.1
+  ],
+  "turn": "print X = model y, print Y = -model z, print Z = -model x (seam face down, foot plate on the bed)"
+ },
+ "mic_mount_coupon": {
+  "triangles": 2374,
+  "size_mm": [
+   25.0,
+   26.0,
+   27.2
+  ],
+  "turn": "print X = model y, print Y = -model z, print Z = -model x (seam face down, foot plate on the bed)"
+ }
+}

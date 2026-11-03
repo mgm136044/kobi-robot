@@ -19,7 +19,7 @@
 9. 최종 정책의 측정 결과
 10. 알려진 문제
 11. 학습 환경은 어떻게 다른가
-12. LCD 얼굴 판(예정)
+12. LCD 얼굴 판
 13. 라이선스와 출처
 14. 애니메이션용 스켈레톤(리그) 파일
 
@@ -63,12 +63,13 @@ kobi-robot/
     skeleton/                  애니메이션용 스켈레톤: kobi_rig.blend/.fbx/.glb, kobi_skeleton.bvh, skeleton.json, README.md(14절)
   policy/
     kobi_v2_final_151M.onnx              최종 정책
+    lcd_face/                            LCD 얼굴 판 정책(ONNX 1개)과 평가 결과 JSON 4개(12절)
     polynomial_coefficients_kobi.pkl     기준 걸음 데이터(학습 때 모방 대상)
     kobi_gestures.py                     몸짓 14가지(거울 대칭 포함 22개) 정의
   tools/                     정책 재생기, 평가기, URDF 생성기와 검사기
     skeleton/                  스켈레톤 추출, 리그 생성(Blender), 검증 도구(14절)
   media/                     시연 영상 MP4 2개와 정지화면 8장
-  lcd_face/                  LCD 얼굴 판 자리(아직 비어 있음, README만 있음)
+  lcd_face/                  LCD 얼굴 판(모델 6판, 1차 공개): MuJoCo 장면, 프린트 파일, Blender 모델, 부품표 v11, 인쇄 부품 질량(mass/), 시연 영상, 소프트웨어 인계 문서(SOFTWARE_HANDOFF.md), README(12절)
 ```
 
 `printed_face/mujoco/` 한 폴더에 일반 장면(`kobi_scene.xml`)과 학습용 장면(`kobi_scene_backlash.xml`)을 함께 두었습니다. 두 장면이 쓰는 메시 파일이 바이트 단위로 같고 `kobi_scene.xml`도 두 원본이 같아서, 같은 `assets/` 폴더를 같이 씁니다.
@@ -132,7 +133,7 @@ kobi-robot/
 python3 tools/fetch_upstream_meshes.py
 ```
 
-이유는 다음과 같습니다. 뼈대 부품 메시 28개(`printed_face/mujoco/assets/`, 그 가운데 11개는 `printed_face/urdf/assets/`에도 필요)는 Open_Duck_Playground 저장소에 있는 단순화된 파일인데, 그 저장소에 라이선스가 없어서 우리가 이 저장소에 담아 다시 배포할 수 없습니다. 그래서 이 스크립트가 GitHub의 고정된 커밋(`b9be205ac64488c23504ca42e5ec790337adeec3`)에서 정확히 그 파일들만 내려받고, 스크립트 안의 SHA-256 표와 하나씩 맞춰 본 뒤에만 저장합니다. 해시가 다르면 파일을 쓰지 않습니다. 이미 맞는 파일이 있으면 건너뜁니다. 파이썬 표준 라이브러리만 쓰며 인터넷이 필요합니다. `python3 tools/fetch_upstream_meshes.py --check`는 내려받지 않고 확인만 합니다. 자세한 사정은 `NOTICE.md` 3절에 있습니다.
+이 명령은 `lcd_face/mujoco/assets/`에도 같은 28개를 내려받습니다(LCD 얼굴 판 장면이 같은 메시를 씁니다). 이유는 다음과 같습니다. 뼈대 부품 메시 28개(`printed_face/mujoco/assets/`, 그 가운데 11개는 `printed_face/urdf/assets/`에도 필요)는 Open_Duck_Playground 저장소에 있는 단순화된 파일인데, 그 저장소에 라이선스가 없어서 우리가 이 저장소에 담아 다시 배포할 수 없습니다. 그래서 이 스크립트가 GitHub의 고정된 커밋(`b9be205ac64488c23504ca42e5ec790337adeec3`)에서 정확히 그 파일들만 내려받고, 스크립트 안의 SHA-256 표와 하나씩 맞춰 본 뒤에만 저장합니다. 해시가 다르면 파일을 쓰지 않습니다. 이미 맞는 파일이 있으면 건너뜁니다. 파이썬 표준 라이브러리만 쓰며 인터넷이 필요합니다. `python3 tools/fetch_upstream_meshes.py --check`는 내려받지 않고 확인만 합니다. 자세한 사정은 `NOTICE.md` 3절에 있습니다.
 
 ### 6.1 불러오기
 
@@ -421,17 +422,19 @@ uv run --no-project --python 3.12 --with mujoco==3.14.0 --with numpy python -I t
 
 출처: `코비_학습/playground_kobi/CHANGES.md`(저장소 밖), 개발 기록 `kobi_playground_env`(저장소 밖).
 
-## 12. LCD 얼굴 판(예정)
+## 12. LCD 얼굴 판
 
-`lcd_face/` 폴더는 지금 비어 있고, 설명 README만 있습니다. 인쇄 얼굴 판과 별도로, 인쇄 얼굴 대신 LCD 화면 얼굴을 단 코비가 개발 중이며, 완성되면 아래를 추가할 예정입니다(작업 계획이며 내용은 바뀔 수 있습니다).
+인쇄한 얼굴 대신 머리 안의 5인치 HDMI 화면으로 표정을 보여 주는 코비의 모델 6판이 `lcd_face/`에 있습니다. 머리 안에 Raspberry Pi 4를 두고, 카메라와 마이크는 이마에 있으며, 목에는 가는 선 7가닥만 지납니다. 폴더에는 MuJoCo 장면(`kobi_scene.xml`, `kobi_scene_backlash.xml`), 3D 프린트 파일, Blender 모델, 부품표 v11, 슬라이서로 잰 인쇄 부품 질량, 시연 영상이 있고, `policy/lcd_face/`에는 이어서 학습한 정책과 평가 결과가 있습니다. 자세한 설명은 `lcd_face/README.md`를, 소프트웨어 팀이 하드웨어에서 알아야 할 것(관절 범위, 서보 번호, 핀 배치, 전원 주의, 게임패드, 질량)은 `lcd_face/SOFTWARE_HANDOFF.md`를 보세요.
 
-- LCD 얼굴 판의 URDF와 MuJoCo 모델, 3D 프린트 파일
-- 머리가 무거워진 모델에 맞춰 다시 학습한 정책(기존 1억 5,100만 걸음 정책에서 이어 약 6,000만 걸음 추가 학습 계획)
-- 평가 결과와 시연 영상
+꼭 알아 둘 점은 다음과 같습니다.
 
-LCD 판 학습 장면의 머리 질량은 543.9 g으로 계획되어 있습니다.
+- **6판 머리(모델 계산 686.2 g)는 정책이 학습한 머리 질량 범위(449.5~638.3 g)보다 47.9 g 무겁습니다.** 실제 출력 기준(슬라이서)으로는 635.1~644.4 g이지만, 학습 때 상한 가까이의 질량은 표본이 거의 없어(635.1 g 이상은 0.1% 미만) 사실상 학습하지 않은 질량이고, 자석, 나사, 접착제, 마이크 커넥터의 질량은 빠져 있어 실제 머리는 몇 g 더 무겁습니다. 머리를 더 가볍게 한 7b판(제작 중, 보통 설정 약 589 g 추정)은 2차에 올립니다(`lcd_face/SOFTWARE_HANDOFF.md`). 정책은 인쇄 얼굴 판 정책(1억 5,100만 걸음)에서 이어서 약 6,000만 걸음 더 학습한 것이며, 6판 질량으로 다시 학습한 것은 아닙니다.
+- 밀기 시험(192회)에서 넘어진 횟수는 3판 장면 103회, 5판 108회, 6판 105회입니다. 속도 추종 66회와 몸짓 88회는 세 장면 모두 넘어지지 않았습니다. 인쇄 얼굴 판 장면의 77회(9.3절)보다는 많습니다.
+- 이 숫자도 모두 시뮬레이션 값입니다. LCD 얼굴 판 실물과 실기 시험 기록은 없습니다.
+- 통풍구의 효과, 카메라 리본의 접점 면(A형, B형), 짧은 HDMI 케이블의 플러그 방향, 마이크 선 분리 커넥터(모델에 없음)는 아직 확인하지 못했습니다(`lcd_face/README.md` 3절).
+- 이 폴더는 1차 공개입니다. 더 가벼운 머리의 모델 7판, 이중 검증을 마친 조립 설명서 PDF(`lcd_face/manual/`), 바로잡은 최신 조립 영상은 검증 뒤 2차에 올리며 지금은 없습니다. 6판 조립 영상은 엉덩이 서보 순서가 틀려 뺐습니다.
 
-출처: `코비_작업_로드맵_20261103.md`(저장소 밖, 작업 계획 문서).
+출처: `lcd_face/README.md`, `policy/lcd_face/eval/`(이 저장소의 `tools/evaluate_policy.py`로 6판 결과를 다시 돌려 같은 값을 확인했습니다).
 
 ## 13. 라이선스와 출처
 
@@ -439,7 +442,7 @@ LCD 판 학습 장면의 머리 질량은 543.9 g으로 계획되어 있습니�
 
 - 뼈대 모델(다리와 몸통 구조, 이에서 만든 URDF와 MJCF)은 Antoine Pirrone(apirrone)의 Open Duck Mini v2에서 왔으며 Apache-2.0입니다. 라이선스 원문은 `LICENSES/Apache-2.0.txt`에 있습니다.
 - 코리 캐릭터의 권리는 원 소유자(대학교)에게 있습니다.
-- 뼈대 부품 메시 일부(`printed_face/mujoco/assets/`의 28개)는 라이선스가 없는 Playground 저장소의 파일이라 이 저장소에 담지 않았고, `tools/fetch_upstream_meshes.py`로 내려받습니다(`NOTICE.md` 3절).
+- 뼈대 부품 메시 일부(`printed_face/mujoco/assets/`와 `lcd_face/mujoco/assets/`의 같은 28개)는 라이선스가 없는 Playground 저장소의 파일이라 이 저장소에 담지 않았고, `tools/fetch_upstream_meshes.py`로 내려받습니다(`NOTICE.md` 3절).
 - 우리가 만든 파일에는 별도 오픈소스 라이선스를 붙이지 않았습니다. 따로 밝히지 않은 한 모든 권리가 유보됩니다. 이는 임시 표시이며 소유자가 바꿀 수 있습니다.
 - 라이선스가 없는 업스트림 저장소(Open_Duck_Playground, Open_Duck_reference_motion_generator, Open_Duck_Mini_Runtime)의 코드는 넣지 않았습니다.
 
@@ -450,4 +453,4 @@ LCD 판 학습 장면의 머리 질량은 543.9 g으로 계획되어 있습니�
 - 파일별 사용처, 뼈 이름과 부모 구조, 좌표축 규칙(Blender는 Z 위, glTF는 Y 위, FBX 설정), 단위, 동작, 검증 오차, 다시 만드는 명령은 `printed_face/skeleton/README.md`에 있습니다.
 - 우리가 만든 겉모양 메시 60개만 넣었습니다. 라이선스가 없는 업스트림 메시 28개(13절)의 모양은 어느 파일에도 들어 있지 않습니다.
 - 만든 파일은 Blender 5.2.2에서 다시 읽어 MuJoCo 계산과 비교해 검증했습니다(뼈 머리 위치 최대 오차 7e-7 m 이하). Maya, Unity, MotionBuilder에서 직접 열어 본 것은 아닙니다.
-- 도구는 `tools/skeleton/`(`extract_skeleton.py`, `build_rig.py`, `verify_rig.py`)에 있습니다. LCD 얼굴 판 MJCF가 생기면 같은 도구에 그 MJCF 경로만 주어 같은 방식으로 스켈레톤을 만들 수 있습니다(12절).
+- 도구는 `tools/skeleton/`(`extract_skeleton.py`, `build_rig.py`, `verify_rig.py`)에 있습니다. LCD 얼굴 판 MJCF(`lcd_face/mujoco/kobi_scene.xml`)로도 같은 도구에 그 경로를 주어 만들 수 있을 것으로 보이지만, 이번에 시도하지 않았습니다(12절).

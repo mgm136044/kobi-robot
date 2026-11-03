@@ -1,0 +1,64 @@
+﻿part,file,material/colour,model solid g,P1 g,P2 g,P1/solid,P2/solid,support g (P1),notes,sim_body,sim solid g (parts.json)
+A_HeadShell,A_HeadShell_L.stl (v6 print); A_HeadShell_R.stl (v6 print),PLA / 노랑(머리·얼굴 노랑),280.984,248.828,253.633,0.886,0.903,504.899,"반쪽 두 개를 따로 잘라 합침: A_HeadShell_L 124.57 g(보통), A_HeadShell_R 124.26 g(보통) | 받침이 부품 무게의 2.0배 필요(모델 방향 그대로, 자동 받침)",kobi_head,280.984
+Face_Blush_R,Face_Blush_R.stl (print_v8),PLA / 분홍(볼터치),5.375,5.038,5.038,0.937,0.937,0.361,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,5.375
+Face_Blush_L,Face_Blush_L.stl (print_v8),PLA / 분홍(볼터치),5.309,4.971,4.971,0.936,0.936,0.402,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,5.309
+Face_WhiteFace,Face_WhiteFace_L.stl (v6 print); Face_WhiteFace_R.stl (v6 print),PLA / 흰색,45.512,42.788,42.777,0.940,0.940,50.562,"반쪽 두 개를 따로 잘라 합침: Face_WhiteFace_L 21.61 g(보통), Face_WhiteFace_R 21.18 g(보통) | 얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.2배 필요(모델 방향 그대로, 자동 받침)",kobi_head,45.513
+Face_LCD_bezel,Face_LCD_bezel.stl (v6 print),PLA / 검정(얼굴),8.879,8.166,8.341,0.920,0.939,9.575,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.2배 필요(모델 방향 그대로, 자동 받침)",kobi_head,8.879
+Neck,Neck.stl (v6 print),PLA / 노랑(머리·얼굴 노랑),77.926,52.505,57.814,0.674,0.742,16.255,,trunk_assembly,77.926
+Collar_ring,Collar_ring.stl (print_v8),PLA / 흰색,23.553,20.927,22.246,0.888,0.944,6.849,,trunk_assembly,23.554
+Foot_L_cover,Foot_L_cover.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),38.569,34.721,35.104,0.900,0.910,5.027,얇은 껍데기 위주라 속채움이 거의 없음,foot_assembly,38.569
+Foot_L_dowel_a,Foot_L_dowel_a.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Foot_L_dowel_b,Foot_L_dowel_b.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Foot_R_cover,Foot_R_cover.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),39.056,35.128,35.514,0.899,0.909,5.164,,foot_assembly_2,39.056
+Foot_R_dowel_a,Foot_R_dowel_a.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Foot_R_dowel_b,Foot_R_dowel_b.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Leg_L_guard,Leg_L_guard.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),5.533,5.173,5.206,0.935,0.941,1.074,얇은 껍데기 위주라 속채움이 거의 없음,knee_and_ankle_assembly_2,5.533
+Leg_R_guard,Leg_R_guard.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),5.503,5.152,5.207,0.936,0.946,1.044,얇은 껍데기 위주라 속채움이 거의 없음,knee_and_ankle_assembly_4,5.503
+Tail_body,Tail_body.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),25.922,21.163,22.518,0.816,0.869,16.591,"받침이 부품 무게의 0.8배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,25.922
+Wing_R,Wing_R.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),22.120,14.968,17.008,0.677,0.769,6.839,,trunk_assembly,22.120
+Wing_L,Wing_L.stl (print_v8),PLA / 노랑(머리·얼굴 노랑),22.120,14.946,17.009,0.676,0.769,6.874,,trunk_assembly,22.120
+Jacket_button_0,Jacket_button_0.stl (print_v8),PLA / 흰색,0.957,0.869,0.903,0.908,0.944,0.126,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.957
+Jacket_button_1,Jacket_button_1.stl (print_v8),PLA / 흰색,0.957,0.867,0.903,0.906,0.944,0.128,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.957
+Jacket_button_2,Jacket_button_2.stl (print_v8),PLA / 흰색,0.957,0.867,0.903,0.906,0.944,0.128,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.957
+Jacket_K,Jacket_K.stl (print_v8),PLA / 흰색,2.161,2.025,2.024,0.937,0.937,0.140,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,2.161
+Jacket_pocket_R0,Jacket_pocket_R0.stl (print_v8),PLA / 흰색,0.439,0.417,0.416,0.949,0.947,0.064,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.439
+Jacket_pocket_R1,Jacket_pocket_R1.stl (print_v8),PLA / 흰색,0.479,0.452,0.454,0.943,0.948,0.080,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.479
+Jacket_pocket_L0,Jacket_pocket_L0.stl (print_v8),PLA / 흰색,0.439,0.417,0.416,0.949,0.947,0.058,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.439
+Jacket_pocket_L1,Jacket_pocket_L1.stl (print_v8),PLA / 흰색,0.479,0.452,0.454,0.943,0.948,0.059,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.479
+Jacket_placket,Jacket_placket.stl (print_v8),PLA / 짙은 남색,1.599,1.455,1.455,0.910,0.910,1.744,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.2배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,1.599
+Jacket_hem_stripe_front,Jacket_hem_stripe_front.stl (print_v8),PLA / 흰색,3.391,3.284,3.284,0.968,0.968,0.052,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,3.391
+Jacket_hem_stripe_back,Jacket_hem_stripe_back.stl (print_v8),PLA / 흰색,3.623,3.508,3.508,0.968,0.968,0.055,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,3.623
+Jacket_front,Jacket_front.stl (print_v8),PLA / 회색(색 미지정),133.199,122.750,122.909,0.922,0.923,163.145,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.3배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,133.199
+Jacket_back,Jacket_back.stl (print_v8),PLA / 회색(색 미지정),143.110,130.442,131.253,0.911,0.917,153.939,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.2배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,143.110
+Jacket_raglan_L_front,Jacket_raglan_L_front.stl (print_v8),PLA / 흰색,9.375,8.730,8.714,0.931,0.929,19.898,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 2.3배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,9.375
+Jacket_raglan_L_back,Jacket_raglan_L_back.stl (print_v8),PLA / 흰색,9.064,8.370,8.357,0.923,0.922,19.618,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 2.3배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,9.064
+Jacket_raglan_R_front,Jacket_raglan_R_front.stl (print_v8),PLA / 흰색,9.376,8.728,8.717,0.931,0.930,19.716,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 2.3배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,9.376
+Jacket_raglan_R_back,Jacket_raglan_R_back.stl (print_v8),PLA / 흰색,9.064,8.359,8.357,0.922,0.922,19.464,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 2.3배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,9.064
+Seam_pin_L_round,Seam_pin_L_round.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Seam_pin_L_slot,Seam_pin_L_slot.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Seam_pin_R_round,Seam_pin_R_round.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Seam_pin_R_slot,Seam_pin_R_slot.stl (print_v8),PLA / 회색(색 미지정),0.055,0.051,0.051,0.930,0.930,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.055
+Arm_R_sleeve,Arm_R_sleeve.stl (print_v8),PLA / 흰색,45.740,40.235,41.772,0.880,0.913,22.911,"받침이 부품 무게의 0.6배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_right,45.740
+Arm_R_cuff,Arm_R_cuff.stl (print_v8),PLA / 남색,1.862,1.739,1.739,0.934,0.934,1.743,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_right,1.862
+Arm_R_cuff_stripe,Arm_R_cuff_stripe.stl (print_v8),PLA / 흰색,1.233,1.159,1.159,0.940,0.940,1.826,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.6배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_right,1.233
+Arm_R_cuff_top,Arm_R_cuff_top.stl (print_v8),PLA / 남색,1.940,1.813,1.813,0.935,0.935,1.749,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_right,1.940
+Arm_R_mitten,Arm_R_mitten.stl (v6 print),PLA / 노랑(머리·얼굴 노랑),13.242,12.431,12.427,0.939,0.938,8.738,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 0.7배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_right,13.242
+Arm_L_sleeve,Arm_L_sleeve.stl (print_v8),PLA / 흰색,45.740,40.120,41.751,0.877,0.913,24.166,"받침이 부품 무게의 0.6배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_left,45.740
+Arm_L_cuff,Arm_L_cuff.stl (print_v8),PLA / 남색,1.862,1.739,1.739,0.934,0.934,1.744,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_left,1.862
+Arm_L_cuff_stripe,Arm_L_cuff_stripe.stl (print_v8),PLA / 흰색,1.233,1.159,1.159,0.940,0.940,1.827,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.6배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_left,1.233
+Arm_L_cuff_top,Arm_L_cuff_top.stl (print_v8),PLA / 남색,1.940,1.813,1.813,0.935,0.935,1.743,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_left,1.940
+Arm_L_mitten,Arm_L_mitten.stl (v6 print),PLA / 노랑(머리·얼굴 노랑),13.271,12.460,12.456,0.939,0.939,8.749,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 0.7배 필요(모델 방향 그대로, 자동 받침)",kobi_arm_left,13.271
+Shoulder_coupler_R,Shoulder_coupler_R.stl (print_v8),PLA / 회색(색 미지정),7.194,5.027,6.051,0.699,0.841,1.164,,kobi_arm_right,7.194
+Shoulder_coupler_L,Shoulder_coupler_L.stl (print_v8),PLA / 회색(색 미지정),7.194,5.193,5.982,0.722,0.831,1.162,,kobi_arm_left,7.194
+Top_plate,Top_plate.stl (v6 print),PLA / 회색(색 미지정),116.366,81.797,92.809,0.703,0.798,7.242,,trunk_assembly,116.367
+Yaw_lock_pin,Yaw_lock_pin.stl (print_v8),PLA / 회색(색 미지정),0.286,0.271,0.271,0.946,0.946,0.114,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.286
+Plate_leg_R,Plate_leg_R.stl (print_v8),PLA / 회색(색 미지정),3.146,1.881,2.319,0.598,0.737,0.000,,trunk_assembly,3.146
+Plate_leg_L,Plate_leg_L.stl (print_v8),PLA / 회색(색 미지정),3.146,1.881,2.319,0.598,0.737,0.000,,trunk_assembly,3.146
+Neck_yaw_yoke,Neck_yaw_yoke.stl (print_v8),PLA / 회색(색 미지정),22.278,18.900,20.145,0.848,0.904,14.219,"받침이 부품 무게의 0.8배 필요(모델 방향 그대로, 자동 받침)",kobi_neck_link,22.278
+Neck_gap_shield,Neck_gap_shield.stl (v6 print),PLA / 회색(색 미지정),1.620,1.781,1.780,1.099,1.099,0.000,벽이 얇아 사실상 통으로 인쇄됨 | 두께가 층 높이 0.2 mm 단위로 올림되어 솔리드 계산보다 무거움,kobi_neck_link,1.620
+Board_keeper_pin,Board_keeper_pin.stl (print_v8),PLA / 회색(색 미지정),0.062,0.056,0.056,0.902,0.904,0.000,얇은 껍데기 위주라 속채움이 거의 없음,trunk_assembly,0.062
+Speaker_bracket,Speaker_bracket.stl (print_v8),PLA / 회색(색 미지정),12.795,8.748,10.028,0.684,0.784,8.418,"받침이 부품 무게의 1.0배 필요(모델 방향 그대로, 자동 받침)",trunk_assembly,12.795
+LCD_mount,LCD_mount.stl (v6 print),PLA / 회색(색 미지정),17.362,15.893,16.126,0.915,0.929,27.926,"얇은 껍데기 위주라 속채움이 거의 없음 | 받침이 부품 무게의 1.8배 필요(모델 방향 그대로, 자동 받침)",kobi_head,17.362
+LCD_mount_pin,LCD_mount_pin.stl (v6 print),PLA / 회색(색 미지정),0.075,0.067,0.069,0.903,0.931,0.000,얇은 껍데기 위주라 속채움이 거의 없음,kobi_head,0.075
+Head_frame_LCD,Head_frame_LCD.stl (v6 print),PLA / 회색(색 미지정),32.559,25.838,28.092,0.794,0.863,36.010,"받침이 부품 무게의 1.4배 필요(모델 방향 그대로, 자동 받침)",kobi_head,32.559
+Pi4_head_bracket,Pi4_head_bracket.stl (v6 print),PLA / 회색(색 미지정),22.236,15.557,17.413,0.700,0.783,0.094,,kobi_head,22.236
