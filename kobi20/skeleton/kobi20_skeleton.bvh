@@ -1,0 +1,131 @@
+HIERARCHY
+ROOT pelvis
+{
+	OFFSET 0.000000 0.000000 0.185000
+	CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+	JOINT left_hip_yaw_joint
+	{
+		OFFSET 0.000000 0.048000 0.015000
+		CHANNELS 3 Xrotation Yrotation Zrotation
+		JOINT left_hip_roll_joint
+		{
+			OFFSET 0.000000 0.000000 -0.015000
+			CHANNELS 3 Xrotation Yrotation Zrotation
+			JOINT left_hip_pitch_joint
+			{
+				OFFSET 0.000000 0.000000 0.000000
+				CHANNELS 3 Xrotation Yrotation Zrotation
+				JOINT left_knee_joint
+				{
+					OFFSET 0.000000 0.000000 -0.068000
+					CHANNELS 3 Xrotation Yrotation Zrotation
+					JOINT left_ankle_pitch_joint
+					{
+						OFFSET 0.000000 0.000000 -0.092000
+						CHANNELS 3 Xrotation Yrotation Zrotation
+						JOINT left_ankle_roll_joint
+						{
+							OFFSET 0.000000 0.000000 0.000000
+							CHANNELS 3 Xrotation Yrotation Zrotation
+							End Site
+							{
+								OFFSET 0.000000 0.016187 0.011746
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	JOINT right_hip_yaw_joint
+	{
+		OFFSET 0.000000 -0.048000 0.015000
+		CHANNELS 3 Xrotation Yrotation Zrotation
+		JOINT right_hip_roll_joint
+		{
+			OFFSET 0.000000 0.000000 -0.015000
+			CHANNELS 3 Xrotation Yrotation Zrotation
+			JOINT right_hip_pitch_joint
+			{
+				OFFSET 0.000000 0.000000 0.000000
+				CHANNELS 3 Xrotation Yrotation Zrotation
+				JOINT right_knee_joint
+				{
+					OFFSET 0.000000 0.000000 -0.068000
+					CHANNELS 3 Xrotation Yrotation Zrotation
+					JOINT right_ankle_pitch_joint
+					{
+						OFFSET 0.000000 0.000000 -0.092000
+						CHANNELS 3 Xrotation Yrotation Zrotation
+						JOINT right_ankle_roll_joint
+						{
+							OFFSET 0.000000 0.000000 0.000000
+							CHANNELS 3 Xrotation Yrotation Zrotation
+							End Site
+							{
+								OFFSET 0.000000 0.000000 0.020000
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	JOINT neck_yaw_joint
+	{
+		OFFSET 0.000000 0.000000 0.240000
+		CHANNELS 3 Xrotation Yrotation Zrotation
+		JOINT neck_pitch_joint
+		{
+			OFFSET 0.000000 0.000000 0.026000
+			CHANNELS 3 Xrotation Yrotation Zrotation
+			End Site
+			{
+				OFFSET 0.032471 0.000000 0.073114
+			}
+		}
+	}
+	JOINT left_shoulder_pitch_joint
+	{
+		OFFSET 0.000000 0.101500 0.221000
+		CHANNELS 3 Xrotation Yrotation Zrotation
+		JOINT left_shoulder_roll_joint
+		{
+			OFFSET 0.000000 0.011500 0.000000
+			CHANNELS 3 Xrotation Yrotation Zrotation
+			JOINT left_elbow_joint
+			{
+				OFFSET 0.007000 0.000000 -0.086000
+				CHANNELS 3 Xrotation Yrotation Zrotation
+				End Site
+				{
+					OFFSET -0.002137 0.000000 -0.030753
+				}
+			}
+		}
+	}
+	JOINT right_shoulder_pitch_joint
+	{
+		OFFSET 0.000000 -0.101500 0.221000
+		CHANNELS 3 Xrotation Yrotation Zrotation
+		JOINT right_shoulder_roll_joint
+		{
+			OFFSET 0.000000 -0.011500 0.000000
+			CHANNELS 3 Xrotation Yrotation Zrotation
+			JOINT right_elbow_joint
+			{
+				OFFSET 0.007000 0.000000 -0.086000
+				CHANNELS 3 Xrotation Yrotation Zrotation
+				End Site
+				{
+					OFFSET -0.002136 0.000000 -0.030753
+				}
+			}
+		}
+	}
+}
+MOTION
+Frames: 2
+Frame Time: 0.033333
+0.000000 0.000000 0.185000 -0.000000 0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000002 0.000000 0.000002 0.000002 0.000000 -0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 -0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 -0.000000 -0.000000 
+0.000000 0.000000 0.185802 -0.000000 0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 0.000000 -0.000000 0.000000 -6.193156 0.000000 -0.000000 8.594365 -0.000001 -0.000000 -2.401203 -0.000000 0.000002 0.000001 -0.000000 -0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000 -0.000000 -6.193155 -0.000000 0.000000 8.594364 0.000001 -0.000000 -2.401205 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 0.000000 -0.000000 -0.000000 -0.000000 0.000000 -0.000000 0.000000 -0.000000 20.000006 0.000002 -0.000001 0.000000 -17.999983 0.000001 -0.000000 0.000000 -0.000000 -20.000006 0.000001 0.000001 0.000002 -17.999980 0.000001 

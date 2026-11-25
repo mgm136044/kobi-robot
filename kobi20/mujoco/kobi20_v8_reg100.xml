@@ -1,0 +1,361 @@
+<mujoco model="kobi20_v8_reg100">
+  <compiler angle="radian" autolimits="true" balanceinertia="true" meshdir="meshes" fusestatic="false" />
+  <option timestep="0.002" integrator="implicitfast" />
+  <default>
+    <geom contype="0" conaffinity="0" condim="3" friction="0.8 0.005 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" density="0" />
+    <site group="5" rgba="1 0.3 0.3 1" />
+    <default class="visual">
+      <geom group="2" />
+    </default>
+    <default class="collision">
+      <geom group="3" rgba="0.3 0.6 0.9 0.3" />
+    </default>
+    <default class="foot">
+      <geom group="3" rgba="0.3 0.9 0.5 0.3" conaffinity="1" />
+    </default>
+    <default class="XM430-W350-T">
+      <joint damping="0.8511329565" armature="0.045" frictionloss="0.03" />
+      <position kp="18.87559641" forcerange="-4.1 4.1" inheritrange="1" />
+    </default>
+    <default class="XL430-W250-T">
+      <joint damping="0.2348187685" armature="0.02" frictionloss="0.03" />
+      <position kp="6.905706005" forcerange="-1.5 1.5" inheritrange="1" />
+    </default>
+    <default class="XL330-M288-T">
+      <joint damping="0.04821004101" armature="0.0016" frictionloss="0.019" />
+      <position kp="2.393978082" forcerange="-0.52 0.52" inheritrange="1" />
+    </default>
+  </default>
+  <asset>
+    <mesh name="chassis_pelvis" file="chassis_pelvis.stl" />
+    <mesh name="chassis_power_tray_0" file="chassis_power_tray_0.stl" />
+    <mesh name="chassis_power_tray_1" file="chassis_power_tray_1.stl" />
+    <mesh name="chassis_torso" file="chassis_torso.stl" />
+    <mesh name="shell_Jacket_front" file="shell_Jacket_front.stl" />
+    <mesh name="shell_Jacket_back" file="shell_Jacket_back.stl" />
+    <mesh name="shell_Wing_L" file="shell_Wing_L.stl" />
+    <mesh name="shell_Wing_R" file="shell_Wing_R.stl" />
+    <mesh name="chassis_neck_link" file="chassis_neck_link.stl" />
+    <mesh name="shell_Neck_cap" file="shell_Neck_cap.stl" />
+    <mesh name="chassis_head_mount" file="chassis_head_mount.stl" />
+    <mesh name="chassis_head_plate" file="chassis_head_plate.stl" />
+    <mesh name="chassis_cam_bracket" file="chassis_cam_bracket.stl" />
+    <mesh name="shell_A_HeadShell_L" file="shell_A_HeadShell_L.stl" />
+    <mesh name="shell_A_HeadShell_R" file="shell_A_HeadShell_R.stl" />
+    <mesh name="shell_Face_Blush_L" file="shell_Face_Blush_L.stl" />
+    <mesh name="shell_Face_Blush_R" file="shell_Face_Blush_R.stl" />
+    <mesh name="shell_Face_LCD_bezel_L" file="shell_Face_LCD_bezel_L.stl" />
+    <mesh name="shell_Face_LCD_bezel_R" file="shell_Face_LCD_bezel_R.stl" />
+    <mesh name="shell_Face_WhiteFace_L" file="shell_Face_WhiteFace_L.stl" />
+    <mesh name="shell_Face_WhiteFace_R" file="shell_Face_WhiteFace_R.stl" />
+    <mesh name="chassis_L_sho_link" file="chassis_L_sho_link.stl" />
+    <mesh name="shell_Arm_L_shoulder_cap_lower" file="shell_Arm_L_shoulder_cap_lower.stl" />
+    <mesh name="shell_Arm_L_shoulder_cap_upper" file="shell_Arm_L_shoulder_cap_upper.stl" />
+    <mesh name="chassis_L_upperarm_link" file="chassis_L_upperarm_link.stl" />
+    <mesh name="shell_Arm_L_sleeve_upper_back" file="shell_Arm_L_sleeve_upper_back.stl" />
+    <mesh name="shell_Arm_L_sleeve_upper_front" file="shell_Arm_L_sleeve_upper_front.stl" />
+    <mesh name="chassis_L_armyaw_link" file="chassis_L_armyaw_link.stl" />
+    <mesh name="shell_Arm_L_elbow_ball_inner" file="shell_Arm_L_elbow_ball_inner.stl" />
+    <mesh name="shell_Arm_L_elbow_ball_outer" file="shell_Arm_L_elbow_ball_outer.stl" />
+    <mesh name="chassis_L_forearm" file="chassis_L_forearm.stl" />
+    <mesh name="shell_Arm_L_cuff_band" file="shell_Arm_L_cuff_band.stl" />
+    <mesh name="shell_Arm_L_sleeve_fore_inner" file="shell_Arm_L_sleeve_fore_inner.stl" />
+    <mesh name="shell_Arm_L_sleeve_fore_outer" file="shell_Arm_L_sleeve_fore_outer.stl" />
+    <mesh name="chassis_L_hand_mount" file="chassis_L_hand_mount.stl" />
+    <mesh name="shell_Arm_L_mitten" file="shell_Arm_L_mitten.stl" />
+    <mesh name="chassis_R_sho_link" file="chassis_R_sho_link.stl" />
+    <mesh name="shell_Arm_R_shoulder_cap_lower" file="shell_Arm_R_shoulder_cap_lower.stl" />
+    <mesh name="shell_Arm_R_shoulder_cap_upper" file="shell_Arm_R_shoulder_cap_upper.stl" />
+    <mesh name="chassis_R_upperarm_link" file="chassis_R_upperarm_link.stl" />
+    <mesh name="shell_Arm_R_sleeve_upper_back" file="shell_Arm_R_sleeve_upper_back.stl" />
+    <mesh name="shell_Arm_R_sleeve_upper_front" file="shell_Arm_R_sleeve_upper_front.stl" />
+    <mesh name="chassis_R_armyaw_link" file="chassis_R_armyaw_link.stl" />
+    <mesh name="shell_Arm_R_elbow_ball_inner" file="shell_Arm_R_elbow_ball_inner.stl" />
+    <mesh name="shell_Arm_R_elbow_ball_outer" file="shell_Arm_R_elbow_ball_outer.stl" />
+    <mesh name="chassis_R_forearm" file="chassis_R_forearm.stl" />
+    <mesh name="shell_Arm_R_cuff_band" file="shell_Arm_R_cuff_band.stl" />
+    <mesh name="shell_Arm_R_sleeve_fore_inner" file="shell_Arm_R_sleeve_fore_inner.stl" />
+    <mesh name="shell_Arm_R_sleeve_fore_outer" file="shell_Arm_R_sleeve_fore_outer.stl" />
+    <mesh name="chassis_R_hand_mount" file="chassis_R_hand_mount.stl" />
+    <mesh name="shell_Arm_R_mitten" file="shell_Arm_R_mitten.stl" />
+    <mesh name="chassis_L_hip_yaw_link" file="chassis_L_hip_yaw_link.stl" />
+    <mesh name="chassis_L_hip_block" file="chassis_L_hip_block.stl" />
+    <mesh name="chassis_L_thigh" file="chassis_L_thigh.stl" />
+    <mesh name="shell_L_thigh_tube_back" file="shell_L_thigh_tube_back.stl" />
+    <mesh name="shell_L_thigh_tube_front" file="shell_L_thigh_tube_front.stl" />
+    <mesh name="chassis_L_shank" file="chassis_L_shank.stl" />
+    <mesh name="shell_L_shin_shell_back" file="shell_L_shin_shell_back.stl" />
+    <mesh name="shell_L_shin_shell_front" file="shell_L_shin_shell_front.stl" />
+    <mesh name="chassis_L_ankle_block" file="chassis_L_ankle_block.stl" />
+    <mesh name="chassis_L_foot" file="chassis_L_foot.stl" />
+    <mesh name="shell_Foot_L_cover_heel" file="shell_Foot_L_cover_heel.stl" />
+    <mesh name="shell_Foot_L_cover_toe" file="shell_Foot_L_cover_toe.stl" />
+    <mesh name="shell_L_ankle_hood" file="shell_L_ankle_hood.stl" />
+    <mesh name="shell_L_foot_lid" file="shell_L_foot_lid.stl" />
+    <mesh name="shell_L_insole" file="shell_L_insole.stl" />
+    <mesh name="chassis_R_hip_yaw_link" file="chassis_R_hip_yaw_link.stl" />
+    <mesh name="chassis_R_hip_block" file="chassis_R_hip_block.stl" />
+    <mesh name="chassis_R_thigh" file="chassis_R_thigh.stl" />
+    <mesh name="shell_R_thigh_tube_back" file="shell_R_thigh_tube_back.stl" />
+    <mesh name="shell_R_thigh_tube_front" file="shell_R_thigh_tube_front.stl" />
+    <mesh name="chassis_R_shank" file="chassis_R_shank.stl" />
+    <mesh name="shell_R_shin_shell_back" file="shell_R_shin_shell_back.stl" />
+    <mesh name="shell_R_shin_shell_front" file="shell_R_shin_shell_front.stl" />
+    <mesh name="chassis_R_ankle_block" file="chassis_R_ankle_block.stl" />
+    <mesh name="chassis_R_foot" file="chassis_R_foot.stl" />
+    <mesh name="shell_Foot_R_cover_heel" file="shell_Foot_R_cover_heel.stl" />
+    <mesh name="shell_Foot_R_cover_toe" file="shell_Foot_R_cover_toe.stl" />
+    <mesh name="shell_R_ankle_hood" file="shell_R_ankle_hood.stl" />
+    <mesh name="shell_R_foot_lid" file="shell_R_foot_lid.stl" />
+    <mesh name="shell_R_insole" file="shell_R_insole.stl" />
+  </asset>
+  <worldbody>
+    <body name="pelvis" pos="0.000000 0.000000 0.185000">
+      <freejoint name="root" />
+      <inertial pos="0.0001316 -0.0007631 0.0847624" mass="0.527180" fullinertia="0.00085823025 0.000881863333 0.000863797397 -5.29353288e-08 3.30372915e-07 1.09571852e-05" />
+      <geom class="visual" type="mesh" mesh="chassis_pelvis" rgba="0.75 0.22 0.2 1" />
+      <geom class="visual" type="mesh" mesh="chassis_power_tray_0" rgba="0.75 0.22 0.2 1" />
+      <geom class="visual" type="mesh" mesh="chassis_power_tray_1" rgba="0.75 0.22 0.2 1" />
+      <body name="torso_link" pos="0.000000 0.000000 0.115000">
+        <inertial pos="-0.0042726 0.0010805 0.0320035" mass="0.776209" fullinertia="0.00777144651 0.0069461832 0.00580406885 3.55868156e-06 0.000143536942 -3.52314123e-05" />
+        <geom class="visual" type="mesh" mesh="chassis_torso" rgba="0.75 0.22 0.2 1" />
+        <geom class="visual" type="mesh" mesh="shell_Jacket_front" rgba="0.93 0.93 0.95 1" />
+        <geom class="visual" type="mesh" mesh="shell_Jacket_back" rgba="0.93 0.93 0.95 1" />
+        <geom class="visual" type="mesh" mesh="shell_Wing_L" rgba="0.93 0.93 0.95 1" />
+        <geom class="visual" type="mesh" mesh="shell_Wing_R" rgba="0.93 0.93 0.95 1" />
+        <geom name="torso" class="collision" type="box" pos="0.00550 0.00000 0.00125" size="0.09050 0.11500 0.12895" />
+        <geom name="torso_core" class="collision" type="box" pos="0.00550 0.00000 0.02050" size="0.09050 0.08000 0.11150" />
+        <site name="imu" pos="0.00000 0.00000 0.07000" size="0.01" />
+        <body name="neck_yaw_link" pos="0.000000 0.000000 0.125000">
+          <joint name="neck_yaw_joint" class="XL430-W250-T" axis="0 0 1" range="-1.57080 1.57080" />
+          <inertial pos="-0.0099935 -0.0000731 0.0218657" mass="0.078291" fullinertia="2.39013855e-05 3.08805114e-05 3.76989866e-05 -1.14774349e-08 1.44438783e-06 2.36480032e-08" />
+          <geom class="visual" type="mesh" mesh="chassis_neck_link" rgba="0.75 0.22 0.2 1" />
+          <geom class="visual" type="mesh" mesh="shell_Neck_cap" rgba="0.93 0.93 0.95 1" />
+          <body name="neck_pitch_link" pos="0.000000 0.000000 0.026000">
+            <joint name="neck_pitch_joint" class="XL430-W250-T" axis="0 1 0" range="-0.29234 0.20944" />
+            <inertial pos="0.0361118 -0.0000212 0.0813127" mass="0.653887" fullinertia="0.0071959796 0.0039313546 0.00661498829 -1.08836288e-06 0.000219853235 -1.80051555e-06" />
+            <geom class="visual" type="mesh" mesh="chassis_head_mount" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="chassis_head_plate" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="chassis_cam_bracket" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="shell_A_HeadShell_L" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_A_HeadShell_R" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_Blush_L" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_Blush_R" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_LCD_bezel_L" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_LCD_bezel_R" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_WhiteFace_L" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Face_WhiteFace_R" rgba="0.93 0.93 0.95 1" />
+            <geom name="head" class="collision" type="box" pos="0.01700 0.00000 0.10300" size="0.09000 0.18500 0.12200" />
+          </body>
+        </body>
+        <body name="left_shoulder_pitch_link" pos="0.000000 0.101500 0.106000">
+          <joint name="left_shoulder_pitch_joint" class="XL330-M288-T" axis="0 1 0" range="-1.67552 0.06545" />
+          <inertial pos="0.0011070 0.0114069 -0.0070092" mass="0.025767" fullinertia="4.40029041e-06 4.77813342e-06 2.96900254e-06 -1.07925667e-08 8.58600457e-08 -8.14055059e-08" />
+          <geom class="visual" type="mesh" mesh="chassis_L_sho_link" rgba="0.75 0.22 0.2 1" />
+          <geom class="visual" type="mesh" mesh="shell_Arm_L_shoulder_cap_lower" rgba="0.93 0.93 0.95 1" />
+          <geom class="visual" type="mesh" mesh="shell_Arm_L_shoulder_cap_upper" rgba="0.93 0.93 0.95 1" />
+          <body name="left_shoulder_roll_link" pos="0.000000 0.011500 0.000000">
+            <joint name="left_shoulder_roll_joint" class="XL330-M288-T" axis="1 0 0" range="0.33598 1.60570" />
+            <inertial pos="0.0084017 0.0141345 -0.0311638" mass="0.039973" fullinertia="2.68446796e-05 2.67864886e-05 1.86545589e-05 6.57526324e-07 -6.7392672e-07 -4.11271336e-06" />
+            <geom class="visual" type="mesh" mesh="chassis_L_upperarm_link" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="shell_Arm_L_sleeve_upper_back" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Arm_L_sleeve_upper_front" rgba="0.93 0.93 0.95 1" />
+            <body name="left_shoulder_yaw_link" pos="0.007000 0.000000 -0.060000">
+              <inertial pos="-0.0007684 -0.0005913 -0.0198769" mass="0.044464" fullinertia="1.96571047e-05 1.75870615e-05 2.09055799e-05 1.49184224e-07 -5.03213206e-07 -7.07882095e-07" />
+              <geom class="visual" type="mesh" mesh="chassis_L_armyaw_link" rgba="0.75 0.22 0.2 1" />
+              <geom class="visual" type="mesh" mesh="shell_Arm_L_elbow_ball_inner" rgba="0.93 0.93 0.95 1" />
+              <geom class="visual" type="mesh" mesh="shell_Arm_L_elbow_ball_outer" rgba="0.93 0.93 0.95 1" />
+              <geom name="left_upper_arm" class="collision" type="capsule" size="0.0280" fromto="-0.00100 0.00200 0.06800 -0.00100 0.00200 0.00000" />
+              <body name="left_elbow_link" pos="0.000000 0.000000 -0.026000">
+                <joint name="left_elbow_joint" class="XL330-M288-T" axis="0 1 0" range="-1.06465 0.05236" />
+                <inertial pos="-0.0021365 0.0030717 -0.0307526" mass="0.041044" fullinertia="1.888142e-05 2.09844195e-05 2.44574352e-05 -1.72837342e-07 2.28834427e-06 1.27883989e-07" />
+                <geom class="visual" type="mesh" mesh="chassis_L_forearm" rgba="0.75 0.22 0.2 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_L_cuff_band" rgba="0.93 0.93 0.95 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_L_sleeve_fore_inner" rgba="0.93 0.93 0.95 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_L_sleeve_fore_outer" rgba="0.93 0.93 0.95 1" />
+                <geom name="left_forearm" class="collision" type="capsule" size="0.0320" fromto="-0.00060 0.00020 0.02650 -0.00060 0.00020 -0.05850" />
+                <body name="left_wrist_roll_link" pos="0.000000 0.000000 -0.044000">
+                  <inertial pos="0.0031303 0.0004851 -0.0361213" mass="0.027038" fullinertia="1.44493019e-05 1.44014643e-05 1.45415089e-05 1.68421238e-07 -7.86797083e-08 -2.64120776e-07" />
+                  <geom class="visual" type="mesh" mesh="chassis_L_hand_mount" rgba="0.75 0.22 0.2 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Arm_L_mitten" rgba="0.93 0.93 0.95 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="right_shoulder_pitch_link" pos="0.000000 -0.101500 0.106000">
+          <joint name="right_shoulder_pitch_joint" class="XL330-M288-T" axis="0 1 0" range="-1.67552 0.06545" />
+          <inertial pos="0.0011070 -0.0114069 -0.0070092" mass="0.025767" fullinertia="4.40029041e-06 4.77813342e-06 2.96900254e-06 1.07925667e-08 8.58600457e-08 8.14055059e-08" />
+          <geom class="visual" type="mesh" mesh="chassis_R_sho_link" rgba="0.75 0.22 0.2 1" />
+          <geom class="visual" type="mesh" mesh="shell_Arm_R_shoulder_cap_lower" rgba="0.93 0.93 0.95 1" />
+          <geom class="visual" type="mesh" mesh="shell_Arm_R_shoulder_cap_upper" rgba="0.93 0.93 0.95 1" />
+          <body name="right_shoulder_roll_link" pos="0.000000 -0.011500 0.000000">
+            <joint name="right_shoulder_roll_joint" class="XL330-M288-T" axis="-1 0 0" range="0.33598 1.60570" />
+            <inertial pos="0.0084017 -0.0141345 -0.0311638" mass="0.039973" fullinertia="2.68446796e-05 2.67864886e-05 1.86545589e-05 -6.57526324e-07 -6.7392672e-07 4.11271336e-06" />
+            <geom class="visual" type="mesh" mesh="chassis_R_upperarm_link" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="shell_Arm_R_sleeve_upper_back" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_Arm_R_sleeve_upper_front" rgba="0.93 0.93 0.95 1" />
+            <body name="right_shoulder_yaw_link" pos="0.007000 0.000000 -0.060000">
+              <inertial pos="-0.0007684 0.0005913 -0.0198769" mass="0.044464" fullinertia="1.96571047e-05 1.75870615e-05 2.09055799e-05 -1.49184224e-07 -5.03213206e-07 7.07882095e-07" />
+              <geom class="visual" type="mesh" mesh="chassis_R_armyaw_link" rgba="0.75 0.22 0.2 1" />
+              <geom class="visual" type="mesh" mesh="shell_Arm_R_elbow_ball_inner" rgba="0.93 0.93 0.95 1" />
+              <geom class="visual" type="mesh" mesh="shell_Arm_R_elbow_ball_outer" rgba="0.93 0.93 0.95 1" />
+              <geom name="right_upper_arm" class="collision" type="capsule" size="0.0280" fromto="-0.00100 -0.00200 0.06800 -0.00100 -0.00200 0.00000" />
+              <body name="right_elbow_link" pos="0.000000 0.000000 -0.026000">
+                <joint name="right_elbow_joint" class="XL330-M288-T" axis="0 1 0" range="-1.06465 0.05236" />
+                <inertial pos="-0.0021364 -0.0030717 -0.0307526" mass="0.041044" fullinertia="1.88814284e-05 2.09844148e-05 2.44574446e-05 1.72820083e-07 2.28835873e-06 -1.27890784e-07" />
+                <geom class="visual" type="mesh" mesh="chassis_R_forearm" rgba="0.75 0.22 0.2 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_R_cuff_band" rgba="0.93 0.93 0.95 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_R_sleeve_fore_inner" rgba="0.93 0.93 0.95 1" />
+                <geom class="visual" type="mesh" mesh="shell_Arm_R_sleeve_fore_outer" rgba="0.93 0.93 0.95 1" />
+                <geom name="right_forearm" class="collision" type="capsule" size="0.0320" fromto="-0.00060 -0.00020 0.02650 -0.00060 -0.00020 -0.05850" />
+                <body name="right_wrist_roll_link" pos="0.000000 0.000000 -0.044000">
+                  <inertial pos="0.0031303 -0.0004851 -0.0361213" mass="0.027038" fullinertia="1.44493019e-05 1.44014643e-05 1.45415089e-05 -1.68421238e-07 -7.86797083e-08 2.64120776e-07" />
+                  <geom class="visual" type="mesh" mesh="chassis_R_hand_mount" rgba="0.75 0.22 0.2 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Arm_R_mitten" rgba="0.93 0.93 0.95 1" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="left_hip_yaw_link" pos="0.000000 0.048000 0.015000">
+        <joint name="left_hip_yaw_joint" class="XL430-W250-T" axis="0 0 1" range="-0.78540 0.78540" />
+        <inertial pos="-0.0011546 0.0000000 -0.0013358" mass="0.005932" fullinertia="1.05299825e-06 2.23180745e-06 1.92986604e-06 1.35441184e-14 -1.16921277e-07 -1.6930252e-15" />
+        <geom class="visual" type="mesh" mesh="chassis_L_hip_yaw_link" rgba="0.75 0.22 0.2 1" />
+        <body name="left_hip_roll_link" pos="0.000000 0.000000 -0.015000">
+          <joint name="left_hip_roll_joint" class="XM430-W350-T" axis="1 0 0" range="-0.41888 0.47124" />
+          <inertial pos="-0.0224688 0.0007508 -0.0122516" mass="0.144742" fullinertia="3.76036406e-05 9.31744443e-05 7.86673768e-05 -2.44187864e-06 -1.20089674e-07 -2.73541174e-08" />
+          <geom class="visual" type="mesh" mesh="chassis_L_hip_block" rgba="0.75 0.22 0.2 1" />
+          <body name="left_hip_pitch_link" pos="0.000000 0.000000 0.000000">
+            <joint name="left_hip_pitch_joint" class="XL430-W250-T" axis="0 1 0" range="-0.89012 0.57596" />
+            <inertial pos="0.0010725 0.0034225 -0.0445303" mass="0.038351" fullinertia="4.31714694e-05 4.20558837e-05 4.37369094e-05 5.15129802e-07 3.67798304e-06 -8.32018512e-07" />
+            <geom class="visual" type="mesh" mesh="chassis_L_thigh" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="shell_L_thigh_tube_back" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_L_thigh_tube_front" rgba="0.93 0.93 0.95 1" />
+            <geom name="left_thigh" class="collision" type="capsule" size="0.0340" fromto="-0.00500 0.00200 -0.00700 -0.00500 0.00200 -0.08000" />
+            <body name="left_knee_link" pos="0.000000 0.000000 -0.068000">
+              <joint name="left_knee_joint" class="XL430-W250-T" axis="0 1 0" range="-0.20944 1.04720" />
+              <inertial pos="0.0003948 0.0037854 -0.0207500" mass="0.092086" fullinertia="6.38775888e-05 6.20951039e-05 3.42984451e-05 2.72067014e-07 -4.18182202e-06 -9.21945252e-08" />
+              <geom class="visual" type="mesh" mesh="chassis_L_shank" rgba="0.75 0.22 0.2 1" />
+              <geom class="visual" type="mesh" mesh="shell_L_shin_shell_back" rgba="0.93 0.93 0.95 1" />
+              <geom class="visual" type="mesh" mesh="shell_L_shin_shell_front" rgba="0.93 0.93 0.95 1" />
+              <geom name="left_shin" class="collision" type="capsule" size="0.0300" fromto="-0.00500 0.00200 0.00500 -0.00500 0.00200 -0.06200" />
+              <body name="left_ankle_pitch_link" pos="0.000000 0.000000 -0.092000">
+                <joint name="left_ankle_pitch_joint" class="XL430-W250-T" axis="0 1 0" range="-0.41888 0.41888" />
+                <inertial pos="-0.0189887 0.0009061 0.0123036" mass="0.119942" fullinertia="3.14375597e-05 7.78366483e-05 6.61046059e-05 -2.06370759e-06 2.46820259e-07 3.29868641e-08" />
+                <geom class="visual" type="mesh" mesh="chassis_L_ankle_block" rgba="0.75 0.22 0.2 1" />
+                <body name="left_ankle_roll_link" pos="0.000000 0.000000 0.000000">
+                  <joint name="left_ankle_roll_joint" class="XL430-W250-T" axis="1 0 0" range="-0.15708 0.15708" />
+                  <inertial pos="-0.0113065 0.0008985 0.0006520" mass="0.078333" fullinertia="9.86053203e-05 0.000178846091 0.000205594893 2.2899811e-07 3.59770421e-06 8.34882653e-08" />
+                  <geom class="visual" type="mesh" mesh="chassis_L_foot" rgba="0.75 0.22 0.2 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Foot_L_cover_heel" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Foot_L_cover_toe" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_L_ankle_hood" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_L_foot_lid" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_L_insole" rgba="0.93 0.93 0.95 1" />
+                  <geom name="left_foot" class="foot" type="box" pos="-0.01010 0.00160 0.00791" size="0.06820 0.04045 0.03369" />
+                  <site name="left_foot" pos="-0.01000 0.00000 -0.02578" size="0.005" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_hip_yaw_link" pos="0.000000 -0.048000 0.015000">
+        <joint name="right_hip_yaw_joint" class="XL430-W250-T" axis="0 0 -1" range="-0.78540 0.78540" />
+        <inertial pos="-0.0011546 -0.0000000 -0.0013358" mass="0.005932" fullinertia="1.05299825e-06 2.23180745e-06 1.92986604e-06 -1.35441183e-14 -1.16921277e-07 1.6930252e-15" />
+        <geom class="visual" type="mesh" mesh="chassis_R_hip_yaw_link" rgba="0.75 0.22 0.2 1" />
+        <body name="right_hip_roll_link" pos="0.000000 0.000000 -0.015000">
+          <joint name="right_hip_roll_joint" class="XM430-W350-T" axis="-1 0 0" range="-0.41888 0.47124" />
+          <inertial pos="-0.0224688 -0.0007508 -0.0122516" mass="0.144742" fullinertia="3.76036406e-05 9.31744443e-05 7.86673768e-05 2.44187864e-06 -1.20089674e-07 2.73541174e-08" />
+          <geom class="visual" type="mesh" mesh="chassis_R_hip_block" rgba="0.75 0.22 0.2 1" />
+          <body name="right_hip_pitch_link" pos="0.000000 0.000000 0.000000">
+            <joint name="right_hip_pitch_joint" class="XL430-W250-T" axis="0 1 0" range="-0.89012 0.57596" />
+            <inertial pos="0.0011454 -0.0033961 -0.0445401" mass="0.038483" fullinertia="4.3329654e-05 4.22187597e-05 4.39086796e-05 -5.2638578e-07 3.69966904e-06 8.41927931e-07" />
+            <geom class="visual" type="mesh" mesh="chassis_R_thigh" rgba="0.75 0.22 0.2 1" />
+            <geom class="visual" type="mesh" mesh="shell_R_thigh_tube_back" rgba="0.93 0.93 0.95 1" />
+            <geom class="visual" type="mesh" mesh="shell_R_thigh_tube_front" rgba="0.93 0.93 0.95 1" />
+            <geom name="right_thigh" class="collision" type="capsule" size="0.0340" fromto="-0.00500 -0.00200 -0.00700 -0.00500 -0.00200 -0.08000" />
+            <body name="right_knee_link" pos="0.000000 0.000000 -0.068000">
+              <joint name="right_knee_joint" class="XL430-W250-T" axis="0 1 0" range="-0.20944 1.04720" />
+              <inertial pos="0.0003708 -0.0037974 -0.0207852" mass="0.092125" fullinertia="6.40828285e-05 6.22856302e-05 3.4379819e-05 -2.69519504e-07 -4.26902322e-06 2.59904698e-08" />
+              <geom class="visual" type="mesh" mesh="chassis_R_shank" rgba="0.75 0.22 0.2 1" />
+              <geom class="visual" type="mesh" mesh="shell_R_shin_shell_back" rgba="0.93 0.93 0.95 1" />
+              <geom class="visual" type="mesh" mesh="shell_R_shin_shell_front" rgba="0.93 0.93 0.95 1" />
+              <geom name="right_shin" class="collision" type="capsule" size="0.0300" fromto="-0.00500 -0.00200 0.00500 -0.00500 -0.00200 -0.06200" />
+              <body name="right_ankle_pitch_link" pos="0.000000 0.000000 -0.092000">
+                <joint name="right_ankle_pitch_joint" class="XL430-W250-T" axis="0 1 0" range="-0.41888 0.41888" />
+                <inertial pos="-0.0189887 -0.0009061 0.0123036" mass="0.119942" fullinertia="3.14375597e-05 7.78366483e-05 6.61046059e-05 2.06370759e-06 2.46820259e-07 -3.29868641e-08" />
+                <geom class="visual" type="mesh" mesh="chassis_R_ankle_block" rgba="0.75 0.22 0.2 1" />
+                <body name="right_ankle_roll_link" pos="0.000000 0.000000 0.000000">
+                  <joint name="right_ankle_roll_joint" class="XL430-W250-T" axis="-1 0 0" range="-0.15708 0.15708" />
+                  <inertial pos="-0.0112629 0.0000216 0.0006777" mass="0.079688" fullinertia="0.00010452719 0.000184539673 0.000215068541 -4.76800802e-07 3.47518207e-06 -1.04040391e-06" />
+                  <geom class="visual" type="mesh" mesh="chassis_R_foot" rgba="0.75 0.22 0.2 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Foot_R_cover_heel" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_Foot_R_cover_toe" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_R_ankle_hood" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_R_foot_lid" rgba="0.93 0.93 0.95 1" />
+                  <geom class="visual" type="mesh" mesh="shell_R_insole" rgba="0.93 0.93 0.95 1" />
+                  <geom name="right_foot" class="foot" type="box" pos="-0.01010 -0.00055 0.00791" size="0.06820 0.04175 0.03369" />
+                  <site name="right_foot" pos="-0.01000 0.00000 -0.02578" size="0.005" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <pair geom1="left_foot" geom2="right_foot" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_shin" geom2="right_shin" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_thigh" geom2="right_thigh" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_foot" geom2="torso" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="right_foot" geom2="torso" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_foot" geom2="right_shin" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="right_foot" geom2="left_shin" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_upper_arm" geom2="torso_core" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="right_upper_arm" geom2="torso_core" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="left_forearm" geom2="torso_core" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+    <pair geom1="right_forearm" geom2="torso_core" condim="3" friction="0.8 0.8 0.005 0.0001 0.0001" solref="0.01 1" solimp="0.9 0.95 0.001 0.5 2" />
+  </contact>
+  <actuator>
+    <position name="left_hip_yaw_joint" joint="left_hip_yaw_joint" class="XL430-W250-T" />
+    <position name="left_hip_roll_joint" joint="left_hip_roll_joint" class="XM430-W350-T" />
+    <position name="left_hip_pitch_joint" joint="left_hip_pitch_joint" class="XL430-W250-T" />
+    <position name="left_knee_joint" joint="left_knee_joint" class="XL430-W250-T" />
+    <position name="left_ankle_pitch_joint" joint="left_ankle_pitch_joint" class="XL430-W250-T" />
+    <position name="left_ankle_roll_joint" joint="left_ankle_roll_joint" class="XL430-W250-T" />
+    <position name="right_hip_yaw_joint" joint="right_hip_yaw_joint" class="XL430-W250-T" />
+    <position name="right_hip_roll_joint" joint="right_hip_roll_joint" class="XM430-W350-T" />
+    <position name="right_hip_pitch_joint" joint="right_hip_pitch_joint" class="XL430-W250-T" />
+    <position name="right_knee_joint" joint="right_knee_joint" class="XL430-W250-T" />
+    <position name="right_ankle_pitch_joint" joint="right_ankle_pitch_joint" class="XL430-W250-T" />
+    <position name="right_ankle_roll_joint" joint="right_ankle_roll_joint" class="XL430-W250-T" />
+    <position name="neck_yaw_joint" joint="neck_yaw_joint" class="XL430-W250-T" />
+    <position name="neck_pitch_joint" joint="neck_pitch_joint" class="XL430-W250-T" />
+    <position name="left_shoulder_pitch_joint" joint="left_shoulder_pitch_joint" class="XL330-M288-T" />
+    <position name="left_shoulder_roll_joint" joint="left_shoulder_roll_joint" class="XL330-M288-T" />
+    <position name="left_elbow_joint" joint="left_elbow_joint" class="XL330-M288-T" />
+    <position name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint" class="XL330-M288-T" />
+    <position name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint" class="XL330-M288-T" />
+    <position name="right_elbow_joint" joint="right_elbow_joint" class="XL330-M288-T" />
+  </actuator>
+  <sensor>
+    <gyro name="imu_gyro" site="imu" />
+    <accelerometer name="imu_acc" site="imu" />
+    <framequat name="imu_quat" objtype="site" objname="imu" />
+    <velocimeter name="imu_vel" site="imu" />
+    <framezaxis name="upvector" objtype="site" objname="imu" />
+    <framelinvel name="global_linvel" objtype="site" objname="imu" />
+    <frameangvel name="global_angvel" objtype="site" objname="imu" />
+    <framepos name="left_foot_pos" objtype="site" objname="left_foot" />
+    <framelinvel name="left_foot_linvel" objtype="site" objname="left_foot" />
+    <framepos name="right_foot_pos" objtype="site" objname="right_foot" />
+    <framelinvel name="right_foot_linvel" objtype="site" objname="right_foot" />
+  </sensor>
+  <keyframe>
+    <key name="home" qpos="0.000000 0.000000 0.185781 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.349066 -0.314159 0.000000 0.349066 -0.314159 0.000000 0.000000 -0.113640 0.150000 -0.036360 0.000000 0.000000 0.000000 -0.113640 0.150000 -0.036360 0.000000" ctrl="0.000000 0.000008 -0.101251 0.147555 -0.031821 -0.000964 0.000000 0.000211 -0.101252 0.147564 -0.031818 -0.000411 -0.000000 -0.033548 -0.008908 0.371177 -0.318227 -0.008908 0.371177 -0.318227" />
+  </keyframe>
+</mujoco>

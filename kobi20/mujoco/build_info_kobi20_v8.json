@@ -1,0 +1,1304 @@
+{
+ "name": "kobi20_v8",
+ "edition": "v8",
+ "materials": {
+  "_comment": [
+   "The only place where material densities and the infill of the mass model are written. No density number is in code.",
+   "shell: PETG 1.27 g/cm3 (the owner's slicer preset is PETG and the shell measurement of the shell folder uses 1.27); the shell parts are modelled solid (wall completely filled), as in edition 2. Edition 3 for shell v6f used PLA 1.24 for the shell.",
+   "brackets: PLA 1.24 g/cm3 at 60 % infill, edition 2's assumption, kept because the material of the chassis designer is not known. THIS IS THE TEAM'S DECISION; change the two numbers here when it is made."
+  ],
+  "shell": {
+   "material": "PETG",
+   "density_kg_m3": 1270.0
+  },
+  "brackets": {
+   "material": "PLA (assumed, not known)",
+   "density_kg_m3": 1240.0,
+   "infill": 0.6
+  }
+ },
+ "range_profile": "shell",
+ "home_leg_pitch_deg": {
+  "hip_pitch": -6.19,
+  "knee": 8.59,
+  "ankle_pitch": -2.4
+ },
+ "center_of_mass_off_its_home_place_mm": -0.0001,
+ "static_hold": {
+  "largest_angle_error_deg": 0.0011,
+  "torso_tilt_deg": 0.004,
+  "torque_share_of_stall": {
+   "neck_pitch_joint": 0.154,
+   "right_shoulder_roll_joint": 0.102,
+   "left_shoulder_roll_joint": 0.102,
+   "right_hip_pitch_joint": 0.057,
+   "left_hip_pitch_joint": 0.057,
+   "right_shoulder_pitch_joint": 0.041,
+   "left_shoulder_pitch_joint": 0.041,
+   "left_knee_joint": 0.025
+  }
+ },
+ "total_mass_kg": 4.0724,
+ "mass_budget_kg": {
+  "brackets": 0.4173,
+  "shell": 1.362,
+  "servos": 0.9584,
+  "lumps": 1.25,
+  "dummies": 0.0847
+ },
+ "shell_manifest": {
+  "file": "shell_v8_parts.json",
+  "sha256": "cad4acfc8f774763b196f87d05cab6739f2666879661d7402a06e49374d4d902",
+  "edition": "v8",
+  "label": "v8 (20 joints, shell v7.4 STLs)",
+  "parts_in_manifest": 52,
+  "parts_placed_and_weighed": 51,
+  "parts_left_out_unplaced": [
+   {
+    "file": "Seam_key.stl",
+    "link": "head",
+    "mass_g_if_it_were_added": 0.116,
+    "why": "manifest says assembled=false (printed separately, file is not in the assembled pose)"
+   }
+  ],
+  "parts_excluded_by_manifest": [
+   {
+    "region": "yoke",
+    "files": [
+     "Jacket_raglan_L_front",
+     "Jacket_raglan_L_back",
+     "Jacket_raglan_R_front",
+     "Jacket_raglan_R_back"
+    ],
+    "source": "shell_v6g/body_jumper",
+    "reason": "the v6g yoke (raglan) pieces were cut for the v6g jacket; probe on 2026-11-17 21:39 found they overlap the iteration-17 jacket by 154 to 228 mm3 (results in scratch probe_raglan.log), so they are not part of the set"
+   },
+   {
+    "region": "arm_cover",
+    "files": [
+     "Arm_L_slide_cover",
+     "Arm_R_slide_cover"
+    ],
+    "source": "shell_v6g/optional_arm_slide_cover",
+    "reason": "optional pieces, not in the default set (as in v6g)"
+   }
+  ],
+  "provisional_regions": {}
+ },
+ "visual_meshes_simplified": {
+  "max_faces": 60000,
+  "why": "MuJoCo reads at most 200,000 faces per STL file; masses, centres of mass and inertias use the full parts",
+  "parts": {
+   "shell_Foot_L_cover_heel": {
+    "faces_before": 111592,
+    "faces_after": 4570,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.132,
+    "bounds_corner_change_mm": 0.0109
+   },
+   "shell_Foot_L_cover_toe": {
+    "faces_before": 111746,
+    "faces_after": 4840,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.0276,
+    "bounds_corner_change_mm": 0.0109
+   },
+   "shell_Foot_R_cover_heel": {
+    "faces_before": 110666,
+    "faces_after": 4646,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.1952,
+    "bounds_corner_change_mm": 0.0207
+   },
+   "shell_Foot_R_cover_toe": {
+    "faces_before": 111384,
+    "faces_after": 5112,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.9588,
+    "bounds_corner_change_mm": 0.0207
+   },
+   "shell_Arm_L_cuff_band": {
+    "faces_before": 75060,
+    "faces_after": 7450,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.2934,
+    "bounds_corner_change_mm": 0.028
+   },
+   "shell_Arm_L_elbow_ball_inner": {
+    "faces_before": 109446,
+    "faces_after": 11760,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.0123,
+    "bounds_corner_change_mm": 0.0479
+   },
+   "shell_Arm_L_elbow_ball_outer": {
+    "faces_before": 120910,
+    "faces_after": 10438,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.01,
+    "bounds_corner_change_mm": 0.0195
+   },
+   "shell_Arm_L_mitten": {
+    "faces_before": 182654,
+    "faces_after": 18000,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.508,
+    "bounds_corner_change_mm": 0.0122
+   },
+   "shell_Arm_L_shoulder_cap_lower": {
+    "faces_before": 477210,
+    "faces_after": 2068,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.0729,
+    "bounds_corner_change_mm": 0.04
+   },
+   "shell_Arm_L_shoulder_cap_upper": {
+    "faces_before": 322906,
+    "faces_after": 1920,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.5376,
+    "bounds_corner_change_mm": 0.0355
+   },
+   "shell_Arm_L_sleeve_fore_inner": {
+    "faces_before": 100940,
+    "faces_after": 6172,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.2628,
+    "bounds_corner_change_mm": 0.0335
+   },
+   "shell_Arm_L_sleeve_fore_outer": {
+    "faces_before": 125438,
+    "faces_after": 4216,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.267,
+    "bounds_corner_change_mm": 0.0056
+   },
+   "shell_Arm_L_sleeve_upper_back": {
+    "faces_before": 80384,
+    "faces_after": 3842,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.5678,
+    "bounds_corner_change_mm": 0.0205
+   },
+   "shell_Arm_L_sleeve_upper_front": {
+    "faces_before": 78748,
+    "faces_after": 3910,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.6026,
+    "bounds_corner_change_mm": 0.0297
+   },
+   "shell_Arm_R_cuff_band": {
+    "faces_before": 75060,
+    "faces_after": 7476,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.3127,
+    "bounds_corner_change_mm": 0.028
+   },
+   "shell_Arm_R_elbow_ball_inner": {
+    "faces_before": 109446,
+    "faces_after": 11760,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": 0.0085,
+    "bounds_corner_change_mm": 0.0479
+   },
+   "shell_Arm_R_elbow_ball_outer": {
+    "faces_before": 120910,
+    "faces_after": 10432,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.0379,
+    "bounds_corner_change_mm": 0.0195
+   },
+   "shell_Arm_R_mitten": {
+    "faces_before": 182654,
+    "faces_after": 17992,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.5198,
+    "bounds_corner_change_mm": 0.0122
+   },
+   "shell_Arm_R_shoulder_cap_lower": {
+    "faces_before": 477210,
+    "faces_after": 2058,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -1.5651,
+    "bounds_corner_change_mm": 0.04
+   },
+   "shell_Arm_R_shoulder_cap_upper": {
+    "faces_before": 322906,
+    "faces_after": 1910,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.6658,
+    "bounds_corner_change_mm": 0.0355
+   },
+   "shell_Arm_R_sleeve_fore_inner": {
+    "faces_before": 100970,
+    "faces_after": 6138,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.2047,
+    "bounds_corner_change_mm": 0.0335
+   },
+   "shell_Arm_R_sleeve_fore_outer": {
+    "faces_before": 125574,
+    "faces_after": 4180,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.1899,
+    "bounds_corner_change_mm": 0.0056
+   },
+   "shell_Arm_R_sleeve_upper_back": {
+    "faces_before": 80384,
+    "faces_after": 3842,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.5392,
+    "bounds_corner_change_mm": 0.0205
+   },
+   "shell_Arm_R_sleeve_upper_front": {
+    "faces_before": 78748,
+    "faces_after": 3906,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.591,
+    "bounds_corner_change_mm": 0.0297
+   },
+   "shell_Jacket_front": {
+    "faces_before": 825348,
+    "faces_after": 39816,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.0828,
+    "bounds_corner_change_mm": 0.0118
+   },
+   "shell_Jacket_back": {
+    "faces_before": 747644,
+    "faces_after": 44010,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": 0.0553,
+    "bounds_corner_change_mm": 0.0129
+   },
+   "shell_A_HeadShell_L": {
+    "faces_before": 220914,
+    "faces_after": 40052,
+    "tolerance_mm": 0.1,
+    "volume_change_percent": 0.0127,
+    "bounds_corner_change_mm": 0.0095
+   },
+   "shell_A_HeadShell_R": {
+    "faces_before": 223232,
+    "faces_after": 40200,
+    "tolerance_mm": 0.1,
+    "volume_change_percent": -0.0458,
+    "bounds_corner_change_mm": 0.0095
+   },
+   "shell_Face_WhiteFace_L": {
+    "faces_before": 75684,
+    "faces_after": 15772,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.0491,
+    "bounds_corner_change_mm": 0.0176
+   },
+   "shell_Face_WhiteFace_R": {
+    "faces_before": 75684,
+    "faces_after": 15772,
+    "tolerance_mm": 0.05,
+    "volume_change_percent": -0.0573,
+    "bounds_corner_change_mm": 0.0176
+   }
+  }
+ },
+ "shell_per_link_in_file_pose": {
+  "L_foot": {
+   "mass_g": 59.768,
+   "com_in_files_mm": [
+    -12.14,
+    49.18,
+    32.08
+   ]
+  },
+  "L_shank": {
+   "mass_g": 23.721,
+   "com_in_files_mm": [
+    1.53,
+    50.05,
+    85.75
+   ]
+  },
+  "L_thigh": {
+   "mass_g": 29.059,
+   "com_in_files_mm": [
+    1.42,
+    49.75,
+    136.9
+   ]
+  },
+  "R_foot": {
+   "mass_g": 61.122,
+   "com_in_files_mm": [
+    -12.07,
+    -47.97,
+    31.98
+   ]
+  },
+  "R_shank": {
+   "mass_g": 23.76,
+   "com_in_files_mm": [
+    1.44,
+    -50.1,
+    85.63
+   ]
+  },
+  "R_thigh": {
+   "mass_g": 29.192,
+   "com_in_files_mm": [
+    1.51,
+    -49.73,
+    136.9
+   ]
+  },
+  "L_forearm": {
+   "mass_g": 22.935,
+   "com_in_files_mm": [
+    18.63,
+    154.98,
+    296.62
+   ]
+  },
+  "L_armyaw": {
+   "mass_g": 25.182,
+   "com_in_files_mm": [
+    5.64,
+    140.0,
+    328.7
+   ]
+  },
+  "L_hand": {
+   "mass_g": 25.411,
+   "com_in_files_mm": [
+    35.58,
+    169.3,
+    252.83
+   ]
+  },
+  "L_shoulder": {
+   "mass_g": 6.236,
+   "com_in_files_mm": [
+    -1.2,
+    115.44,
+    400.19
+   ]
+  },
+  "L_upperarm": {
+   "mass_g": 23.27,
+   "com_in_files_mm": [
+    7.16,
+    140.6,
+    389.42
+   ]
+  },
+  "R_forearm": {
+   "mass_g": 22.935,
+   "com_in_files_mm": [
+    18.63,
+    -154.98,
+    296.62
+   ]
+  },
+  "R_armyaw": {
+   "mass_g": 25.182,
+   "com_in_files_mm": [
+    5.64,
+    -140.0,
+    328.7
+   ]
+  },
+  "R_hand": {
+   "mass_g": 25.411,
+   "com_in_files_mm": [
+    35.58,
+    -169.3,
+    252.83
+   ]
+  },
+  "R_shoulder": {
+   "mass_g": 6.236,
+   "com_in_files_mm": [
+    -1.2,
+    -115.44,
+    400.19
+   ]
+  },
+  "R_upperarm": {
+   "mass_g": 23.27,
+   "com_in_files_mm": [
+    7.16,
+    -140.6,
+    389.42
+   ]
+  },
+  "torso": {
+   "mass_g": 481.138,
+   "com_in_files_mm": [
+    -3.34,
+    0.32,
+    304.25
+   ]
+  },
+  "neck": {
+   "mass_g": 11.058,
+   "com_in_files_mm": [
+    0.0,
+    0.0,
+    439.67
+   ]
+  },
+  "head": {
+   "mass_g": 437.142,
+   "com_in_files_mm": [
+    30.09,
+    0.01,
+    545.72
+   ]
+  }
+ },
+ "foot_box_vs_shoe_parts_mm": {
+  "L": {
+   "shoe_parts_bounds_mm": [
+    [
+     -78.09,
+     9.22,
+     -0.69
+    ],
+    [
+     58.1,
+     89.98,
+     66.6
+    ]
+   ],
+   "foot_box_bounds_mm": [
+    [
+     -78.3,
+     9.15,
+     -0.78
+    ],
+    [
+     58.1,
+     90.05,
+     66.6
+    ]
+   ],
+   "shoe_width_mm": 80.76,
+   "foot_box_width_mm": 80.9,
+   "largest_difference_mm": 0.21
+  },
+  "R": {
+   "shoe_parts_bounds_mm": [
+    [
+     -78.25,
+     -90.25,
+     -0.69
+    ],
+    [
+     57.94,
+     -6.89,
+     66.6
+    ]
+   ],
+   "foot_box_bounds_mm": [
+    [
+     -78.3,
+     -90.3,
+     -0.78
+    ],
+    [
+     58.1,
+     -6.8,
+     66.6
+    ]
+   ],
+   "shoe_width_mm": 83.36,
+   "foot_box_width_mm": 83.5,
+   "largest_difference_mm": 0.16
+  }
+ },
+ "body_mass_breakdown_kg": {
+  "pelvis": {
+   "total": 1.24718,
+   "brackets": 0.098179,
+   "shell": 0.0,
+   "servos": 0.1144,
+   "lumps": 1.0,
+   "dummies": 0.034601
+  },
+  "torso_link": {
+   "total": 0.776209,
+   "brackets": 0.101872,
+   "shell": 0.481138,
+   "servos": 0.0932,
+   "lumps": 0.1,
+   "dummies": 0.0
+  },
+  "neck_yaw_link": {
+   "total": 0.078291,
+   "brackets": 0.010033,
+   "shell": 0.011058,
+   "servos": 0.0572,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "neck_pitch_link": {
+   "total": 0.653887,
+   "brackets": 0.066745,
+   "shell": 0.437142,
+   "servos": 0.0,
+   "lumps": 0.15,
+   "dummies": 0.0
+  },
+  "left_shoulder_pitch_link": {
+   "total": 0.025767,
+   "brackets": 0.001531,
+   "shell": 0.006236,
+   "servos": 0.018,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_shoulder_roll_link": {
+   "total": 0.039973,
+   "brackets": 0.004179,
+   "shell": 0.02327,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.012523
+  },
+  "left_shoulder_yaw_link": {
+   "total": 0.044464,
+   "brackets": 0.001281,
+   "shell": 0.025182,
+   "servos": 0.018,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_elbow_link": {
+   "total": 0.041044,
+   "brackets": 0.005585,
+   "shell": 0.022935,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.012523
+  },
+  "left_wrist_roll_link": {
+   "total": 0.027038,
+   "brackets": 0.001628,
+   "shell": 0.025411,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_shoulder_pitch_link": {
+   "total": 0.025767,
+   "brackets": 0.001531,
+   "shell": 0.006236,
+   "servos": 0.018,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_shoulder_roll_link": {
+   "total": 0.039973,
+   "brackets": 0.004179,
+   "shell": 0.02327,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.012523
+  },
+  "right_shoulder_yaw_link": {
+   "total": 0.044464,
+   "brackets": 0.001281,
+   "shell": 0.025182,
+   "servos": 0.018,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_elbow_link": {
+   "total": 0.041044,
+   "brackets": 0.005585,
+   "shell": 0.022935,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.012523
+  },
+  "right_wrist_roll_link": {
+   "total": 0.027038,
+   "brackets": 0.001628,
+   "shell": 0.025411,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_hip_yaw_link": {
+   "total": 0.005932,
+   "brackets": 0.005932,
+   "shell": 0.0,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_hip_roll_link": {
+   "total": 0.144742,
+   "brackets": 0.005542,
+   "shell": 0.0,
+   "servos": 0.1392,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_hip_pitch_link": {
+   "total": 0.038351,
+   "brackets": 0.009292,
+   "shell": 0.029059,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_knee_link": {
+   "total": 0.092086,
+   "brackets": 0.011165,
+   "shell": 0.023721,
+   "servos": 0.0572,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_ankle_pitch_link": {
+   "total": 0.119942,
+   "brackets": 0.005542,
+   "shell": 0.0,
+   "servos": 0.1144,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "left_ankle_roll_link": {
+   "total": 0.078333,
+   "brackets": 0.018565,
+   "shell": 0.059768,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_hip_yaw_link": {
+   "total": 0.005932,
+   "brackets": 0.005932,
+   "shell": 0.0,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_hip_roll_link": {
+   "total": 0.144742,
+   "brackets": 0.005542,
+   "shell": 0.0,
+   "servos": 0.1392,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_hip_pitch_link": {
+   "total": 0.038483,
+   "brackets": 0.009292,
+   "shell": 0.029192,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_knee_link": {
+   "total": 0.092125,
+   "brackets": 0.011165,
+   "shell": 0.02376,
+   "servos": 0.0572,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_ankle_pitch_link": {
+   "total": 0.119942,
+   "brackets": 0.005542,
+   "shell": 0.0,
+   "servos": 0.1144,
+   "lumps": 0.0,
+   "dummies": 0.0
+  },
+  "right_ankle_roll_link": {
+   "total": 0.079688,
+   "brackets": 0.018565,
+   "shell": 0.061122,
+   "servos": 0.0,
+   "lumps": 0.0,
+   "dummies": 0.0
+  }
+ },
+ "servo_seats": {
+  "neck_yaw": {
+   "class": "XL430-W250-T",
+   "carrier_link": "torso",
+   "horn_link": "neck",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    12.0,
+    404.2
+   ],
+   "body_size_mm": [
+    28.5,
+    46.5,
+    34.0
+   ]
+  },
+  "neck_pitch": {
+   "class": "XL430-W250-T",
+   "carrier_link": "neck",
+   "horn_link": "head",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    -12.0,
+    -0.1,
+    451.0
+   ],
+   "body_size_mm": [
+    46.5,
+    34.0,
+    28.5
+   ]
+  },
+  "L_shoulder_pitch": {
+   "class": "XL330-M288-T",
+   "carrier_link": "torso",
+   "horn_link": "L_shoulder",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    0.0,
+    85.5,
+    398.5
+   ],
+   "body_size_mm": [
+    20.0,
+    23.0,
+    34.0
+   ]
+  },
+  "L_shoulder_roll": {
+   "class": "XL330-M288-T",
+   "carrier_link": "L_shoulder",
+   "horn_link": "L_upperarm",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    2.0,
+    113.0,
+    398.5
+   ],
+   "body_size_mm": [
+    23.0,
+    20.0,
+    34.0
+   ]
+  },
+  "L_elbow": {
+   "class": "XL330-M288-T",
+   "carrier_link": "L_armyaw",
+   "horn_link": "L_forearm",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    7.0,
+    113.0,
+    327.5
+   ],
+   "body_size_mm": [
+    20.0,
+    23.0,
+    34.0
+   ]
+  },
+  "R_shoulder_pitch": {
+   "class": "XL330-M288-T",
+   "carrier_link": "torso",
+   "horn_link": "R_shoulder",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    0.0,
+    -85.5,
+    398.5
+   ],
+   "body_size_mm": [
+    20.0,
+    23.0,
+    34.0
+   ]
+  },
+  "R_shoulder_roll": {
+   "class": "XL330-M288-T",
+   "carrier_link": "R_shoulder",
+   "horn_link": "R_upperarm",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    2.0,
+    -113.0,
+    398.5
+   ],
+   "body_size_mm": [
+    23.0,
+    20.0,
+    34.0
+   ]
+  },
+  "R_elbow": {
+   "class": "XL330-M288-T",
+   "carrier_link": "R_armyaw",
+   "horn_link": "R_forearm",
+   "mass_kg": 0.018,
+   "body_centre_straight_mm": [
+    7.0,
+    -113.0,
+    327.5
+   ],
+   "body_size_mm": [
+    20.0,
+    23.0,
+    34.0
+   ]
+  },
+  "L_hip_yaw": {
+   "class": "XL430-W250-T",
+   "carrier_link": "pelvis",
+   "horn_link": "L_hip_yaw",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    36.0,
+    228.5
+   ],
+   "body_size_mm": [
+    28.5,
+    46.5,
+    34.0
+   ]
+  },
+  "L_hip_roll": {
+   "class": "XM430-W350-T",
+   "carrier_link": "L_hip_roll",
+   "horn_link": "L_hip_yaw",
+   "mass_kg": 0.082,
+   "body_centre_straight_mm": [
+    -39.3,
+    48.0,
+    173.0
+   ],
+   "body_size_mm": [
+    34.0,
+    28.5,
+    46.5
+   ]
+  },
+  "L_hip_pitch": {
+   "class": "XL430-W250-T",
+   "carrier_link": "L_hip_roll",
+   "horn_link": "L_thigh",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    49.9,
+    173.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "L_knee": {
+   "class": "XL430-W250-T",
+   "carrier_link": "L_shank",
+   "horn_link": "L_thigh",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    52.7,
+    105.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "L_ankle_pitch": {
+   "class": "XL430-W250-T",
+   "carrier_link": "L_ankle",
+   "horn_link": "L_shank",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    49.9,
+    37.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "L_ankle_roll": {
+   "class": "XL430-W250-T",
+   "carrier_link": "L_ankle",
+   "horn_link": "L_foot",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    -39.3,
+    48.0,
+    37.0
+   ],
+   "body_size_mm": [
+    34.0,
+    28.5,
+    46.5
+   ]
+  },
+  "R_hip_yaw": {
+   "class": "XL430-W250-T",
+   "carrier_link": "pelvis",
+   "horn_link": "R_hip_yaw",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    -36.0,
+    228.5
+   ],
+   "body_size_mm": [
+    28.5,
+    46.5,
+    34.0
+   ]
+  },
+  "R_hip_roll": {
+   "class": "XM430-W350-T",
+   "carrier_link": "R_hip_roll",
+   "horn_link": "R_hip_yaw",
+   "mass_kg": 0.082,
+   "body_centre_straight_mm": [
+    -39.3,
+    -48.0,
+    173.0
+   ],
+   "body_size_mm": [
+    34.0,
+    28.5,
+    46.5
+   ]
+  },
+  "R_hip_pitch": {
+   "class": "XL430-W250-T",
+   "carrier_link": "R_hip_roll",
+   "horn_link": "R_thigh",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    -49.9,
+    173.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "R_knee": {
+   "class": "XL430-W250-T",
+   "carrier_link": "R_shank",
+   "horn_link": "R_thigh",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    -52.7,
+    105.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "R_ankle_pitch": {
+   "class": "XL430-W250-T",
+   "carrier_link": "R_ankle",
+   "horn_link": "R_shank",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    0.0,
+    -49.9,
+    37.0
+   ],
+   "body_size_mm": [
+    28.5,
+    34.0,
+    46.5
+   ]
+  },
+  "R_ankle_roll": {
+   "class": "XL430-W250-T",
+   "carrier_link": "R_ankle",
+   "horn_link": "R_foot",
+   "mass_kg": 0.0572,
+   "body_centre_straight_mm": [
+    -39.3,
+    -48.0,
+    37.0
+   ],
+   "body_size_mm": [
+    34.0,
+    28.5,
+    46.5
+   ]
+  }
+ },
+ "frozen_joints": {
+  "joints": [
+   "waist_yaw",
+   "L_arm_yaw",
+   "R_arm_yaw",
+   "L_wrist",
+   "R_wrist"
+  ],
+  "value_deg": 0.0,
+  "dummy_servos": {
+   "waist_yaw": {
+    "carrier_link": "pelvis",
+    "replaces_servo": "XL430-W250-T",
+    "file": "dummy_waist_yaw_XL430.stl",
+    "mass_kg": 0.034601,
+    "removed_servo_mass_kg": 0.0572,
+    "centre_straight_mm": [
+     0.0,
+     -11.63,
+     297.02
+    ],
+    "size_mm": [
+     28.5,
+     46.5,
+     40.9
+    ]
+   },
+   "L_arm_yaw": {
+    "carrier_link": "L_upperarm",
+    "replaces_servo": "XL330-M288-T",
+    "file": "dummy_L_arm_yaw_XL330.stl",
+    "mass_kg": 0.012523,
+    "removed_servo_mass_kg": 0.018,
+    "centre_straight_mm": [
+     7.0,
+     119.97,
+     362.0
+    ],
+    "size_mm": [
+     20.0,
+     34.0,
+     29.0
+    ]
+   },
+   "L_wrist": {
+    "carrier_link": "L_forearm",
+    "replaces_servo": "XL330-M288-T",
+    "file": "dummy_L_wrist_XL330.stl",
+    "mass_kg": 0.012523,
+    "removed_servo_mass_kg": 0.018,
+    "centre_straight_mm": [
+     0.03,
+     113.0,
+     290.5
+    ],
+    "size_mm": [
+     34.0,
+     20.0,
+     29.0
+    ]
+   },
+   "R_arm_yaw": {
+    "carrier_link": "R_upperarm",
+    "replaces_servo": "XL330-M288-T",
+    "file": "dummy_R_arm_yaw_XL330.stl",
+    "mass_kg": 0.012523,
+    "removed_servo_mass_kg": 0.018,
+    "centre_straight_mm": [
+     7.0,
+     -119.97,
+     362.0
+    ],
+    "size_mm": [
+     20.0,
+     34.0,
+     29.0
+    ]
+   },
+   "R_wrist": {
+    "carrier_link": "R_forearm",
+    "replaces_servo": "XL330-M288-T",
+    "file": "dummy_R_wrist_XL330.stl",
+    "mass_kg": 0.012523,
+    "removed_servo_mass_kg": 0.018,
+    "centre_straight_mm": [
+     0.03,
+     -113.0,
+     290.5
+    ],
+    "size_mm": [
+     34.0,
+     20.0,
+     29.0
+    ]
+   }
+  },
+  "dummy_total_kg": 0.084693,
+  "removed_servo_total_kg": 0.1292
+ },
+ "assumed_lumps": [
+  {
+   "body": "pelvis",
+   "what": "battery (assumed 180 g, on the lower tray)",
+   "kg": 0.18
+  },
+  {
+   "body": "pelvis",
+   "what": "regulators (data-sheet upper bound unless overridden, on the upper tray)",
+   "kg": 0.82
+  },
+  {
+   "body": "torso",
+   "what": "Pi 5, U2D2 x2, sensors, wiring (assumed 100 g)",
+   "kg": 0.1
+  },
+  {
+   "body": "head",
+   "what": "LCD, Zero 2 W, camera, speaker (assumed 150 g)",
+   "kg": 0.15
+  }
+ ],
+ "joints": 20,
+ "actuators": 20,
+ "visual_meshes": 81,
+ "home_root_height_m": 0.1858,
+ "center_of_mass_home_m": [
+  0.0035,
+  0.0001,
+  0.2998
+ ],
+ "foot_box_m": {
+  "L": {
+   "length": 0.1364,
+   "width": 0.0809
+  },
+  "R": {
+   "length": 0.1364,
+   "width": 0.0835
+  }
+ },
+ "joint_ranges_deg": {
+  "neck_yaw_joint": [
+   -90.0,
+   90.0
+  ],
+  "neck_pitch_joint": [
+   -16.7,
+   12.0
+  ],
+  "left_shoulder_pitch_joint": [
+   -96.0,
+   3.8
+  ],
+  "left_shoulder_roll_joint": [
+   19.3,
+   92.0
+  ],
+  "left_elbow_joint": [
+   -61.0,
+   3.0
+  ],
+  "right_shoulder_pitch_joint": [
+   -96.0,
+   3.8
+  ],
+  "right_shoulder_roll_joint": [
+   19.3,
+   92.0
+  ],
+  "right_elbow_joint": [
+   -61.0,
+   3.0
+  ],
+  "left_hip_yaw_joint": [
+   -45.0,
+   45.0
+  ],
+  "left_hip_roll_joint": [
+   -24.0,
+   27.0
+  ],
+  "left_hip_pitch_joint": [
+   -51.0,
+   33.0
+  ],
+  "left_knee_joint": [
+   -12.0,
+   60.0
+  ],
+  "left_ankle_pitch_joint": [
+   -24.0,
+   24.0
+  ],
+  "left_ankle_roll_joint": [
+   -9.0,
+   9.0
+  ],
+  "right_hip_yaw_joint": [
+   -45.0,
+   45.0
+  ],
+  "right_hip_roll_joint": [
+   -24.0,
+   27.0
+  ],
+  "right_hip_pitch_joint": [
+   -51.0,
+   33.0
+  ],
+  "right_knee_joint": [
+   -12.0,
+   60.0
+  ],
+  "right_ankle_pitch_joint": [
+   -24.0,
+   24.0
+  ],
+  "right_ankle_roll_joint": [
+   -9.0,
+   9.0
+  ]
+ },
+ "stand_tests": {
+  "servo gain x1": {
+   "seconds": 60.0,
+   "worst_tilt_deg": 91.18,
+   "end_tilt_deg": 90.0,
+   "first_past_10_deg_at_s": 35.56,
+   "root_height_change_mm": -100.8,
+   "peak_effort_share_of_stall": {
+    "right_knee_joint": 1.0,
+    "right_ankle_pitch_joint": 1.0,
+    "left_knee_joint": 1.0,
+    "left_ankle_pitch_joint": 1.0,
+    "right_hip_pitch_joint": 0.701,
+    "left_hip_pitch_joint": 0.701
+   }
+  },
+  "servo gain x2": {
+   "seconds": 60.0,
+   "worst_tilt_deg": 0.01,
+   "end_tilt_deg": 0.01,
+   "first_past_10_deg_at_s": "never",
+   "root_height_change_mm": -0.5,
+   "peak_effort_share_of_stall": {
+    "neck_pitch_joint": 0.154,
+    "right_shoulder_roll_joint": 0.102,
+    "left_shoulder_roll_joint": 0.102,
+    "right_hip_pitch_joint": 0.057,
+    "left_hip_pitch_joint": 0.057,
+    "left_shoulder_pitch_joint": 0.042
+   }
+  }
+ }
+}

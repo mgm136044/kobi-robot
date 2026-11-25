@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<!-- generated from kobi20/mujoco/kobi20_v8.xml by the Kobi 20-joint URDF converter (Kobi 20-joint edition v8, variant: full); mesh files: ../mujoco/meshes/ (shared with the MuJoCo model); do not edit by hand.
+     Units: metres, kilograms, radians, N*m, rad/s. Base link = pelvis, z up, x forward, y left.
+     Collision: boxes as boxes; each MJCF capsule = 1 cylinder + 2 spheres (exact union). -->
+<robot name="kobi20_v8">
+  <mujoco>
+    <compiler meshdir="." discardvisual="false" fusestatic="false" strippath="false" />
+  </mujoco>
+  <link name="pelvis">
+    <inertial>
+      <origin xyz="5.56e-05 -0.0003226 0.1068371" rpy="1.579941376 -0.6835596238 1.56516143" />
+      <mass value="1.24718" />
+      <inertia ixx="0.002078542487" iyy="0.002074301367" izz="0.001813376426" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="pelvis_chassis_pelvis">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_pelvis.stl" scale="1 1 1" />
+      </geometry>
+      <material name="pelvis_chassis_pelvis_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="pelvis_chassis_power_tray_0">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_power_tray_0.stl" scale="1 1 1" />
+      </geometry>
+      <material name="pelvis_chassis_power_tray_0_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="pelvis_chassis_power_tray_1">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_power_tray_1.stl" scale="1 1 1" />
+      </geometry>
+      <material name="pelvis_chassis_power_tray_1_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="torso_link">
+    <inertial>
+      <origin xyz="-0.0042726 0.0010805 0.0320035" rpy="-0.03076034441 -0.07242586631 0.00119967069" />
+      <mass value="0.776209" />
+      <inertia ixx="0.007781864789" iyy="0.006947268083" izz="0.005792565688" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="torso_link_chassis_torso">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_torso.stl" scale="1 1 1" />
+      </geometry>
+      <material name="torso_link_chassis_torso_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="torso_link_shell_Jacket_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Jacket_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="torso_link_shell_Jacket_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="torso_link_shell_Jacket_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Jacket_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="torso_link_shell_Jacket_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="torso_link_shell_Wing_L">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Wing_L.stl" scale="1 1 1" />
+      </geometry>
+      <material name="torso_link_shell_Wing_L_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="torso_link_shell_Wing_R">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Wing_R.stl" scale="1 1 1" />
+      </geometry>
+      <material name="torso_link_shell_Wing_R_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="torso">
+      <origin xyz="0.0055 0 0.00125" rpy="0 -0 0" />
+      <geometry>
+        <box size="0.181 0.23 0.2579" />
+      </geometry>
+    </collision>
+    <collision name="torso_core">
+      <origin xyz="0.0055 0 0.0205" rpy="0 -0 0" />
+      <geometry>
+        <box size="0.181 0.16 0.223" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="neck_yaw_link">
+    <inertial>
+      <origin xyz="-0.0099935 -7.31e-05 0.0218657" rpy="3.112587233 -1.467556474 0.03111417192" />
+      <mass value="0.078291" />
+      <inertia ixx="3.784864084e-05" iyy="3.08804667e-05" izz="2.375177597e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="neck_yaw_link_chassis_neck_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_neck_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_yaw_link_chassis_neck_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="neck_yaw_link_shell_Neck_cap">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Neck_cap.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_yaw_link_shell_Neck_cap_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="neck_pitch_link">
+    <inertial>
+      <origin xyz="0.0361118 -2.12e-05 0.0813127" rpy="1.571479014 -0.3239270214 -0.0005070904321" />
+      <mass value="0.653887" />
+      <inertia ixx="0.00726979663" iyy="0.00654117274" izz="0.003931353119" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="neck_pitch_link_chassis_head_mount">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_head_mount.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_chassis_head_mount_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_chassis_head_plate">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_head_plate.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_chassis_head_plate_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_chassis_cam_bracket">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_cam_bracket.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_chassis_cam_bracket_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_A_HeadShell_L">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_A_HeadShell_L.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_A_HeadShell_L_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_A_HeadShell_R">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_A_HeadShell_R.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_A_HeadShell_R_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_Blush_L">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_Blush_L.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_Blush_L_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_Blush_R">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_Blush_R.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_Blush_R_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_LCD_bezel_L">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_LCD_bezel_L.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_LCD_bezel_L_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_LCD_bezel_R">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_LCD_bezel_R.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_LCD_bezel_R_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_WhiteFace_L">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_WhiteFace_L.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_WhiteFace_L_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="neck_pitch_link_shell_Face_WhiteFace_R">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Face_WhiteFace_R.stl" scale="1 1 1" />
+      </geometry>
+      <material name="neck_pitch_link_shell_Face_WhiteFace_R_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="head">
+      <origin xyz="0.017 0 0.103" rpy="0 -0 0" />
+      <geometry>
+        <box size="0.18 0.37 0.244" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_shoulder_pitch_link">
+    <inertial>
+      <origin xyz="0.001107 0.0114069 -0.0070092" rpy="-0.05740173186 0.04665803665 1.609525709" />
+      <mass value="0.025767" />
+      <inertia ixx="4.782355451e-06" iyy="4.404776015e-06" izz="2.960294904e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_shoulder_pitch_link_chassis_L_sho_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_sho_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_pitch_link_chassis_L_sho_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_pitch_link_shell_Arm_L_shoulder_cap_lower">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_shoulder_cap_lower.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_pitch_link_shell_Arm_L_shoulder_cap_lower_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_pitch_link_shell_Arm_L_shoulder_cap_upper">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_shoulder_cap_upper.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_pitch_link_shell_Arm_L_shoulder_cap_upper_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_shoulder_roll_link">
+    <inertial>
+      <origin xyz="0.0084017 0.0141345 -0.0311638" rpy="-0.1284914261 0.3739677375 1.133467036" />
+      <mass value="0.039973" />
+      <inertia ixx="2.887554694e-05" iyy="2.648672886e-05" izz="1.69234513e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_shoulder_roll_link_chassis_L_upperarm_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_upperarm_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_roll_link_chassis_L_upperarm_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_roll_link_shell_Arm_L_sleeve_upper_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_sleeve_upper_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_roll_link_shell_Arm_L_sleeve_upper_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_roll_link_shell_Arm_L_sleeve_upper_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_sleeve_upper_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_roll_link_shell_Arm_L_sleeve_upper_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_shoulder_yaw_link">
+    <inertial>
+      <origin xyz="-0.0007684 -0.0005913 -0.0198769" rpy="-2.131099711 -1.190633034 -2.592448248" />
+      <mass value="0.044464" />
+      <inertia ixx="2.122474645e-05" iyy="1.948359237e-05" izz="1.744140728e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_shoulder_yaw_link_chassis_L_armyaw_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_armyaw_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_yaw_link_chassis_L_armyaw_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_yaw_link_shell_Arm_L_elbow_ball_inner">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_elbow_ball_inner.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_yaw_link_shell_Arm_L_elbow_ball_inner_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_shoulder_yaw_link_shell_Arm_L_elbow_ball_outer">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_elbow_ball_outer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_shoulder_yaw_link_shell_Arm_L_elbow_ball_outer_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="left_upper_arm_cylinder">
+      <origin xyz="-0.001 0.002 0.034" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.028" length="0.068" />
+      </geometry>
+    </collision>
+    <collision name="left_upper_arm_cap_top">
+      <origin xyz="-0.001 0.002 0.068" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+    </collision>
+    <collision name="left_upper_arm_cap_bottom">
+      <origin xyz="-0.001 0.002 0" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_elbow_link">
+    <inertial>
+      <origin xyz="-0.0021365 0.0030717 -0.0307526" rpy="-3.112149181 -1.227273651 0.04307052324" />
+      <mass value="0.041044" />
+      <inertia ixx="2.527719861e-05" iyy="2.09979472e-05" izz="1.804812889e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_elbow_link_chassis_L_forearm">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_forearm.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_elbow_link_chassis_L_forearm_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_elbow_link_shell_Arm_L_cuff_band">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_cuff_band.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_elbow_link_shell_Arm_L_cuff_band_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_elbow_link_shell_Arm_L_sleeve_fore_inner">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_sleeve_fore_inner.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_elbow_link_shell_Arm_L_sleeve_fore_inner_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_elbow_link_shell_Arm_L_sleeve_fore_outer">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_sleeve_fore_outer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_elbow_link_shell_Arm_L_sleeve_fore_outer_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="left_forearm_cylinder">
+      <origin xyz="-0.0006 0.0002 -0.016" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.032" length="0.085" />
+      </geometry>
+    </collision>
+    <collision name="left_forearm_cap_top">
+      <origin xyz="-0.0006 0.0002 0.0265" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.032" />
+      </geometry>
+    </collision>
+    <collision name="left_forearm_cap_bottom">
+      <origin xyz="-0.0006 0.0002 -0.0585" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.032" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_wrist_roll_link">
+    <inertial>
+      <origin xyz="0.0031303 0.0004851 -0.0361213" rpy="-2.313566165 -0.7534498506 -2.178778285" />
+      <mass value="0.027038" />
+      <inertia ixx="1.48205246e-05" iyy="1.44046181e-05" izz="1.416713241e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_wrist_roll_link_chassis_L_hand_mount">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_hand_mount.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_wrist_roll_link_chassis_L_hand_mount_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_wrist_roll_link_shell_Arm_L_mitten">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_L_mitten.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_wrist_roll_link_shell_Arm_L_mitten_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_shoulder_pitch_link">
+    <inertial>
+      <origin xyz="0.001107 -0.0114069 -0.0070092" rpy="-0.05740173186 -0.04665803665 1.532066944" />
+      <mass value="0.025767" />
+      <inertia ixx="4.782355451e-06" iyy="4.404776015e-06" izz="2.960294904e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_shoulder_pitch_link_chassis_R_sho_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_sho_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_pitch_link_chassis_R_sho_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_pitch_link_shell_Arm_R_shoulder_cap_lower">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_shoulder_cap_lower.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_pitch_link_shell_Arm_R_shoulder_cap_lower_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_pitch_link_shell_Arm_R_shoulder_cap_upper">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_shoulder_cap_upper.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_pitch_link_shell_Arm_R_shoulder_cap_upper_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_shoulder_roll_link">
+    <inertial>
+      <origin xyz="0.0084017 -0.0141345 -0.0311638" rpy="-0.1284914261 -0.3739677375 2.008125617" />
+      <mass value="0.039973" />
+      <inertia ixx="2.887554694e-05" iyy="2.648672886e-05" izz="1.69234513e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_shoulder_roll_link_chassis_R_upperarm_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_upperarm_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_roll_link_chassis_R_upperarm_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_roll_link_shell_Arm_R_sleeve_upper_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_sleeve_upper_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_roll_link_shell_Arm_R_sleeve_upper_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_roll_link_shell_Arm_R_sleeve_upper_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_sleeve_upper_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_roll_link_shell_Arm_R_sleeve_upper_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_shoulder_yaw_link">
+    <inertial>
+      <origin xyz="-0.0007684 0.0005913 -0.0198769" rpy="-1.010492943 -1.190633034 2.592448248" />
+      <mass value="0.044464" />
+      <inertia ixx="2.122474645e-05" iyy="1.948359237e-05" izz="1.744140728e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_shoulder_yaw_link_chassis_R_armyaw_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_armyaw_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_yaw_link_chassis_R_armyaw_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_yaw_link_shell_Arm_R_elbow_ball_inner">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_elbow_ball_inner.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_yaw_link_shell_Arm_R_elbow_ball_inner_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_shoulder_yaw_link_shell_Arm_R_elbow_ball_outer">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_elbow_ball_outer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_shoulder_yaw_link_shell_Arm_R_elbow_ball_outer_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="right_upper_arm_cylinder">
+      <origin xyz="-0.001 -0.002 0.034" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.028" length="0.068" />
+      </geometry>
+    </collision>
+    <collision name="right_upper_arm_cap_top">
+      <origin xyz="-0.001 -0.002 0.068" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+    </collision>
+    <collision name="right_upper_arm_cap_bottom">
+      <origin xyz="-0.001 -0.002 0" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.028" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_elbow_link">
+    <inertial>
+      <origin xyz="-0.0021364 -0.0030717 -0.0307526" rpy="3.112161071 -1.227272085 -0.04307833902" />
+      <mass value="0.041044" />
+      <inertia ixx="2.527721741e-05" iyy="2.099794024e-05" izz="1.804813014e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_elbow_link_chassis_R_forearm">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_forearm.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_elbow_link_chassis_R_forearm_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_elbow_link_shell_Arm_R_cuff_band">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_cuff_band.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_elbow_link_shell_Arm_R_cuff_band_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_elbow_link_shell_Arm_R_sleeve_fore_inner">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_sleeve_fore_inner.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_elbow_link_shell_Arm_R_sleeve_fore_inner_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_elbow_link_shell_Arm_R_sleeve_fore_outer">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_sleeve_fore_outer.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_elbow_link_shell_Arm_R_sleeve_fore_outer_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="right_forearm_cylinder">
+      <origin xyz="-0.0006 -0.0002 -0.016" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.032" length="0.085" />
+      </geometry>
+    </collision>
+    <collision name="right_forearm_cap_top">
+      <origin xyz="-0.0006 -0.0002 0.0265" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.032" />
+      </geometry>
+    </collision>
+    <collision name="right_forearm_cap_bottom">
+      <origin xyz="-0.0006 -0.0002 -0.0585" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.032" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_wrist_roll_link">
+    <inertial>
+      <origin xyz="0.0031303 -0.0004851 -0.0361213" rpy="-0.8280264889 -0.7534498506 2.178778285" />
+      <mass value="0.027038" />
+      <inertia ixx="1.48205246e-05" iyy="1.44046181e-05" izz="1.416713241e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_wrist_roll_link_chassis_R_hand_mount">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_hand_mount.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_wrist_roll_link_chassis_R_hand_mount_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_wrist_roll_link_shell_Arm_R_mitten">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Arm_R_mitten.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_wrist_roll_link_shell_Arm_R_mitten_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_hip_yaw_link">
+    <inertial>
+      <origin xyz="-0.0011546 0 -0.0013358" rpy="1.440489199 1.045796089e-08 1.570796314" />
+      <mass value="0.005932" />
+      <inertia ixx="2.23180745e-06" iyy="1.945188539e-06" izz="1.037675751e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_hip_yaw_link_chassis_L_hip_yaw_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_hip_yaw_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_hip_yaw_link_chassis_L_hip_yaw_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_hip_roll_link">
+    <inertial>
+      <origin xyz="-0.0224688 0.0007508 -0.0122516" rpy="1.567853184 0.001509935088 1.614622195" />
+      <mass value="0.144742" />
+      <inertia ixx="9.328157166e-05" iyy="7.866770011e-05" izz="3.749618993e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_hip_roll_link_chassis_L_hip_block">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_hip_block.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_hip_roll_link_chassis_L_hip_block_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0010725 0.0034225 -0.0445303" rpy="2.85277305 -0.8289384736 -0.07736578051" />
+      <mass value="0.038351" />
+      <inertia ixx="4.715664178e-05" iyy="4.238172197e-05" izz="3.942589875e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_hip_pitch_link_chassis_L_thigh">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_thigh.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_hip_pitch_link_chassis_L_thigh_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_hip_pitch_link_shell_L_thigh_tube_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_thigh_tube_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_hip_pitch_link_shell_L_thigh_tube_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_hip_pitch_link_shell_L_thigh_tube_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_thigh_tube_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_hip_pitch_link_shell_L_thigh_tube_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="left_thigh_cylinder">
+      <origin xyz="-0.005 0.002 -0.0435" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.034" length="0.073" />
+      </geometry>
+    </collision>
+    <collision name="left_thigh_cap_top">
+      <origin xyz="-0.005 0.002 -0.007" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.034" />
+      </geometry>
+    </collision>
+    <collision name="left_thigh_cap_bottom">
+      <origin xyz="-0.005 0.002 -0.08" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.034" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_knee_link">
+    <inertial>
+      <origin xyz="0.0003948 0.0037854 -0.02075" rpy="0.01432841462 0.1370338794 0.1183597165" />
+      <mass value="0.092086" />
+      <inertia ixx="6.449067018e-05" iyy="6.206197325e-05" izz="3.371849436e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_knee_link_chassis_L_shank">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_shank.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_knee_link_chassis_L_shank_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_knee_link_shell_L_shin_shell_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_shin_shell_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_knee_link_shell_L_shin_shell_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_knee_link_shell_L_shin_shell_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_shin_shell_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_knee_link_shell_L_shin_shell_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="left_shin_cylinder">
+      <origin xyz="-0.005 0.002 -0.0285" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.067" />
+      </geometry>
+    </collision>
+    <collision name="left_shin_cap_top">
+      <origin xyz="-0.005 0.002 0.005" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+    <collision name="left_shin_cap_bottom">
+      <origin xyz="-0.005 0.002 -0.062" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_ankle_pitch_link">
+    <inertial>
+      <origin xyz="-0.0189887 0.0009061 0.0123036" rpy="1.57793193 -0.001861631037 1.615146983" />
+      <mass value="0.119942" />
+      <inertia ixx="7.792829661e-05" iyy="6.610633487e-05" izz="3.134418242e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_ankle_pitch_link_chassis_L_ankle_block">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_ankle_block.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_pitch_link_chassis_L_ankle_block_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_ankle_roll_link">
+    <inertial>
+      <origin xyz="-0.0113065 0.0008985 0.000652" rpy="3.038170272 -1.537042304 0.1006662337" />
+      <mass value="0.078333" />
+      <inertia ixx="0.0002057160444" iyy="0.0001788464179" izz="9.848384199e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="left_ankle_roll_link_chassis_L_foot">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_L_foot.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_chassis_L_foot_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="left_ankle_roll_link_shell_Foot_L_cover_heel">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Foot_L_cover_heel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_shell_Foot_L_cover_heel_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_ankle_roll_link_shell_Foot_L_cover_toe">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Foot_L_cover_toe.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_shell_Foot_L_cover_toe_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_ankle_roll_link_shell_L_ankle_hood">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_ankle_hood.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_shell_L_ankle_hood_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_ankle_roll_link_shell_L_foot_lid">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_foot_lid.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_shell_L_foot_lid_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="left_ankle_roll_link_shell_L_insole">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_L_insole.stl" scale="1 1 1" />
+      </geometry>
+      <material name="left_ankle_roll_link_shell_L_insole_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="left_foot">
+      <origin xyz="-0.0101 0.0016 0.00791" rpy="0 -0 0" />
+      <geometry>
+        <box size="0.1364 0.0809 0.06738" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_hip_yaw_link">
+    <inertial>
+      <origin xyz="-0.0011546 -0 -0.0013358" rpy="1.440489199 -1.045796089e-08 1.570796339" />
+      <mass value="0.005932" />
+      <inertia ixx="2.23180745e-06" iyy="1.945188539e-06" izz="1.037675751e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_hip_yaw_link_chassis_R_hip_yaw_link">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_hip_yaw_link.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_hip_yaw_link_chassis_R_hip_yaw_link_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_hip_roll_link">
+    <inertial>
+      <origin xyz="-0.0224688 -0.0007508 -0.0122516" rpy="1.567853184 -0.001509935088 1.526970458" />
+      <mass value="0.144742" />
+      <inertia ixx="9.328157166e-05" iyy="7.866770011e-05" izz="3.749618993e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_hip_roll_link_chassis_R_hip_block">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_hip_block.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_hip_roll_link_chassis_R_hip_block_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0011454 -0.0033961 -0.0445401" rpy="-2.851003219 -0.829677476 0.07718468456" />
+      <mass value="0.038483" />
+      <inertia ixx="4.734373735e-05" iyy="4.255177042e-05" izz="3.956158553e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_hip_pitch_link_chassis_R_thigh">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_thigh.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_hip_pitch_link_chassis_R_thigh_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_hip_pitch_link_shell_R_thigh_tube_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_thigh_tube_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_hip_pitch_link_shell_R_thigh_tube_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_hip_pitch_link_shell_R_thigh_tube_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_thigh_tube_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_hip_pitch_link_shell_R_thigh_tube_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="right_thigh_cylinder">
+      <origin xyz="-0.005 -0.002 -0.0435" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.034" length="0.073" />
+      </geometry>
+    </collision>
+    <collision name="right_thigh_cap_top">
+      <origin xyz="-0.005 -0.002 -0.007" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.034" />
+      </geometry>
+    </collision>
+    <collision name="right_thigh_cap_bottom">
+      <origin xyz="-0.005 -0.002 -0.08" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.034" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_knee_link">
+    <inertial>
+      <origin xyz="0.0003708 -0.0037974 -0.0207852" rpy="-0.01600642577 0.1390423916 -0.1120085027" />
+      <mass value="0.092125" />
+      <inertia ixx="6.471434137e-05" iyy="6.225550568e-05" izz="3.377843065e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_knee_link_chassis_R_shank">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_shank.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_knee_link_chassis_R_shank_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_knee_link_shell_R_shin_shell_back">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_shin_shell_back.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_knee_link_shell_R_shin_shell_back_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_knee_link_shell_R_shin_shell_front">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_shin_shell_front.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_knee_link_shell_R_shin_shell_front_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="right_shin_cylinder">
+      <origin xyz="-0.005 -0.002 -0.0285" rpy="0 -0 0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.067" />
+      </geometry>
+    </collision>
+    <collision name="right_shin_cap_top">
+      <origin xyz="-0.005 -0.002 0.005" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+    <collision name="right_shin_cap_bottom">
+      <origin xyz="-0.005 -0.002 -0.062" rpy="0 -0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_ankle_pitch_link">
+    <inertial>
+      <origin xyz="-0.0189887 -0.0009061 0.0123036" rpy="1.57793193 0.001861631037 1.526445671" />
+      <mass value="0.119942" />
+      <inertia ixx="7.792829661e-05" iyy="6.610633487e-05" izz="3.134418242e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_ankle_pitch_link_chassis_R_ankle_block">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_ankle_block.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_pitch_link_chassis_R_ankle_block_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_ankle_roll_link">
+    <inertial>
+      <origin xyz="-0.0112629 2.16e-05 0.0006777" rpy="-2.307804596 -1.524150531 -0.8287860434" />
+      <mass value="0.079688" />
+      <inertia ixx="0.0002152139631" iyy="0.000184505855" izz="0.0001044155859" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="right_ankle_roll_link_chassis_R_foot">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/chassis_R_foot.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_chassis_R_foot_material">
+        <color rgba="0.75 0.2199999988 0.200000003 1" />
+      </material>
+    </visual>
+    <visual name="right_ankle_roll_link_shell_Foot_R_cover_heel">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Foot_R_cover_heel.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_shell_Foot_R_cover_heel_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_ankle_roll_link_shell_Foot_R_cover_toe">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_Foot_R_cover_toe.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_shell_Foot_R_cover_toe_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_ankle_roll_link_shell_R_ankle_hood">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_ankle_hood.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_shell_R_ankle_hood_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_ankle_roll_link_shell_R_foot_lid">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_foot_lid.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_shell_R_foot_lid_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <visual name="right_ankle_roll_link_shell_R_insole">
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../mujoco/meshes/shell_R_insole.stl" scale="1 1 1" />
+      </geometry>
+      <material name="right_ankle_roll_link_shell_R_insole_material">
+        <color rgba="0.9300000072 0.9300000072 0.9499999881 1" />
+      </material>
+    </visual>
+    <collision name="right_foot">
+      <origin xyz="-0.0101 -0.00055 0.00791" rpy="0 -0 0" />
+      <geometry>
+        <box size="0.1364 0.0835 0.06738" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- welded in v8: the 25-joint model's waist_yaw_joint is removed (frozen at 0 rad) -->
+  <joint name="waist_yaw_joint_fixed" type="fixed">
+    <origin xyz="0 0 0.115" rpy="0 -0 0" />
+    <parent link="pelvis" />
+    <child link="torso_link" />
+  </joint>
+  <joint name="neck_yaw_joint" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0.125" rpy="0 -0 0" />
+    <parent link="torso_link" />
+    <child link="neck_yaw_link" />
+  </joint>
+  <joint name="neck_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.29234" upper="0.20944" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0.026" rpy="0 -0 0" />
+    <parent link="neck_yaw_link" />
+    <child link="neck_pitch_link" />
+  </joint>
+  <joint name="left_shoulder_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-1.67552" upper="0.06545" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 0.1015 0.106" rpy="0 -0 0" />
+    <parent link="torso_link" />
+    <child link="left_shoulder_pitch_link" />
+  </joint>
+  <joint name="left_shoulder_roll_joint" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit lower="0.33598" upper="1.6057" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 0.0115 0" rpy="0 -0 0" />
+    <parent link="left_shoulder_pitch_link" />
+    <child link="left_shoulder_roll_link" />
+  </joint>
+  <!-- welded in v8: the 25-joint model's left_shoulder_yaw_joint is removed (frozen at 0 rad) -->
+  <joint name="left_shoulder_yaw_joint_fixed" type="fixed">
+    <origin xyz="0.007 0 -0.06" rpy="0 -0 0" />
+    <parent link="left_shoulder_roll_link" />
+    <child link="left_shoulder_yaw_link" />
+  </joint>
+  <joint name="left_elbow_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-1.06465" upper="0.05236" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 0 -0.026" rpy="0 -0 0" />
+    <parent link="left_shoulder_yaw_link" />
+    <child link="left_elbow_link" />
+  </joint>
+  <!-- welded in v8: the 25-joint model's left_wrist_roll_joint is removed (frozen at 0 rad) -->
+  <joint name="left_wrist_roll_joint_fixed" type="fixed">
+    <origin xyz="0 0 -0.044" rpy="0 -0 0" />
+    <parent link="left_elbow_link" />
+    <child link="left_wrist_roll_link" />
+  </joint>
+  <joint name="right_shoulder_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-1.67552" upper="0.06545" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 -0.1015 0.106" rpy="0 -0 0" />
+    <parent link="torso_link" />
+    <child link="right_shoulder_pitch_link" />
+  </joint>
+  <joint name="right_shoulder_roll_joint" type="revolute">
+    <axis xyz="-1 0 0" />
+    <limit lower="0.33598" upper="1.6057" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 -0.0115 0" rpy="0 -0 0" />
+    <parent link="right_shoulder_pitch_link" />
+    <child link="right_shoulder_roll_link" />
+  </joint>
+  <!-- welded in v8: the 25-joint model's right_shoulder_yaw_joint is removed (frozen at 0 rad) -->
+  <joint name="right_shoulder_yaw_joint_fixed" type="fixed">
+    <origin xyz="0.007 0 -0.06" rpy="0 -0 0" />
+    <parent link="right_shoulder_roll_link" />
+    <child link="right_shoulder_yaw_link" />
+  </joint>
+  <joint name="right_elbow_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-1.06465" upper="0.05236" effort="0.52" velocity="10.78613478" />
+    <dynamics damping="0.04821004101" friction="0.019" />
+    <origin xyz="0 0 -0.026" rpy="0 -0 0" />
+    <parent link="right_shoulder_yaw_link" />
+    <child link="right_elbow_link" />
+  </joint>
+  <!-- welded in v8: the 25-joint model's right_wrist_roll_joint is removed (frozen at 0 rad) -->
+  <joint name="right_wrist_roll_joint_fixed" type="fixed">
+    <origin xyz="0 0 -0.044" rpy="0 -0 0" />
+    <parent link="right_elbow_link" />
+    <child link="right_wrist_roll_link" />
+  </joint>
+  <joint name="left_hip_yaw_joint" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7854" upper="0.7854" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0.048 0.015" rpy="0 -0 0" />
+    <parent link="pelvis" />
+    <child link="left_hip_yaw_link" />
+  </joint>
+  <joint name="left_hip_roll_joint" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit lower="-0.41888" upper="0.47124" effort="4.1" velocity="4.817108736" />
+    <dynamics damping="0.8511329565" friction="0.03" />
+    <origin xyz="0 0 -0.015" rpy="0 -0 0" />
+    <parent link="left_hip_yaw_link" />
+    <child link="left_hip_roll_link" />
+  </joint>
+  <joint name="left_hip_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.89012" upper="0.57596" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <parent link="left_hip_roll_link" />
+    <child link="left_hip_pitch_link" />
+  </joint>
+  <joint name="left_knee_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.20944" upper="1.0472" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 -0.068" rpy="0 -0 0" />
+    <parent link="left_hip_pitch_link" />
+    <child link="left_knee_link" />
+  </joint>
+  <joint name="left_ankle_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.41888" upper="0.41888" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 -0.092" rpy="0 -0 0" />
+    <parent link="left_knee_link" />
+    <child link="left_ankle_pitch_link" />
+  </joint>
+  <joint name="left_ankle_roll_joint" type="revolute">
+    <axis xyz="1 0 0" />
+    <limit lower="-0.15708" upper="0.15708" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <parent link="left_ankle_pitch_link" />
+    <child link="left_ankle_roll_link" />
+  </joint>
+  <joint name="right_hip_yaw_joint" type="revolute">
+    <axis xyz="0 0 -1" />
+    <limit lower="-0.7854" upper="0.7854" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 -0.048 0.015" rpy="0 -0 0" />
+    <parent link="pelvis" />
+    <child link="right_hip_yaw_link" />
+  </joint>
+  <joint name="right_hip_roll_joint" type="revolute">
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.41888" upper="0.47124" effort="4.1" velocity="4.817108736" />
+    <dynamics damping="0.8511329565" friction="0.03" />
+    <origin xyz="0 0 -0.015" rpy="0 -0 0" />
+    <parent link="right_hip_yaw_link" />
+    <child link="right_hip_roll_link" />
+  </joint>
+  <joint name="right_hip_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.89012" upper="0.57596" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <parent link="right_hip_roll_link" />
+    <child link="right_hip_pitch_link" />
+  </joint>
+  <joint name="right_knee_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.20944" upper="1.0472" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 -0.068" rpy="0 -0 0" />
+    <parent link="right_hip_pitch_link" />
+    <child link="right_knee_link" />
+  </joint>
+  <joint name="right_ankle_pitch_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit lower="-0.41888" upper="0.41888" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 -0.092" rpy="0 -0 0" />
+    <parent link="right_knee_link" />
+    <child link="right_ankle_pitch_link" />
+  </joint>
+  <joint name="right_ankle_roll_joint" type="revolute">
+    <axis xyz="-1 0 0" />
+    <limit lower="-0.15708" upper="0.15708" effort="1.5" velocity="6.387905062" />
+    <dynamics damping="0.2348187685" friction="0.03" />
+    <origin xyz="0 0 0" rpy="0 -0 0" />
+    <parent link="right_ankle_pitch_link" />
+    <child link="right_ankle_roll_link" />
+  </joint>
+  <link name="imu" />
+  <joint name="imu_frame" type="fixed">
+    <origin xyz="0 0 0.07" rpy="0 -0 0" />
+    <parent link="torso_link" />
+    <child link="imu" />
+  </joint>
+  <link name="left_foot" />
+  <joint name="left_foot_frame" type="fixed">
+    <origin xyz="-0.01 0 -0.02578" rpy="0 -0 0" />
+    <parent link="left_ankle_roll_link" />
+    <child link="left_foot" />
+  </joint>
+  <link name="right_foot" />
+  <joint name="right_foot_frame" type="fixed">
+    <origin xyz="-0.01 0 -0.02578" rpy="0 -0 0" />
+    <parent link="right_ankle_roll_link" />
+    <child link="right_foot" />
+  </joint>
+</robot>

@@ -49,6 +49,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rig-dir", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, required=True, help="empty scratch folder for the 22-frame test BVH")
     parser.add_argument("--report", type=Path, default=None, help="optional JSON report path")
+    parser.add_argument("--name-prefix", default="kobi", help="file name prefix of the rig files (see build_rig.py)")
     return parser.parse_args(argv)
 
 
@@ -356,19 +357,20 @@ def main() -> int:
     args.work_dir.mkdir(parents=True, exist_ok=True)
     reports: list[dict[str, Any]] = []
 
-    bpy.ops.wm.open_mainfile(filepath=str(args.rig_dir / "kobi_rig.blend"))
+    prefix = args.name_prefix
+    bpy.ops.wm.open_mainfile(filepath=str(args.rig_dir / f"{prefix}_rig.blend"))
     test_bvh = args.work_dir / BVH_TEST_NAME
     # test BVH first: it keys temporary data into the in-memory file, so check the .blend before that
     reports.append(check_armature_file("blend", skeleton, fk, euler_z=True, mesh_check=True))
     bvh_cases = write_test_bvh(skeleton, fk, test_bvh)
 
-    import_fbx(args.rig_dir / "kobi_rig.fbx")
+    import_fbx(args.rig_dir / f"{prefix}_rig.fbx")
     reports.append(check_armature_file("fbx_reimport", skeleton, fk, euler_z=False, mesh_check=True))
-    import_glb(args.rig_dir / "kobi_rig.glb")
+    import_glb(args.rig_dir / f"{prefix}_rig.glb")
     reports.append(check_armature_file("glb_reimport", skeleton, fk, euler_z=False, mesh_check=True))
-    reports.append(raw_formats.check_glb_raw((args.rig_dir / "kobi_rig.glb").read_bytes(), skeleton, fk))
-    reports.append(raw_formats.check_fbx_raw((args.rig_dir / "kobi_rig.fbx").read_bytes(), skeleton, fk))
-    reports.append(check_bvh(args.rig_dir / "kobi_skeleton.bvh", skeleton, [fk["rest"], fk["home"]], "bvh_delivered_2_frames"))
+    reports.append(raw_formats.check_glb_raw((args.rig_dir / f"{prefix}_rig.glb").read_bytes(), skeleton, fk))
+    reports.append(raw_formats.check_fbx_raw((args.rig_dir / f"{prefix}_rig.fbx").read_bytes(), skeleton, fk))
+    reports.append(check_bvh(args.rig_dir / f"{prefix}_skeleton.bvh", skeleton, [fk["rest"], fk["home"]], "bvh_delivered_2_frames"))
     reports.append(check_bvh(test_bvh, skeleton, bvh_cases, "bvh_test_22_frames"))
 
     ok = True

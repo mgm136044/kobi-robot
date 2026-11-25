@@ -1,0 +1,182 @@
+{
+ "neck_yaw_joint": {
+  "probe": "neck_pitch_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   0.1987,
+   0.0
+  ],
+  "dominant": "y+"
+ },
+ "neck_pitch_joint": {
+  "probe": "neck_pitch_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   0.0,
+   -0.1987
+  ],
+  "dominant": "z-"
+ },
+ "left_shoulder_pitch_joint": {
+  "probe": "left_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.026,
+   0.0,
+   0.0012
+  ],
+  "dominant": "x-"
+ },
+ "right_shoulder_pitch_joint": {
+  "probe": "right_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.026,
+   0.0,
+   0.0012
+  ],
+  "dominant": "x-"
+ },
+ "left_shoulder_roll_joint": {
+  "probe": "left_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   0.0,
+   0.0258,
+   0.0026
+  ],
+  "dominant": "y+"
+ },
+ "right_shoulder_roll_joint": {
+  "probe": "right_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   0.0,
+   -0.0258,
+   0.0026
+  ],
+  "dominant": "y-"
+ },
+ "left_elbow_joint": {
+  "probe": "left_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0087,
+   0.0,
+   0.0009
+  ],
+  "dominant": "x-"
+ },
+ "right_elbow_joint": {
+  "probe": "right_wrist_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0087,
+   0.0,
+   0.0009
+  ],
+  "dominant": "x-"
+ },
+ "left_hip_yaw_joint": {
+  "probe": "left_ankle_roll_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   0.1987,
+   0.0
+  ],
+  "dominant": "y+"
+ },
+ "right_hip_yaw_joint": {
+  "probe": "right_ankle_roll_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   -0.1987,
+   -0.0
+  ],
+  "dominant": "y-"
+ },
+ "left_hip_roll_joint": {
+  "probe": "left_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   0.0,
+   0.0318,
+   0.0032
+  ],
+  "dominant": "y+"
+ },
+ "right_hip_roll_joint": {
+  "probe": "right_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   0.0,
+   -0.0318,
+   0.0032
+  ],
+  "dominant": "y-"
+ },
+ "left_hip_pitch_joint": {
+  "probe": "left_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0318,
+   0.0,
+   0.0032
+  ],
+  "dominant": "x-"
+ },
+ "right_hip_pitch_joint": {
+  "probe": "right_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0318,
+   0.0,
+   0.0032
+  ],
+  "dominant": "x-"
+ },
+ "left_knee_joint": {
+  "probe": "left_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0183,
+   0.0,
+   0.0018
+  ],
+  "dominant": "x-"
+ },
+ "right_knee_joint": {
+  "probe": "right_ankle_roll_link origin",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0183,
+   0.0,
+   0.0018
+  ],
+  "dominant": "x-"
+ },
+ "left_ankle_pitch_joint": {
+  "probe": "left_ankle_roll_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   0.0,
+   -0.1987
+  ],
+  "dominant": "z-"
+ },
+ "right_ankle_pitch_joint": {
+  "probe": "right_ankle_roll_link x_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0199,
+   0.0,
+   -0.1987
+  ],
+  "dominant": "z-"
+ },
+ "left_ankle_roll_joint": {
+  "probe": "left_ankle_roll_link y_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   0.0,
+   -0.0199,
+   0.1987
+  ],
+  "dominant": "z+"
+ },
+ "right_ankle_roll_joint": {
+  "probe": "right_ankle_roll_link y_axis",
+  "delta_xyz_for_plus_0p2rad": [
+   -0.0,
+   -0.0199,
+   -0.1987
+  ],
+  "dominant": "z-"
+ }
+}

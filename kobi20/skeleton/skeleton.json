@@ -1,0 +1,5686 @@
+{
+ "schema_version": 1,
+ "source_mjcf": "kobi20/mujoco/kobi20_v8.xml",
+ "mujoco_version": "3.14.0",
+ "units": {
+  "length": "metre",
+  "angle": "radian",
+  "torque": "N*m"
+ },
+ "coordinate_system": "MuJoCo world: right-handed, x forward, y left, z up",
+ "root_bone": "pelvis",
+ "root_body": "pelvis",
+ "home": {
+  "keyframe": "home",
+  "root_position": [
+   0.0,
+   0.0,
+   0.185802
+  ],
+  "root_quat_wxyz": [
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "qpos0_root_position": [
+   0.0,
+   0.0,
+   0.185
+  ],
+  "joint_angles": {
+   "neck_yaw_joint": 0.0,
+   "neck_pitch_joint": 0.0,
+   "left_shoulder_pitch_joint": 0.0,
+   "left_shoulder_roll_joint": 0.349066,
+   "left_elbow_joint": -0.314159,
+   "right_shoulder_pitch_joint": 0.0,
+   "right_shoulder_roll_joint": 0.349066,
+   "right_elbow_joint": -0.314159,
+   "left_hip_yaw_joint": 0.0,
+   "left_hip_roll_joint": 0.0,
+   "left_hip_pitch_joint": -0.108091,
+   "left_knee_joint": 0.15,
+   "left_ankle_pitch_joint": -0.041909,
+   "left_ankle_roll_joint": 0.0,
+   "right_hip_yaw_joint": 0.0,
+   "right_hip_roll_joint": 0.0,
+   "right_hip_pitch_joint": -0.108091,
+   "right_knee_joint": 0.15,
+   "right_ankle_pitch_joint": -0.041909,
+   "right_ankle_roll_joint": 0.0
+  }
+ },
+ "bodies": [
+  {
+   "name": "world",
+   "parent": null,
+   "bone": null,
+   "mass_kg": 0.0,
+   "com_qpos0": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "pelvis",
+   "parent": "world",
+   "bone": "pelvis",
+   "mass_kg": 1.24718,
+   "com_qpos0": [
+    5.56e-05,
+    -0.0003226,
+    0.2918371
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.0,
+     0.185
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.0,
+     0.185802
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "torso_link",
+   "parent": "pelvis",
+   "bone": "pelvis",
+   "mass_kg": 0.776209,
+   "com_qpos0": [
+    -0.0042726,
+    0.0010805,
+    0.3320035
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.0,
+     0.3
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.0,
+     0.300802
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "neck_yaw_link",
+   "parent": "torso_link",
+   "bone": "neck_yaw_joint",
+   "mass_kg": 0.078291,
+   "com_qpos0": [
+    -0.0099935,
+    -7.31e-05,
+    0.4468657
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.0,
+     0.425
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.0,
+     0.425802
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "neck_pitch_link",
+   "parent": "neck_yaw_link",
+   "bone": "neck_pitch_joint",
+   "mass_kg": 0.653887,
+   "com_qpos0": [
+    0.0361118,
+    -2.12e-05,
+    0.5323127
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.0,
+     0.451
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.0,
+     0.45180200000000004
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_shoulder_pitch_link",
+   "parent": "torso_link",
+   "bone": "left_shoulder_pitch_joint",
+   "mass_kg": 0.025767,
+   "com_qpos0": [
+    0.001107,
+    0.1129069,
+    0.3989908
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.1015,
+     0.40599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.1015,
+     0.406802
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_shoulder_roll_link",
+   "parent": "left_shoulder_pitch_link",
+   "bone": "left_shoulder_roll_joint",
+   "mass_kg": 0.039973,
+   "com_qpos0": [
+    0.0084017,
+    0.1271345,
+    0.37483619999999995
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.113,
+     0.40599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.113,
+     0.406802
+    ],
+    "quat_wxyz": [
+     0.9848077400232231,
+     0.1736482513311082,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.9396925696192966,
+      -0.34202028390474665
+     ],
+     [
+      0.0,
+      0.34202028390474665,
+      0.9396925696192966
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_shoulder_yaw_link",
+   "parent": "left_shoulder_roll_link",
+   "bone": "left_shoulder_roll_joint",
+   "mass_kg": 0.044464,
+   "com_qpos0": [
+    0.0062316,
+    0.1124087,
+    0.3261231
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     0.113,
+     0.346
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007,
+     0.1335212170342848,
+     0.3504204458228422
+    ],
+    "quat_wxyz": [
+     0.9848077400232231,
+     0.1736482513311082,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.9396925696192966,
+      -0.34202028390474665
+     ],
+     [
+      0.0,
+      0.34202028390474665,
+      0.9396925696192966
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_elbow_link",
+   "parent": "left_shoulder_yaw_link",
+   "bone": "left_elbow_joint",
+   "mass_kg": 0.041044,
+   "com_qpos0": [
+    0.0048635,
+    0.1160717,
+    0.28924739999999993
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     0.113,
+     0.31999999999999995
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007,
+     0.1424137444158082,
+     0.3259884390127405
+    ],
+    "quat_wxyz": [
+     0.9726831429890963,
+     0.17151035680864962,
+     -0.15405774292291002,
+     -0.0271645485462471
+    ],
+    "matrix": [
+     [
+      0.9510565982955542,
+      -6.938893903907228e-18,
+      -0.3090167420035501
+     ],
+     [
+      -0.10568999383137406,
+      0.9396925696192965,
+      -0.32528064775852805
+     ],
+     [
+      0.2903807363486992,
+      0.3420202839047466,
+      0.8937008187057364
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_wrist_roll_link",
+   "parent": "left_elbow_link",
+   "bone": "left_elbow_joint",
+   "mass_kg": 0.027038,
+   "com_qpos0": [
+    0.0101303,
+    0.1134851,
+    0.23987869999999997
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     0.113,
+     0.27599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.020596736648156203,
+     0.15672609291718342,
+     0.2866656029896881
+    ],
+    "quat_wxyz": [
+     0.9726831429890963,
+     0.17151035680864962,
+     -0.15405774292291002,
+     -0.0271645485462471
+    ],
+    "matrix": [
+     [
+      0.9510565982955542,
+      -6.938893903907228e-18,
+      -0.3090167420035501
+     ],
+     [
+      -0.10568999383137406,
+      0.9396925696192965,
+      -0.32528064775852805
+     ],
+     [
+      0.2903807363486992,
+      0.3420202839047466,
+      0.8937008187057364
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_shoulder_pitch_link",
+   "parent": "torso_link",
+   "bone": "right_shoulder_pitch_joint",
+   "mass_kg": 0.025767,
+   "com_qpos0": [
+    0.001107,
+    -0.1129069,
+    0.3989908
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.1015,
+     0.40599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     -0.1015,
+     0.406802
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_shoulder_roll_link",
+   "parent": "right_shoulder_pitch_link",
+   "bone": "right_shoulder_roll_joint",
+   "mass_kg": 0.039973,
+   "com_qpos0": [
+    0.0084017,
+    -0.1271345,
+    0.37483619999999995
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.113,
+     0.40599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     -0.113,
+     0.406802
+    ],
+    "quat_wxyz": [
+     0.9848077400232231,
+     -0.1736482513311082,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.9396925696192966,
+      0.34202028390474665
+     ],
+     [
+      -0.0,
+      -0.34202028390474665,
+      0.9396925696192966
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_shoulder_yaw_link",
+   "parent": "right_shoulder_roll_link",
+   "bone": "right_shoulder_roll_joint",
+   "mass_kg": 0.044464,
+   "com_qpos0": [
+    0.0062316,
+    -0.1124087,
+    0.3261231
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     -0.113,
+     0.346
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007,
+     -0.1335212170342848,
+     0.3504204458228422
+    ],
+    "quat_wxyz": [
+     0.9848077400232231,
+     -0.1736482513311082,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.9396925696192966,
+      0.34202028390474665
+     ],
+     [
+      -0.0,
+      -0.34202028390474665,
+      0.9396925696192966
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_elbow_link",
+   "parent": "right_shoulder_yaw_link",
+   "bone": "right_elbow_joint",
+   "mass_kg": 0.041044,
+   "com_qpos0": [
+    0.0048636,
+    -0.1160717,
+    0.28924739999999993
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     -0.113,
+     0.31999999999999995
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007,
+     -0.1424137444158082,
+     0.3259884390127405
+    ],
+    "quat_wxyz": [
+     0.9726831429890963,
+     -0.17151035680864962,
+     -0.15405774292291002,
+     0.0271645485462471
+    ],
+    "matrix": [
+     [
+      0.9510565982955542,
+      6.938893903907228e-18,
+      -0.3090167420035501
+     ],
+     [
+      0.10568999383137406,
+      0.9396925696192965,
+      0.32528064775852805
+     ],
+     [
+      0.2903807363486992,
+      -0.3420202839047466,
+      0.8937008187057364
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_wrist_roll_link",
+   "parent": "right_elbow_link",
+   "bone": "right_elbow_joint",
+   "mass_kg": 0.027038,
+   "com_qpos0": [
+    0.0101303,
+    -0.1134851,
+    0.23987869999999997
+   ],
+   "qpos0": {
+    "position": [
+     0.007,
+     -0.113,
+     0.27599999999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.020596736648156203,
+     -0.15672609291718342,
+     0.2866656029896881
+    ],
+    "quat_wxyz": [
+     0.9726831429890963,
+     -0.17151035680864962,
+     -0.15405774292291002,
+     0.0271645485462471
+    ],
+    "matrix": [
+     [
+      0.9510565982955542,
+      6.938893903907228e-18,
+      -0.3090167420035501
+     ],
+     [
+      0.10568999383137406,
+      0.9396925696192965,
+      0.32528064775852805
+     ],
+     [
+      0.2903807363486992,
+      -0.3420202839047466,
+      0.8937008187057364
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_hip_yaw_link",
+   "parent": "pelvis",
+   "bone": "left_hip_yaw_joint",
+   "mass_kg": 0.005932,
+   "com_qpos0": [
+    -0.0011546,
+    0.048,
+    0.1986642
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.2
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.048,
+     0.20080199999999998
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_hip_roll_link",
+   "parent": "left_hip_yaw_link",
+   "bone": "left_hip_roll_joint",
+   "mass_kg": 0.144742,
+   "com_qpos0": [
+    -0.0224688,
+    0.048750800000000004,
+    0.1727484
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.185
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.048,
+     0.18580199999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_hip_pitch_link",
+   "parent": "left_hip_roll_link",
+   "bone": "left_hip_pitch_joint",
+   "mass_kg": 0.038351,
+   "com_qpos0": [
+    0.0010725,
+    0.0514225,
+    0.1404697
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.185
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     0.048,
+     0.18580199999999997
+    ],
+    "quat_wxyz": [
+     0.998539897419877,
+     0.0,
+     -0.0540191934473431,
+     0.0
+    ],
+    "matrix": [
+     [
+      0.994163853478597,
+      -0.0,
+      -0.10788063976722895
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      0.10788063976722895,
+      0.0,
+      0.994163853478597
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_knee_link",
+   "parent": "left_hip_pitch_link",
+   "bone": "left_knee_joint",
+   "mass_kg": 0.092086,
+   "com_qpos0": [
+    0.0003948,
+    0.0517854,
+    0.09624999999999999
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.11699999999999999
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007335883504171569,
+     0.048,
+     0.11819885796345536
+    ],
+    "quat_wxyz": [
+     0.9997804624981311,
+     0.0,
+     0.020952966544694775,
+     0.0
+    ],
+    "matrix": [
+     [
+      0.9991219463859539,
+      0.0,
+      0.04189673316552562
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      -0.04189673316552562,
+      0.0,
+      0.9991219463859539
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_ankle_pitch_link",
+   "parent": "left_knee_link",
+   "bone": "left_ankle_pitch_joint",
+   "mass_kg": 0.119942,
+   "com_qpos0": [
+    -0.0189887,
+    0.0489061,
+    0.03730359999999999
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.024999999999999994
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0034813840529432116,
+     0.048,
+     0.026279638895947602
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     -1.2610958019283282e-17,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      -2.5221916038566563e-17
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      2.5221916038566563e-17,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "left_ankle_roll_link",
+   "parent": "left_ankle_pitch_link",
+   "bone": "left_ankle_roll_joint",
+   "mass_kg": 0.078333,
+   "com_qpos0": [
+    -0.0113065,
+    0.0488985,
+    0.025651999999999994
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     0.048,
+     0.024999999999999994
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0034813840529432116,
+     0.048,
+     0.026279638895947602
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     -1.2610958019283282e-17,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      -2.5221916038566563e-17
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      2.5221916038566563e-17,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_hip_yaw_link",
+   "parent": "pelvis",
+   "bone": "right_hip_yaw_joint",
+   "mass_kg": 0.005932,
+   "com_qpos0": [
+    -0.0011546,
+    -0.048,
+    0.1986642
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.2
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     -0.048,
+     0.20080199999999998
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_hip_roll_link",
+   "parent": "right_hip_yaw_link",
+   "bone": "right_hip_roll_joint",
+   "mass_kg": 0.144742,
+   "com_qpos0": [
+    -0.0224688,
+    -0.048750800000000004,
+    0.1727484
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.185
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     -0.048,
+     0.18580199999999997
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_hip_pitch_link",
+   "parent": "right_hip_roll_link",
+   "bone": "right_hip_pitch_joint",
+   "mass_kg": 0.038483,
+   "com_qpos0": [
+    0.0011454,
+    -0.0513961,
+    0.1404599
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.185
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0,
+     -0.048,
+     0.18580199999999997
+    ],
+    "quat_wxyz": [
+     0.998539897419877,
+     0.0,
+     -0.0540191934473431,
+     0.0
+    ],
+    "matrix": [
+     [
+      0.994163853478597,
+      -0.0,
+      -0.10788063976722895
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      0.10788063976722895,
+      0.0,
+      0.994163853478597
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_knee_link",
+   "parent": "right_hip_pitch_link",
+   "bone": "right_knee_joint",
+   "mass_kg": 0.092125,
+   "com_qpos0": [
+    0.0003708,
+    -0.0517974,
+    0.09621479999999999
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.11699999999999999
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.007335883504171569,
+     -0.048,
+     0.11819885796345536
+    ],
+    "quat_wxyz": [
+     0.9997804624981311,
+     0.0,
+     0.020952966544694775,
+     0.0
+    ],
+    "matrix": [
+     [
+      0.9991219463859539,
+      0.0,
+      0.04189673316552562
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      -0.04189673316552562,
+      0.0,
+      0.9991219463859539
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_ankle_pitch_link",
+   "parent": "right_knee_link",
+   "bone": "right_ankle_pitch_joint",
+   "mass_kg": 0.119942,
+   "com_qpos0": [
+    -0.0189887,
+    -0.0489061,
+    0.03730359999999999
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.024999999999999994
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0034813840529432116,
+     -0.048,
+     0.026279638895947602
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     -1.2610958019283282e-17,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      -2.5221916038566563e-17
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      2.5221916038566563e-17,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "right_ankle_roll_link",
+   "parent": "right_ankle_pitch_link",
+   "bone": "right_ankle_roll_joint",
+   "mass_kg": 0.079688,
+   "com_qpos0": [
+    -0.0112629,
+    -0.047978400000000004,
+    0.025677699999999994
+   ],
+   "qpos0": {
+    "position": [
+     0.0,
+     -0.048,
+     0.024999999999999994
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      1.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      1.0
+     ]
+    ]
+   },
+   "home": {
+    "position": [
+     0.0034813840529432116,
+     -0.048,
+     0.026279638895947602
+    ],
+    "quat_wxyz": [
+     1.0,
+     0.0,
+     -1.2610958019283282e-17,
+     0.0
+    ],
+    "matrix": [
+     [
+      1.0,
+      -0.0,
+      -2.5221916038566563e-17
+     ],
+     [
+      0.0,
+      1.0,
+      -0.0
+     ],
+     [
+      2.5221916038566563e-17,
+      0.0,
+      1.0
+     ]
+    ]
+   }
+  }
+ ],
+ "joints": [
+  {
+   "name": "left_hip_yaw_joint",
+   "child_body": "left_hip_yaw_link",
+   "parent_bone": "pelvis",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.2
+   ],
+   "axis_world": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "range": [
+    -0.7854,
+    0.7854
+   ],
+   "actuator_index": 0,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "left_hip_roll_joint",
+   "child_body": "left_hip_roll_link",
+   "parent_bone": "left_hip_yaw_joint",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.185
+   ],
+   "axis_world": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    -0.41888,
+    0.47124
+   ],
+   "actuator_index": 1,
+   "torque_limit_nm": 4.1,
+   "home_angle": 0.0
+  },
+  {
+   "name": "left_hip_pitch_joint",
+   "child_body": "left_hip_pitch_link",
+   "parent_bone": "left_hip_roll_joint",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.185
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.89012,
+    0.57596
+   ],
+   "actuator_index": 2,
+   "torque_limit_nm": 1.5,
+   "home_angle": -0.108091
+  },
+  {
+   "name": "left_knee_joint",
+   "child_body": "left_knee_link",
+   "parent_bone": "left_hip_pitch_joint",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.11699999999999999
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.20944,
+    1.0472
+   ],
+   "actuator_index": 3,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.15
+  },
+  {
+   "name": "left_ankle_pitch_joint",
+   "child_body": "left_ankle_pitch_link",
+   "parent_bone": "left_knee_joint",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.024999999999999994
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.41888,
+    0.41888
+   ],
+   "actuator_index": 4,
+   "torque_limit_nm": 1.5,
+   "home_angle": -0.041909
+  },
+  {
+   "name": "left_ankle_roll_joint",
+   "child_body": "left_ankle_roll_link",
+   "parent_bone": "left_ankle_pitch_joint",
+   "anchor_world": [
+    0.0,
+    0.048,
+    0.024999999999999994
+   ],
+   "axis_world": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    -0.15708,
+    0.15708
+   ],
+   "actuator_index": 5,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "right_hip_yaw_joint",
+   "child_body": "right_hip_yaw_link",
+   "parent_bone": "pelvis",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.2
+   ],
+   "axis_world": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "range": [
+    -0.7854,
+    0.7854
+   ],
+   "actuator_index": 6,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "right_hip_roll_joint",
+   "child_body": "right_hip_roll_link",
+   "parent_bone": "right_hip_yaw_joint",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.185
+   ],
+   "axis_world": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    -0.41888,
+    0.47124
+   ],
+   "actuator_index": 7,
+   "torque_limit_nm": 4.1,
+   "home_angle": 0.0
+  },
+  {
+   "name": "right_hip_pitch_joint",
+   "child_body": "right_hip_pitch_link",
+   "parent_bone": "right_hip_roll_joint",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.185
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.89012,
+    0.57596
+   ],
+   "actuator_index": 8,
+   "torque_limit_nm": 1.5,
+   "home_angle": -0.108091
+  },
+  {
+   "name": "right_knee_joint",
+   "child_body": "right_knee_link",
+   "parent_bone": "right_hip_pitch_joint",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.11699999999999999
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.20944,
+    1.0472
+   ],
+   "actuator_index": 9,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.15
+  },
+  {
+   "name": "right_ankle_pitch_joint",
+   "child_body": "right_ankle_pitch_link",
+   "parent_bone": "right_knee_joint",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.024999999999999994
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.41888,
+    0.41888
+   ],
+   "actuator_index": 10,
+   "torque_limit_nm": 1.5,
+   "home_angle": -0.041909
+  },
+  {
+   "name": "right_ankle_roll_joint",
+   "child_body": "right_ankle_roll_link",
+   "parent_bone": "right_ankle_pitch_joint",
+   "anchor_world": [
+    0.0,
+    -0.048,
+    0.024999999999999994
+   ],
+   "axis_world": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    -0.15708,
+    0.15708
+   ],
+   "actuator_index": 11,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "neck_yaw_joint",
+   "child_body": "neck_yaw_link",
+   "parent_bone": "pelvis",
+   "anchor_world": [
+    0.0,
+    0.0,
+    0.425
+   ],
+   "axis_world": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "range": [
+    -1.5708,
+    1.5708
+   ],
+   "actuator_index": 12,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "neck_pitch_joint",
+   "child_body": "neck_pitch_link",
+   "parent_bone": "neck_yaw_joint",
+   "anchor_world": [
+    0.0,
+    0.0,
+    0.451
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -0.29234,
+    0.20944
+   ],
+   "actuator_index": 13,
+   "torque_limit_nm": 1.5,
+   "home_angle": 0.0
+  },
+  {
+   "name": "left_shoulder_pitch_joint",
+   "child_body": "left_shoulder_pitch_link",
+   "parent_bone": "pelvis",
+   "anchor_world": [
+    0.0,
+    0.1015,
+    0.40599999999999997
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -1.67552,
+    0.06545
+   ],
+   "actuator_index": 14,
+   "torque_limit_nm": 0.52,
+   "home_angle": 0.0
+  },
+  {
+   "name": "left_shoulder_roll_joint",
+   "child_body": "left_shoulder_roll_link",
+   "parent_bone": "left_shoulder_pitch_joint",
+   "anchor_world": [
+    0.0,
+    0.113,
+    0.40599999999999997
+   ],
+   "axis_world": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    0.33598,
+    1.6057
+   ],
+   "actuator_index": 15,
+   "torque_limit_nm": 0.52,
+   "home_angle": 0.349066
+  },
+  {
+   "name": "left_elbow_joint",
+   "child_body": "left_elbow_link",
+   "parent_bone": "left_shoulder_roll_joint",
+   "anchor_world": [
+    0.007,
+    0.113,
+    0.31999999999999995
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -1.06465,
+    0.05236
+   ],
+   "actuator_index": 16,
+   "torque_limit_nm": 0.52,
+   "home_angle": -0.314159
+  },
+  {
+   "name": "right_shoulder_pitch_joint",
+   "child_body": "right_shoulder_pitch_link",
+   "parent_bone": "pelvis",
+   "anchor_world": [
+    0.0,
+    -0.1015,
+    0.40599999999999997
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -1.67552,
+    0.06545
+   ],
+   "actuator_index": 17,
+   "torque_limit_nm": 0.52,
+   "home_angle": 0.0
+  },
+  {
+   "name": "right_shoulder_roll_joint",
+   "child_body": "right_shoulder_roll_link",
+   "parent_bone": "right_shoulder_pitch_joint",
+   "anchor_world": [
+    0.0,
+    -0.113,
+    0.40599999999999997
+   ],
+   "axis_world": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "range": [
+    0.33598,
+    1.6057
+   ],
+   "actuator_index": 18,
+   "torque_limit_nm": 0.52,
+   "home_angle": 0.349066
+  },
+  {
+   "name": "right_elbow_joint",
+   "child_body": "right_elbow_link",
+   "parent_bone": "right_shoulder_roll_joint",
+   "anchor_world": [
+    0.007,
+    -0.113,
+    0.31999999999999995
+   ],
+   "axis_world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "range": [
+    -1.06465,
+    0.05236
+   ],
+   "actuator_index": 19,
+   "torque_limit_nm": 0.52,
+   "home_angle": -0.314159
+  }
+ ],
+ "mesh_geoms": [
+  {
+   "geom": "pelvis__chassis_pelvis",
+   "body": "pelvis",
+   "bone": "pelvis",
+   "mesh": "chassis_pelvis",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_pelvis.stl",
+   "mesh_file_sha256": "dd20c9149da96b9d17d55ee2ca2b1ff7ea52a648e516d3fb0a2120868ff68717",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000008,
+     -3.6177403127459646e-33,
+     0.0,
+     1.0600318413907346e-30
+    ],
+    [
+     -3.6177403127459646e-33,
+     1.000000000000008,
+     0.0,
+     5.546678239835239e-32
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000008,
+     0.18499999999999958
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "pelvis__chassis_power_tray_0",
+   "body": "pelvis",
+   "bone": "pelvis",
+   "mesh": "chassis_power_tray_0",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_power_tray_0.stl",
+   "mesh_file_sha256": "5e2fbc08afcfabd4caa054ac1952e463503783ceeb24ca45a35ca000c4ba0295",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000073,
+     4.459413864727903e-33,
+     -6.493438744392979e-23,
+     -6.776263578034403e-19
+    ],
+    [
+     4.459413864727903e-33,
+     1.000000000000007,
+     -2.3165648714316082e-33,
+     1.6948183510607676e-31
+    ],
+    [
+     0.0,
+     2.741817063405969e-33,
+     1.0000000000000073,
+     0.1849999999999995
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "pelvis__chassis_power_tray_1",
+   "body": "pelvis",
+   "bone": "pelvis",
+   "mesh": "chassis_power_tray_1",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_power_tray_1.stl",
+   "mesh_file_sha256": "6d1d6b685b9314c06f749fdd161a7c5a124630be69a5fb1d12e7b929ae7b25a9",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000073,
+     4.459413864727903e-33,
+     -6.493438744392979e-23,
+     -6.776263578034403e-19
+    ],
+    [
+     4.459413864727903e-33,
+     1.000000000000007,
+     -2.3165648714316082e-33,
+     1.9413373839423337e-31
+    ],
+    [
+     0.0,
+     2.741817063405969e-33,
+     1.0000000000000073,
+     0.18499999999999933
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "torso_link__chassis_torso",
+   "body": "torso_link",
+   "bone": "pelvis",
+   "mesh": "chassis_torso",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_torso.stl",
+   "mesh_file_sha256": "97f3da6dfd273181a993e06618a6b55ead0437ade7a1fec4b4c92da58e5f8e0c",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000007,
+     0.0,
+     -9.080291724815421e-20,
+     8.673617379884035e-18
+    ],
+    [
+     0.0,
+     1.0000000000000004,
+     0.0,
+     -9.693522803355793e-27
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000007,
+     0.29999999999999993
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "torso_link__shell_Jacket_front",
+   "body": "torso_link",
+   "bone": "pelvis",
+   "mesh": "shell_Jacket_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Jacket_front.stl",
+   "mesh_file_sha256": "20ca112c66268ab765f0328da557fa9916e7dfff26df2d1e21d93ef3e9c0dfc6",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000007,
+     2.0853187935778615e-20,
+     -1.9617973557268768e-18,
+     -4.163336342344337e-17
+    ],
+    [
+     2.0853187935778615e-20,
+     1.0000000000000004,
+     6.32502707567595e-20,
+     -4.235164736271502e-21
+    ],
+    [
+     -3.469446951953614e-18,
+     1.0842021724855044e-19,
+     1.0000000000000004,
+     0.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "torso_link__shell_Jacket_back",
+   "body": "torso_link",
+   "bone": "pelvis",
+   "mesh": "shell_Jacket_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Jacket_back.stl",
+   "mesh_file_sha256": "7865bbc7ea3df8e8b8648cb68c2dfab53c5f3d87e9cedf34b4543c9cd6b1b525",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000004,
+     -6.765706149618067e-20,
+     -4.908497332679911e-19,
+     2.0816681711721685e-17
+    ],
+    [
+     -6.765706149618067e-20,
+     1.0000000000000007,
+     -2.2811024419130967e-18,
+     -1.3552527156068805e-20
+    ],
+    [
+     -8.673617379884035e-19,
+     0.0,
+     1.0000000000000007,
+     0.3
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "torso_link__shell_Wing_L",
+   "body": "torso_link",
+   "bone": "pelvis",
+   "mesh": "shell_Wing_L",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Wing_L.stl",
+   "mesh_file_sha256": "9d43f5165eed5e0a831a38aa8f650c617e6bf40d541cd36c522c8b7f6add27f3",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000003,
+     1.3218316498884325e-17,
+     -4.8634316518759426e-18,
+     2.7755575615628914e-16
+    ],
+    [
+     1.3218316498884325e-17,
+     1.0000000000000036,
+     5.701119873526242e-17,
+     -3.0531133177191805e-16
+    ],
+    [
+     0.0,
+     5.551115123125783e-17,
+     1.0000000000000033,
+     0.2999999999999998
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "torso_link__shell_Wing_R",
+   "body": "torso_link",
+   "bone": "pelvis",
+   "mesh": "shell_Wing_R",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Wing_R.stl",
+   "mesh_file_sha256": "abd5e67bfc595106ea7816a5b1e5304d4858258f3b95e9a95c82d25fefc4520a",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000003,
+     -2.1276319701830738e-18,
+     -1.3828937343315524e-17,
+     2.7755575615628914e-16
+    ],
+    [
+     -2.1276319701830738e-18,
+     1.0000000000000033,
+     -9.832493047468432e-18,
+     2.914335439641036e-16
+    ],
+    [
+     -1.3877787807814457e-17,
+     -5.551115123125783e-17,
+     1.0000000000000033,
+     0.2999999999999998
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_yaw_link__chassis_neck_link",
+   "body": "neck_yaw_link",
+   "bone": "neck_yaw_joint",
+   "mesh": "chassis_neck_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_neck_link.stl",
+   "mesh_file_sha256": "ca3cbd3c14a794551e5224577c6807e94515a75d3e8bb93b6f43405acdda7f9f",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000084,
+     -6.421816997368094e-33,
+     -5.837264721599726e-18,
+     7.632783294297951e-17
+    ],
+    [
+     -6.421816997368094e-33,
+     1.0000000000000084,
+     -3.6933642549011904e-33,
+     -2.473867798773093e-27
+    ],
+    [
+     0.0,
+     -6.933347799794049e-33,
+     1.0000000000000084,
+     0.425
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_yaw_link__shell_Neck_cap",
+   "body": "neck_yaw_link",
+   "bone": "neck_yaw_joint",
+   "mesh": "shell_Neck_cap",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Neck_cap.stl",
+   "mesh_file_sha256": "bf91bb88e947fb9187a842c492df3d45d5684decd506763c127df2057b69065d",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000053,
+     0.0,
+     0.0,
+     -1.5407439555097887e-32
+    ],
+    [
+     0.0,
+     1.0000000000000053,
+     0.0,
+     4.092601131822876e-34
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000053,
+     0.42499999999999993
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__chassis_head_mount",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "chassis_head_mount",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_head_mount.stl",
+   "mesh_file_sha256": "9f9fdc0e373383c921007f5d2232c93a18dfcd327f5bf28c924b888cfe64deea",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000044,
+     3.575781912836594e-17,
+     -7.633678908592093e-17,
+     -1.6479873021779667e-17
+    ],
+    [
+     3.575781912836594e-17,
+     1.0000000000000044,
+     4.965806844973683e-17,
+     7.37257477290143e-18
+    ],
+    [
+     -8.783392849848193e-17,
+     5.0306980803327406e-17,
+     1.0000000000000044,
+     0.45099999999999996
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__chassis_head_plate",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "chassis_head_plate",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_head_plate.stl",
+   "mesh_file_sha256": "78ee41603cca2dcc82629392145901ad60c3b37046ae3eecc5e2c51de199f9d2",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000006,
+     0.0,
+     -1.0438123047498633e-17,
+     -1.4224732503009818e-16
+    ],
+    [
+     0.0,
+     1.0000000000000058,
+     0.0,
+     -8.478601278668534e-24
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000006,
+     0.4509999999999998
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__chassis_cam_bracket",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "chassis_cam_bracket",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_cam_bracket.stl",
+   "mesh_file_sha256": "e65b6409429318e3c325c74711950d676c9e02b7a340606e8737896af80ee77b",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000004,
+     0.0,
+     3.64364311979165e-18,
+     -4.163336342344337e-17
+    ],
+    [
+     0.0,
+     1.0000000000000004,
+     0.0,
+     1.925929944387236e-34
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000004,
+     0.4509999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_A_HeadShell_L",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_A_HeadShell_L",
+   "mesh_file": "kobi20/mujoco/meshes/shell_A_HeadShell_L.stl",
+   "mesh_file_sha256": "7379bdcc541c52af8d1f3e738477254b303482b260894742f9a4e1a66c578133",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000033,
+     -5.893082987540465e-17,
+     -1.589791206721663e-18,
+     -5.551115123125783e-17
+    ],
+    [
+     -5.893082987540465e-17,
+     1.0000000000000033,
+     -7.087188417376204e-18,
+     -2.7755575615628914e-16
+    ],
+    [
+     -4.336808689942018e-18,
+     2.7755575615628914e-17,
+     1.000000000000003,
+     0.45099999999999973
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_A_HeadShell_R",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_A_HeadShell_R",
+   "mesh_file": "kobi20/mujoco/meshes/shell_A_HeadShell_R.stl",
+   "mesh_file_sha256": "3bbd69da7647ab530bf68b0498d9ef53089b11d777ba76c8a89d71f4fe96663f",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000038,
+     -5.3466296644198834e-17,
+     -2.6162601046555647e-18,
+     -6.938893903907228e-17
+    ],
+    [
+     -5.3466296644198834e-17,
+     1.000000000000004,
+     1.1741630796584467e-17,
+     3.3306690738754696e-16
+    ],
+    [
+     -1.734723475976807e-18,
+     0.0,
+     1.000000000000004,
+     0.4509999999999996
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_Blush_L",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_Blush_L",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_Blush_L.stl",
+   "mesh_file_sha256": "3b2de3674ef3d6963b935b04f581fff10fbb00898318be036a4e106ae58ab2ad",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000002,
+     -1.4552032135894804e-17,
+     -4.7811189037406115e-17,
+     -1.942890293094024e-16
+    ],
+    [
+     -1.4552032135894804e-17,
+     1.000000000000002,
+     1.9297908561189743e-17,
+     -1.8041124150158794e-16
+    ],
+    [
+     -5.551115123125783e-17,
+     0.0,
+     1.0000000000000022,
+     0.4509999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_Blush_R",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_Blush_R",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_Blush_R.stl",
+   "mesh_file_sha256": "e0b15f8a38b4414324daec67a9b665f5666e38e702d50f856a073684abe3b961",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000002,
+     1.2354853647361438e-17,
+     -3.962663058988715e-17,
+     -1.942890293094024e-16
+    ],
+    [
+     1.2354853647361438e-17,
+     1.0000000000000022,
+     1.9844125775030167e-17,
+     1.942890293094024e-16
+    ],
+    [
+     -2.7755575615628914e-17,
+     0.0,
+     1.000000000000002,
+     0.4509999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_LCD_bezel_L",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_LCD_bezel_L",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_LCD_bezel_L.stl",
+   "mesh_file_sha256": "1cb7bebf361c58db671027a4d07ad8d93c6837ed4a62e6a849f451e0e839ecab",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000013,
+     8.19798445568449e-19,
+     2.1118210804052297e-19,
+     -1.249000902703301e-16
+    ],
+    [
+     8.19798445568449e-19,
+     1.0000000000000009,
+     -3.404516893650082e-19,
+     -3.469446951953614e-17
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000009,
+     0.451
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_LCD_bezel_R",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_LCD_bezel_R",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_LCD_bezel_R.stl",
+   "mesh_file_sha256": "7d38bc68d759e62291df77b88901908a310873feef25d803d4f44b44ba499b33",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     0.9999999999999997,
+     8.254250887167382e-19,
+     -3.1353112921046374e-19,
+     2.7755575615628914e-17
+    ],
+    [
+     8.254250887167382e-19,
+     1.0,
+     -2.318992744248834e-19,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.9999999999999997,
+     0.45099999999999996
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_WhiteFace_L",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_WhiteFace_L",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_WhiteFace_L.stl",
+   "mesh_file_sha256": "42300e3bba9d27700b19edbd870f662fb5870aafa4cc5f4a0a58402778da2851",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000016,
+     4.41540135971584e-17,
+     -9.09533418789525e-18,
+     -1.1102230246251565e-16
+    ],
+    [
+     4.41540135971584e-17,
+     1.0000000000000016,
+     -1.8064297928923883e-17,
+     -1.8041124150158794e-16
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000018,
+     0.45099999999999985
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "neck_pitch_link__shell_Face_WhiteFace_R",
+   "body": "neck_pitch_link",
+   "bone": "neck_pitch_joint",
+   "mesh": "shell_Face_WhiteFace_R",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Face_WhiteFace_R.stl",
+   "mesh_file_sha256": "a2c82a4ea5de003054ed82633eb2b50e9db345a8f75561bac76c47a537605c20",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000024,
+     -6.332375809667457e-18,
+     -8.422338034436954e-17,
+     -1.8041124150158794e-16
+    ],
+    [
+     -6.332375809667457e-18,
+     1.0000000000000022,
+     9.462172457663337e-17,
+     2.498001805406602e-16
+    ],
+    [
+     -6.938893903907228e-17,
+     1.1102230246251565e-16,
+     1.0000000000000022,
+     0.45099999999999996
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_pitch_link__chassis_L_sho_link",
+   "body": "left_shoulder_pitch_link",
+   "bone": "left_shoulder_pitch_joint",
+   "mesh": "chassis_L_sho_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_sho_link.stl",
+   "mesh_file_sha256": "9550c357108e0e06273260f6b626fca5ae104de6440cc0802956e8b564ba7d22",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000027,
+     0.0,
+     0.0,
+     7.318533788671496e-33
+    ],
+    [
+     0.0,
+     1.0000000000000027,
+     0.0,
+     0.1015
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000027,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_pitch_link__shell_Arm_L_shoulder_cap_lower",
+   "body": "left_shoulder_pitch_link",
+   "bone": "left_shoulder_pitch_joint",
+   "mesh": "shell_Arm_L_shoulder_cap_lower",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_shoulder_cap_lower.stl",
+   "mesh_file_sha256": "f27f952e8daf5ed9ca90a692eca04e1b6f2613cca36c41d0810292910828df72",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000098,
+     -2.774952299097297e-17,
+     1.6455024600698463e-17,
+     5.5294310796760726e-18
+    ],
+    [
+     -2.774952299097297e-17,
+     1.0000000000000098,
+     1.8502876520277331e-16,
+     0.10149999999999988
+    ],
+    [
+     2.7755575615628914e-17,
+     2.0296264668928643e-16,
+     1.0000000000000098,
+     0.4060000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_pitch_link__shell_Arm_L_shoulder_cap_upper",
+   "body": "left_shoulder_pitch_link",
+   "bone": "left_shoulder_pitch_joint",
+   "mesh": "shell_Arm_L_shoulder_cap_upper",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_shoulder_cap_upper.stl",
+   "mesh_file_sha256": "12ada1fcc5d30595bfa7c69a98b009bf76ea0f587d3e772a02efa564ff779219",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000007,
+     1.5532194135500112e-17,
+     2.9669323197700696e-17,
+     1.3010426069826053e-17
+    ],
+    [
+     1.5532194135500112e-17,
+     1.000000000000007,
+     6.1226353924383245e-18,
+     0.1014999999999999
+    ],
+    [
+     2.7755575615628914e-17,
+     1.5612511283791264e-17,
+     1.0000000000000073,
+     0.4059999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_roll_link__chassis_L_upperarm_link",
+   "body": "left_shoulder_roll_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "chassis_L_upperarm_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_upperarm_link.stl",
+   "mesh_file_sha256": "78806ebeadf5fbe72fe8d1d5d20b2fd927b8ea4c6482328fdf97c4f878db4de8",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000002,
+     -6.930801346389588e-19,
+     4.0775682673950186e-19,
+     -3.469446951953614e-18
+    ],
+    [
+     -6.930801346389588e-19,
+     1.0,
+     -9.897392135895831e-18,
+     0.113
+    ],
+    [
+     3.2526065174565133e-19,
+     -1.3877787807814457e-17,
+     0.9999999999999999,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_roll_link__shell_Arm_L_sleeve_upper_back",
+   "body": "left_shoulder_roll_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "shell_Arm_L_sleeve_upper_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_sleeve_upper_back.stl",
+   "mesh_file_sha256": "fcc2a76b7a9b172910ccf87832fad858d5a94e545a64746d1a59f7f543fb3c8d",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     0.9999999999999996,
+     -1.7419533498597723e-17,
+     1.2624571189163642e-17,
+     -3.469446951953614e-18
+    ],
+    [
+     -1.7419533498597723e-17,
+     0.9999999999999996,
+     6.030785324360793e-17,
+     0.11300000000000002
+    ],
+    [
+     1.3877787807814457e-17,
+     5.551115123125783e-17,
+     0.9999999999999997,
+     0.4059999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_roll_link__shell_Arm_L_sleeve_upper_front",
+   "body": "left_shoulder_roll_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "shell_Arm_L_sleeve_upper_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_sleeve_upper_front.stl",
+   "mesh_file_sha256": "a8f3631bd651da29cda8111e92b12265913f8f37b29d191be9f1d4d2553f80d8",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000016,
+     -2.2338416246354228e-17,
+     -1.898222070312192e-18,
+     -3.469446951953614e-17
+    ],
+    [
+     -2.2338416246354228e-17,
+     1.0000000000000016,
+     -6.580893293002066e-17,
+     0.11299999999999998
+    ],
+    [
+     -3.469446951953614e-18,
+     -5.551115123125783e-17,
+     1.0000000000000013,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_yaw_link__chassis_L_armyaw_link",
+   "body": "left_shoulder_yaw_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "chassis_L_armyaw_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_armyaw_link.stl",
+   "mesh_file_sha256": "e9f239c2dbf979ec4dc046a100f0b573739029c9267232a3924d5768974a5281",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000053,
+     0.0,
+     0.0,
+     0.007
+    ],
+    [
+     0.0,
+     1.0000000000000053,
+     0.0,
+     0.113
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000053,
+     0.346
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_yaw_link__shell_Arm_L_elbow_ball_inner",
+   "body": "left_shoulder_yaw_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "shell_Arm_L_elbow_ball_inner",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_elbow_ball_inner.stl",
+   "mesh_file_sha256": "8b3c24bb68cd7ec5d1e778295dceba63745a202180c3245bcf179b22582d83d3",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000062,
+     -3.47107358249494e-17,
+     4.330830626705527e-17,
+     0.007000000000000006
+    ],
+    [
+     -3.47107358249494e-17,
+     1.0000000000000062,
+     -4.411918903831952e-17,
+     0.1130000000000001
+    ],
+    [
+     4.163336342344337e-17,
+     -5.637851296924623e-17,
+     1.0000000000000064,
+     0.34600000000000014
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_shoulder_yaw_link__shell_Arm_L_elbow_ball_outer",
+   "body": "left_shoulder_yaw_link",
+   "bone": "left_shoulder_roll_joint",
+   "mesh": "shell_Arm_L_elbow_ball_outer",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_elbow_ball_outer.stl",
+   "mesh_file_sha256": "498e7a07eb3f1edca17f269b310db0a9fac5e43e7b83ef74e1a208ced616ddd3",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000056,
+     2.2279607555803088e-17,
+     -9.538666996283232e-18,
+     0.007000000000000009
+    ],
+    [
+     2.2279607555803088e-17,
+     1.0000000000000053,
+     -2.366213660977168e-17,
+     0.11299999999999992
+    ],
+    [
+     0.0,
+     -3.0357660829594124e-17,
+     1.0000000000000053,
+     0.3460000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_elbow_link__chassis_L_forearm",
+   "body": "left_elbow_link",
+   "bone": "left_elbow_joint",
+   "mesh": "chassis_L_forearm",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_forearm.stl",
+   "mesh_file_sha256": "5949a187e5820c30a23ea02435b608d195f4e8d4fb213544493320369922e3b0",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000002,
+     -4.375946863311758e-17,
+     1.7167179073036328e-18,
+     0.007000000000000013
+    ],
+    [
+     -4.375946863311758e-17,
+     1.0000000000000022,
+     3.8135334241468643e-17,
+     0.11299999999999996
+    ],
+    [
+     0.0,
+     3.469446951953614e-17,
+     1.0000000000000022,
+     0.32
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_elbow_link__shell_Arm_L_cuff_band",
+   "body": "left_elbow_link",
+   "bone": "left_elbow_joint",
+   "mesh": "shell_Arm_L_cuff_band",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_cuff_band.stl",
+   "mesh_file_sha256": "10098d2888ae7dc09514ab57a901be27bc852016ce1f44bd1a9be215d1a62f3e",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000005,
+     -1.2771265838058193e-17,
+     -1.3611575371375077e-17,
+     0.006999999999999978
+    ],
+    [
+     -1.2771265838058193e-17,
+     1.000000000000005,
+     3.4304695754672096e-17,
+     0.11299999999999999
+    ],
+    [
+     -1.214306433183765e-17,
+     2.7755575615628914e-17,
+     1.0000000000000049,
+     0.3200000000000002
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_elbow_link__shell_Arm_L_sleeve_fore_inner",
+   "body": "left_elbow_link",
+   "bone": "left_elbow_joint",
+   "mesh": "shell_Arm_L_sleeve_fore_inner",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_sleeve_fore_inner.stl",
+   "mesh_file_sha256": "d0279743e0396bbfa877b9d942802a9299f166ca6963e6057d236c579df963f6",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000058,
+     -3.759594187550917e-17,
+     -2.059245487143158e-18,
+     0.007000000000000015
+    ],
+    [
+     -3.759594187550917e-17,
+     1.000000000000006,
+     -3.584742699726001e-17,
+     0.1130000000000001
+    ],
+    [
+     0.0,
+     -3.122502256758253e-17,
+     1.0000000000000058,
+     0.32000000000000006
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_elbow_link__shell_Arm_L_sleeve_fore_outer",
+   "body": "left_elbow_link",
+   "bone": "left_elbow_joint",
+   "mesh": "shell_Arm_L_sleeve_fore_outer",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_sleeve_fore_outer.stl",
+   "mesh_file_sha256": "5b43f57ce2e816e2c0fa7b4f7d281fb4b0a271747075029db7290cd358ee9c11",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000058,
+     4.901322495524603e-17,
+     2.1712468900988284e-17,
+     0.006999999999999996
+    ],
+    [
+     4.901322495524603e-17,
+     1.000000000000006,
+     -7.1078806093461e-17,
+     0.1129999999999999
+    ],
+    [
+     2.7755575615628914e-17,
+     -6.418476861114186e-17,
+     1.000000000000006,
+     0.3200000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_wrist_roll_link__chassis_L_hand_mount",
+   "body": "left_wrist_roll_link",
+   "bone": "left_elbow_joint",
+   "mesh": "chassis_L_hand_mount",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_hand_mount.stl",
+   "mesh_file_sha256": "5c37a070bdfa661d8eae06b20c3106cf93fe1aaa9699b406e7cfd3e997a613d3",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000008,
+     -3.6177403127459646e-33,
+     0.0,
+     0.007
+    ],
+    [
+     -3.6177403127459646e-33,
+     1.000000000000008,
+     0.0,
+     0.113
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000008,
+     0.276
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_wrist_roll_link__shell_Arm_L_mitten",
+   "body": "left_wrist_roll_link",
+   "bone": "left_elbow_joint",
+   "mesh": "shell_Arm_L_mitten",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_L_mitten.stl",
+   "mesh_file_sha256": "34c1302c9195a2d32f051f694d0753bd9677702a68891477f2998aae8789a8ff",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000047,
+     -2.7575747726238526e-17,
+     -7.5140947107889e-18,
+     0.006999999999999984
+    ],
+    [
+     -2.7575747726238526e-17,
+     1.0000000000000047,
+     -2.1961621979540803e-17,
+     0.113
+    ],
+    [
+     3.469446951953614e-18,
+     -3.469446951953614e-17,
+     1.0000000000000047,
+     0.27600000000000013
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_pitch_link__chassis_R_sho_link",
+   "body": "right_shoulder_pitch_link",
+   "bone": "right_shoulder_pitch_joint",
+   "mesh": "chassis_R_sho_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_sho_link.stl",
+   "mesh_file_sha256": "107af1280a4f323e578a0d637d5f4e410148222aa11c3e8b0ac06424fdab39dc",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000027,
+     0.0,
+     0.0,
+     5.3926038442842604e-33
+    ],
+    [
+     0.0,
+     1.0000000000000027,
+     0.0,
+     -0.1015
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000027,
+     0.406
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_pitch_link__shell_Arm_R_shoulder_cap_lower",
+   "body": "right_shoulder_pitch_link",
+   "bone": "right_shoulder_pitch_joint",
+   "mesh": "shell_Arm_R_shoulder_cap_lower",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_shoulder_cap_lower.stl",
+   "mesh_file_sha256": "0aa6b7c19972f66b2e52737e9cfc96c8669224bf612f3d5cdfd0185f5db1fccf",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000082,
+     -6.478512867859572e-17,
+     2.944780599864247e-17,
+     3.686287386450715e-18
+    ],
+    [
+     -6.478512867859572e-17,
+     1.0000000000000082,
+     8.75938662638585e-18,
+     -0.1014999999999999
+    ],
+    [
+     2.7755575615628914e-17,
+     -1.5612511283791264e-17,
+     1.0000000000000084,
+     0.4060000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_pitch_link__shell_Arm_R_shoulder_cap_upper",
+   "body": "right_shoulder_pitch_link",
+   "bone": "right_shoulder_pitch_joint",
+   "mesh": "shell_Arm_R_shoulder_cap_upper",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_shoulder_cap_upper.stl",
+   "mesh_file_sha256": "3fa3765ace8773447bbc6daf82067c1c0a5f721d897ad8c5d8f70b8c8b808f6d",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000098,
+     -6.746658046169961e-18,
+     6.287392642979338e-17,
+     1.8648277366750676e-17
+    ],
+    [
+     -6.746658046169961e-18,
+     1.0000000000000098,
+     -2.437522575339852e-18,
+     -0.10149999999999987
+    ],
+    [
+     6.938893903907228e-17,
+     3.469446951953614e-18,
+     1.0000000000000098,
+     0.4059999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_roll_link__chassis_R_upperarm_link",
+   "body": "right_shoulder_roll_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "chassis_R_upperarm_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_upperarm_link.stl",
+   "mesh_file_sha256": "06ee8f694d9a2ef0f470f259d4b9052afce80140ed92319ca6e9703c9e5c1dca",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0,
+     -3.0985436341842305e-18,
+     1.951837924970255e-19,
+     0.0
+    ],
+    [
+     -3.0985436341842305e-18,
+     1.0,
+     -1.7858183479733082e-17,
+     -0.11300000000000002
+    ],
+    [
+     2.168404344971009e-19,
+     -1.3877787807814457e-17,
+     0.9999999999999999,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_roll_link__shell_Arm_R_sleeve_upper_back",
+   "body": "right_shoulder_roll_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "shell_Arm_R_sleeve_upper_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_sleeve_upper_back.stl",
+   "mesh_file_sha256": "73ddb480f0f042ae07120a0d46e9b0b739e25e73e77a7f17441e47cf50d26b55",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000007,
+     -6.70737014424368e-18,
+     1.6405881148474643e-18,
+     5.204170427930421e-18
+    ],
+    [
+     -6.70737014424368e-18,
+     1.0000000000000007,
+     4.3631063532102214e-17,
+     -0.113
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000004,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_roll_link__shell_Arm_R_sleeve_upper_front",
+   "body": "right_shoulder_roll_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "shell_Arm_R_sleeve_upper_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_sleeve_upper_front.stl",
+   "mesh_file_sha256": "212fab1bce2f57503d717afe681814c10f67da120cffe2ecc7f3b3cd62e0409c",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000007,
+     3.113966733256361e-17,
+     1.3344224637823702e-17,
+     -1.3877787807814457e-17
+    ],
+    [
+     3.113966733256361e-17,
+     1.0000000000000007,
+     -1.66418555914106e-17,
+     -0.11299999999999999
+    ],
+    [
+     1.734723475976807e-17,
+     0.0,
+     1.0000000000000004,
+     0.40599999999999997
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_yaw_link__chassis_R_armyaw_link",
+   "body": "right_shoulder_yaw_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "chassis_R_armyaw_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_armyaw_link.stl",
+   "mesh_file_sha256": "25ef9cd2a511618d4b1a0396d3477c07cc4964e4e1c8b08a8602785c08b3bc73",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000053,
+     0.0,
+     0.0,
+     0.007
+    ],
+    [
+     0.0,
+     1.0000000000000053,
+     0.0,
+     -0.113
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000053,
+     0.346
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_yaw_link__shell_Arm_R_elbow_ball_inner",
+   "body": "right_shoulder_yaw_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "shell_Arm_R_elbow_ball_inner",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_elbow_ball_inner.stl",
+   "mesh_file_sha256": "37a084a877f0f222c1ef6bc65facbbe0259c9fb1213960d506d74dfb2b1054f1",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000058,
+     -2.0083808477993268e-17,
+     3.7652219387417176e-17,
+     0.007000000000000007
+    ],
+    [
+     -2.0083808477993268e-17,
+     1.000000000000006,
+     2.0055842942526688e-17,
+     -0.1130000000000001
+    ],
+    [
+     4.163336342344337e-17,
+     3.252606517456513e-17,
+     1.0000000000000058,
+     0.3460000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_shoulder_yaw_link__shell_Arm_R_elbow_ball_outer",
+   "body": "right_shoulder_yaw_link",
+   "bone": "right_shoulder_roll_joint",
+   "mesh": "shell_Arm_R_elbow_ball_outer",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_elbow_ball_outer.stl",
+   "mesh_file_sha256": "e4f3652fa3e28dc1331a59ae4d75eadbac9aa65cb9e11d48b4e72e92676ea250",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000049,
+     -4.214741302010636e-17,
+     -9.234100230630882e-17,
+     0.007000000000000006
+    ],
+    [
+     -4.214741302010636e-17,
+     1.0000000000000047,
+     -7.267641604595002e-17,
+     -0.1129999999999999
+    ],
+    [
+     -8.326672684688674e-17,
+     -9.540979117872439e-17,
+     1.000000000000005,
+     0.3460000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_elbow_link__chassis_R_forearm",
+   "body": "right_elbow_link",
+   "bone": "right_elbow_joint",
+   "mesh": "chassis_R_forearm",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_forearm.stl",
+   "mesh_file_sha256": "467186778661adb1d6aac7b6fe1ca2fc66611a60375f78813020d2fe24215d7f",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000033,
+     -1.8564744918848815e-17,
+     -5.659826382346345e-17,
+     0.00700000000000002
+    ],
+    [
+     -1.8564744918848815e-17,
+     1.000000000000003,
+     8.741786562649502e-18,
+     -0.11299999999999995
+    ],
+    [
+     -5.551115123125783e-17,
+     6.938893903907228e-18,
+     1.0000000000000033,
+     0.32
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_elbow_link__shell_Arm_R_cuff_band",
+   "body": "right_elbow_link",
+   "bone": "right_elbow_joint",
+   "mesh": "shell_Arm_R_cuff_band",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_cuff_band.stl",
+   "mesh_file_sha256": "a1f1d52492ebacbdc92b22bd278e08d55c62e73bba18b86ffc71fa37d77db1ce",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000049,
+     -2.7682714269812367e-18,
+     3.374797640586672e-17,
+     0.006999999999999982
+    ],
+    [
+     -2.7682714269812367e-18,
+     1.000000000000005,
+     -1.2441392734753025e-17,
+     -0.11299999999999999
+    ],
+    [
+     3.5128150388530344e-17,
+     -1.3877787807814457e-17,
+     1.0000000000000047,
+     0.3200000000000002
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_elbow_link__shell_Arm_R_sleeve_fore_inner",
+   "body": "right_elbow_link",
+   "bone": "right_elbow_joint",
+   "mesh": "shell_Arm_R_sleeve_fore_inner",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_sleeve_fore_inner.stl",
+   "mesh_file_sha256": "ed3f797c6bd83fc0e6657379281a963b516c079f889e9bf2f62ae9fffbb1881b",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000073,
+     6.839169806388912e-18,
+     -2.430094574021545e-17,
+     0.007000000000000018
+    ],
+    [
+     6.839169806388912e-18,
+     1.0000000000000075,
+     -1.0795261825827601e-17,
+     -0.11300000000000011
+    ],
+    [
+     0.0,
+     6.938893903907228e-18,
+     1.0000000000000075,
+     0.3200000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_elbow_link__shell_Arm_R_sleeve_fore_outer",
+   "body": "right_elbow_link",
+   "bone": "right_elbow_joint",
+   "mesh": "shell_Arm_R_sleeve_fore_outer",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_sleeve_fore_outer.stl",
+   "mesh_file_sha256": "e6ca813eb95bbf1d12d6274a43a9a5092c6d1f26a94f08a5a403db035190e171",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000067,
+     4.109713900828138e-17,
+     9.156236838536317e-17,
+     0.0069999999999999975
+    ],
+    [
+     4.109713900828138e-17,
+     1.0000000000000067,
+     -3.477529729990466e-17,
+     -0.11299999999999988
+    ],
+    [
+     8.326672684688674e-17,
+     -3.8163916471489756e-17,
+     1.0000000000000067,
+     0.3200000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_wrist_roll_link__chassis_R_hand_mount",
+   "body": "right_wrist_roll_link",
+   "bone": "right_elbow_joint",
+   "mesh": "chassis_R_hand_mount",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_hand_mount.stl",
+   "mesh_file_sha256": "9bee5a98a4e3b7b68090176951b937305b554105a3d34de4bdc359af9ae8edf3",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000008,
+     -3.6177403127459646e-33,
+     0.0,
+     0.007
+    ],
+    [
+     -3.6177403127459646e-33,
+     1.000000000000008,
+     0.0,
+     -0.113
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000008,
+     0.276
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_wrist_roll_link__shell_Arm_R_mitten",
+   "body": "right_wrist_roll_link",
+   "bone": "right_elbow_joint",
+   "mesh": "shell_Arm_R_mitten",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Arm_R_mitten.stl",
+   "mesh_file_sha256": "04d5c594649c744965594f0b3949cb66c80658e77763e0f27d94d223f7fa8de1",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000007,
+     5.386845408979021e-18,
+     -5.091132155706193e-17,
+     0.006999999999999973
+    ],
+    [
+     5.386845408979021e-18,
+     1.0000000000000069,
+     8.693610442763848e-17,
+     -0.113
+    ],
+    [
+     -6.418476861114186e-17,
+     7.979727989493313e-17,
+     1.000000000000007,
+     0.27600000000000025
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_hip_yaw_link__chassis_L_hip_yaw_link",
+   "body": "left_hip_yaw_link",
+   "bone": "left_hip_yaw_joint",
+   "mesh": "chassis_L_hip_yaw_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_hip_yaw_link.stl",
+   "mesh_file_sha256": "2a2056e89fc347290ba471dd1cdaa46bdefd9b46600663b5748f1e9af60a070a",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000005,
+     5.551115123125797e-17,
+     -3.879427601209701e-18,
+     2.8189256484623115e-18
+    ],
+    [
+     5.551115123125797e-17,
+     1.0000000000000053,
+     0.0,
+     0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000005,
+     0.20000000000000004
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_hip_roll_link__chassis_L_hip_block",
+   "body": "left_hip_roll_link",
+   "bone": "left_hip_roll_joint",
+   "mesh": "chassis_L_hip_block",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_hip_block.stl",
+   "mesh_file_sha256": "a3a79a5a48305891bb5a3114f182b8f553e8a3aee15b523667ed2561345791aa",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000008,
+     -1.6979583675591983e-23,
+     -1.4677896738007015e-17,
+     1.4907779871675686e-18
+    ],
+    [
+     -1.6979583675591983e-23,
+     1.000000000000008,
+     -3.459398776376989e-24,
+     0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000008,
+     0.1850000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_hip_pitch_link__chassis_L_thigh",
+   "body": "left_hip_pitch_link",
+   "bone": "left_hip_pitch_joint",
+   "mesh": "chassis_L_thigh",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_thigh.stl",
+   "mesh_file_sha256": "9c4f4b29e972383e1511930b069e77d1fea44480ba72f8e007d18345de0c855d",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000004,
+     0.0,
+     0.0,
+     2.5849394142282115e-26
+    ],
+    [
+     0.0,
+     1.0000000000000004,
+     4.292721292919271e-18,
+     0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000004,
+     0.185
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_hip_pitch_link__shell_L_thigh_tube_back",
+   "body": "left_hip_pitch_link",
+   "bone": "left_hip_pitch_joint",
+   "mesh": "shell_L_thigh_tube_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_thigh_tube_back.stl",
+   "mesh_file_sha256": "eb758f36c698fd59893987f2647dfb174ca3e2ba7b3cf4aace378a24740888fb",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000036,
+     -6.2864647430283565e-18,
+     -1.4384864811041098e-17,
+     9.367506770274758e-17
+    ],
+    [
+     -6.2864647430283565e-18,
+     1.0000000000000038,
+     -1.5871920920430274e-18,
+     0.04799999999999999
+    ],
+    [
+     -1.4087851978733523e-17,
+     0.0,
+     1.0000000000000036,
+     0.18500000000000016
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_hip_pitch_link__shell_L_thigh_tube_front",
+   "body": "left_hip_pitch_link",
+   "bone": "left_hip_pitch_joint",
+   "mesh": "shell_L_thigh_tube_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_thigh_tube_front.stl",
+   "mesh_file_sha256": "00c7a2f362b82770bdc5ef4d5bf93610daf254c5697e7a3975033d83f53b3990",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000027,
+     -1.4998440862933182e-17,
+     2.530611280458356e-19,
+     -5.204170427930421e-17
+    ],
+    [
+     -1.4998440862933182e-17,
+     1.0000000000000029,
+     2.815879851242827e-18,
+     0.047999999999999994
+    ],
+    [
+     -8.890457814381136e-18,
+     0.0,
+     1.0000000000000024,
+     0.1850000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_knee_link__chassis_L_shank",
+   "body": "left_knee_link",
+   "bone": "left_knee_joint",
+   "mesh": "chassis_L_shank",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_shank.stl",
+   "mesh_file_sha256": "7cc86c3665fe2ff4731721f76089b0ac260eb3b5defc65e7b4996a2ff6d37bb0",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     1.4139264520798246e-18,
+     0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.11699999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_knee_link__shell_L_shin_shell_back",
+   "body": "left_knee_link",
+   "bone": "left_knee_joint",
+   "mesh": "shell_L_shin_shell_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_shin_shell_back.stl",
+   "mesh_file_sha256": "7b2f511b79446be9902ee9088d3eb43f8b5a32aa85b43f4ed366b0c69083d0c6",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000029,
+     -1.660349210843956e-17,
+     2.682593680452299e-17,
+     5.551115123125783e-17
+    ],
+    [
+     -1.660349210843956e-17,
+     1.0000000000000029,
+     -1.4755623090349732e-18,
+     0.047999999999999994
+    ],
+    [
+     3.707971429900425e-17,
+     0.0,
+     1.000000000000003,
+     0.11700000000000013
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_knee_link__shell_L_shin_shell_front",
+   "body": "left_knee_link",
+   "bone": "left_knee_joint",
+   "mesh": "shell_L_shin_shell_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_shin_shell_front.stl",
+   "mesh_file_sha256": "aa6081a183c76d38dc26d26c1fa2beb1a00ca33431ab7132b89335b3a9a199b4",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000002,
+     3.503329864730048e-20,
+     -3.8510036477006474e-17,
+     -3.469446951953614e-18
+    ],
+    [
+     3.503329864730048e-20,
+     0.9999999999999999,
+     -4.645989293342227e-20,
+     0.048
+    ],
+    [
+     -2.7755575615628914e-17,
+     -5.421010862427522e-20,
+     1.0,
+     0.11699999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_pitch_link__chassis_L_ankle_block",
+   "body": "left_ankle_pitch_link",
+   "bone": "left_ankle_pitch_joint",
+   "mesh": "chassis_L_ankle_block",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_ankle_block.stl",
+   "mesh_file_sha256": "40dd6d14f0f1738298574fe799ecb07859c3f0c8fab173f9de7499e506d7196f",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000082,
+     2.7273154907270225e-24,
+     -1.2345597153666956e-16,
+     3.876022766635678e-18
+    ],
+    [
+     2.7273154907270225e-24,
+     1.0000000000000084,
+     -8.788293912548327e-23,
+     0.048
+    ],
+    [
+     -1.1102230246251565e-16,
+     -1.0587911840678754e-22,
+     1.0000000000000084,
+     0.02499999999999985
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__chassis_L_foot",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "chassis_L_foot",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_L_foot.stl",
+   "mesh_file_sha256": "69266a51ea1bde8393aeb247a451d4dbf3690b50eed85201c3fe571186dbb394",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000082,
+     -3.7741279680077115e-33,
+     -3.3021375398718e-18,
+     4.336808689942018e-17
+    ],
+    [
+     -3.7741279680077115e-33,
+     1.0000000000000084,
+     4.8002516132928284e-33,
+     0.048
+    ],
+    [
+     0.0,
+     4.622231866529366e-33,
+     1.0000000000000082,
+     0.02500000000000013
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__shell_Foot_L_cover_heel",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "shell_Foot_L_cover_heel",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Foot_L_cover_heel.stl",
+   "mesh_file_sha256": "f07e4ef55465eeb03baf65b3d8f1288f913ff797076418b81eb4c7b838e6e78a",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000058,
+     1.0617214270289667e-16,
+     7.364162054526538e-17,
+     2.706168622523819e-16
+    ],
+    [
+     1.0617214270289667e-16,
+     1.0000000000000058,
+     -1.8643940875366134e-18,
+     0.048
+    ],
+    [
+     7.270494067867486e-17,
+     -1.870248747537495e-18,
+     1.0000000000000058,
+     0.02499999999999996
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__shell_Foot_L_cover_toe",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "shell_Foot_L_cover_toe",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Foot_L_cover_toe.stl",
+   "mesh_file_sha256": "9cfe539cf93fa9f27da0bf0f54fafdd123d68cc261324cefc83bd3031b2bc950",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000056,
+     -1.0620969535816283e-17,
+     -3.7871929732560355e-17,
+     -1.734723475976807e-16
+    ],
+    [
+     -1.0620969535816283e-17,
+     1.0000000000000058,
+     -3.775331924328741e-18,
+     0.04799999999999999
+    ],
+    [
+     -3.968921105125794e-17,
+     -3.7947076036992655e-18,
+     1.0000000000000058,
+     0.024999999999999953
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__shell_L_ankle_hood",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "shell_L_ankle_hood",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_ankle_hood.stl",
+   "mesh_file_sha256": "dbe665354003fa2cea578f4a6fa19c2d761c0f4707184b2ae7349262e1f73143",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000053,
+     3.2149154416937566e-20,
+     5.551115123125799e-17,
+     3.0531133177191805e-16
+    ],
+    [
+     3.2149154416937566e-20,
+     1.0000000000000056,
+     0.0,
+     0.048
+    ],
+    [
+     5.551115123125799e-17,
+     0.0,
+     1.0000000000000058,
+     0.02499999999999975
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__shell_L_foot_lid",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "shell_L_foot_lid",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_foot_lid.stl",
+   "mesh_file_sha256": "48ea0035b59ff8984622d6a063b62fa7c8bcaed2438939d6e381e25197144fa4",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000089,
+     9.877117030419497e-19,
+     0.0,
+     6.765421556309548e-17
+    ],
+    [
+     9.877117030419497e-19,
+     1.0000000000000089,
+     0.0,
+     0.04800000000000006
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000089,
+     0.02499999999999969
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "left_ankle_roll_link__shell_L_insole",
+   "body": "left_ankle_roll_link",
+   "bone": "left_ankle_roll_joint",
+   "mesh": "shell_L_insole",
+   "mesh_file": "kobi20/mujoco/meshes/shell_L_insole.stl",
+   "mesh_file_sha256": "6dd53d5f0317eaa6df52c85e3fb0ba0aef5481aadfe50dcf0c8ad18f52a8b622",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000087,
+     -5.482987921867008e-21,
+     0.0,
+     8.500145032286355e-17
+    ],
+    [
+     -5.482987921867008e-21,
+     1.0000000000000087,
+     0.0,
+     0.04799999999999999
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000084,
+     0.025000000000000147
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_hip_yaw_link__chassis_R_hip_yaw_link",
+   "body": "right_hip_yaw_link",
+   "bone": "right_hip_yaw_joint",
+   "mesh": "chassis_R_hip_yaw_link",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_hip_yaw_link.stl",
+   "mesh_file_sha256": "79a42bf83265dc531d7202ae40116d033bc1f164698a9023aba6c4185874e497",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000005,
+     5.551115123125797e-17,
+     -3.879427601209701e-18,
+     2.8189256484623115e-18
+    ],
+    [
+     5.551115123125797e-17,
+     1.0000000000000053,
+     0.0,
+     -0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.000000000000005,
+     0.20000000000000004
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_hip_roll_link__chassis_R_hip_block",
+   "body": "right_hip_roll_link",
+   "bone": "right_hip_roll_joint",
+   "mesh": "chassis_R_hip_block",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_hip_block.stl",
+   "mesh_file_sha256": "594bb6064cc0c133205a46b68de2dd111ade098fa0ed644669d4f54978f4180d",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000078,
+     -1.510008309548711e-22,
+     -9.551975889739174e-17,
+     5.421010862427522e-20
+    ],
+    [
+     -1.510008309548711e-22,
+     1.0000000000000078,
+     -3.668133688201909e-23,
+     -0.048
+    ],
+    [
+     -1.1102230246251565e-16,
+     -5.293955920339377e-23,
+     1.0000000000000078,
+     0.18500000000000014
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_hip_pitch_link__chassis_R_thigh",
+   "body": "right_hip_pitch_link",
+   "bone": "right_hip_pitch_joint",
+   "mesh": "chassis_R_thigh",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_thigh.stl",
+   "mesh_file_sha256": "6e23696f5b785ecb030cbf05bf62c738ed42d443fed6439e5ada6331f6107a97",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000004,
+     0.0,
+     0.0,
+     6.462348535570529e-27
+    ],
+    [
+     0.0,
+     1.0000000000000002,
+     1.839743664388361e-18,
+     -0.048
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000002,
+     0.185
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_hip_pitch_link__shell_R_thigh_tube_back",
+   "body": "right_hip_pitch_link",
+   "bone": "right_hip_pitch_joint",
+   "mesh": "shell_R_thigh_tube_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_thigh_tube_back.stl",
+   "mesh_file_sha256": "c684e19123fabde91d363bdfe86165e6726043864b6863e0c4981633a749a149",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000004,
+     -6.5290284087797014e-18,
+     4.2894197721127685e-17,
+     1.0755285551056204e-16
+    ],
+    [
+     -6.5290284087797014e-18,
+     1.0000000000000038,
+     2.1836774660202814e-18,
+     -0.047999999999999994
+    ],
+    [
+     4.3551046016027106e-17,
+     0.0,
+     1.0000000000000038,
+     0.18500000000000016
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_hip_pitch_link__shell_R_thigh_tube_front",
+   "body": "right_hip_pitch_link",
+   "bone": "right_hip_pitch_joint",
+   "mesh": "shell_R_thigh_tube_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_thigh_tube_front.stl",
+   "mesh_file_sha256": "4e6966cbd0bd6110c96d1fefa9236313b72f6babea765eab9c19c60164773797",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000033,
+     -7.023188020852063e-18,
+     1.3562953874050782e-17,
+     -6.245004513516506e-17
+    ],
+    [
+     -7.023188020852063e-18,
+     1.0000000000000033,
+     1.2746645360193893e-17,
+     -0.047999999999999994
+    ],
+    [
+     2.3310346708438345e-17,
+     -2.7755575615628914e-17,
+     1.0000000000000033,
+     0.18500000000000016
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_knee_link__chassis_R_shank",
+   "body": "right_knee_link",
+   "bone": "right_knee_joint",
+   "mesh": "chassis_R_shank",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_shank.stl",
+   "mesh_file_sha256": "9a8a4847ae988fa3247a83b394cbb34e0aa51a11d90ed68fc9de1abbde688c2d",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     0.9999999999999996,
+     0.0,
+     0.0,
+     1.9387045606711586e-26
+    ],
+    [
+     0.0,
+     0.9999999999999996,
+     -5.2345507508150324e-18,
+     -0.048
+    ],
+    [
+     0.0,
+     0.0,
+     0.9999999999999996,
+     0.11699999999999998
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_knee_link__shell_R_shin_shell_back",
+   "body": "right_knee_link",
+   "bone": "right_knee_joint",
+   "mesh": "shell_R_shin_shell_back",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_shin_shell_back.stl",
+   "mesh_file_sha256": "a698d5da95f145dbf846736e39cbe21028d47fe70df954df68100f1d1db49ef8",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000022,
+     8.629829742685268e-18,
+     4.6102814588963284e-18,
+     4.163336342344337e-17
+    ],
+    [
+     8.629829742685268e-18,
+     1.0000000000000024,
+     -1.7269071590791817e-17,
+     -0.048
+    ],
+    [
+     -7.589415207398531e-18,
+     -6.938893903907228e-18,
+     1.0000000000000027,
+     0.1170000000000001
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_knee_link__shell_R_shin_shell_front",
+   "body": "right_knee_link",
+   "bone": "right_knee_joint",
+   "mesh": "shell_R_shin_shell_front",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_shin_shell_front.stl",
+   "mesh_file_sha256": "ceb4f0bfdad0d0c55fb6bbde1b44ca6e85aa2df6647642021c53a0f0902f0d5c",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000009,
+     -5.853422740309371e-20,
+     -2.104339407417556e-18,
+     -1.3877787807814457e-17
+    ],
+    [
+     -5.853422740309371e-20,
+     1.0000000000000007,
+     5.699579860448545e-20,
+     -0.048
+    ],
+    [
+     0.0,
+     2.168404344971009e-19,
+     1.0000000000000007,
+     0.117
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_pitch_link__chassis_R_ankle_block",
+   "body": "right_ankle_pitch_link",
+   "bone": "right_ankle_pitch_joint",
+   "mesh": "chassis_R_ankle_block",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_ankle_block.stl",
+   "mesh_file_sha256": "23564ac4f40e487e3c353db874b643f57d348cd2ab2657093d8aa244859ae708",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000084,
+     2.050947860118048e-23,
+     -1.2303807638839172e-16,
+     3.903127820947816e-18
+    ],
+    [
+     2.050947860118048e-23,
+     1.0000000000000087,
+     9.214722183265898e-23,
+     -0.048
+    ],
+    [
+     -1.1102230246251565e-16,
+     1.0587911840678754e-22,
+     1.0000000000000087,
+     0.024999999999999845
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__chassis_R_foot",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "chassis_R_foot",
+   "mesh_file": "kobi20/mujoco/meshes/chassis_R_foot.stl",
+   "mesh_file_sha256": "f6ac277ea1875204db0f91469e42d899958fcbed2bc75f9a12209f2d0c2197ab",
+   "rgba": [
+    0.75,
+    0.2199999988079071,
+    0.20000000298023224,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000082,
+     -3.7741279680077115e-33,
+     -3.3021375398718e-18,
+     4.336808689942018e-17
+    ],
+    [
+     -3.7741279680077115e-33,
+     1.0000000000000084,
+     4.8002516132928284e-33,
+     -0.048
+    ],
+    [
+     0.0,
+     4.622231866529366e-33,
+     1.0000000000000082,
+     0.02500000000000013
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__shell_Foot_R_cover_heel",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "shell_Foot_R_cover_heel",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Foot_R_cover_heel.stl",
+   "mesh_file_sha256": "2be97e89dee86bfe4633c55aa8ad8e5399724f1b037227ad317a9c8fdcd2732f",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000006,
+     1.1728674285174966e-17,
+     5.679132450299759e-17,
+     2.8449465006019636e-16
+    ],
+    [
+     1.1728674285174966e-17,
+     1.000000000000006,
+     -1.2058396342568246e-17,
+     -0.047999999999999994
+    ],
+    [
+     5.5148277022698164e-17,
+     -1.2034644114589099e-17,
+     1.0000000000000058,
+     0.024999999999999956
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__shell_Foot_R_cover_toe",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "shell_Foot_R_cover_toe",
+   "mesh_file": "kobi20/mujoco/meshes/shell_Foot_R_cover_toe.stl",
+   "mesh_file_sha256": "02861e4e041dcd35c02fc4d599389e52e2259686635b845a5373b2f4701aa711",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000062,
+     9.281371369519576e-18,
+     2.700677808131196e-17,
+     -1.942890293094024e-16
+    ],
+    [
+     9.281371369519576e-18,
+     1.0000000000000062,
+     -8.242800184680045e-18,
+     -0.048
+    ],
+    [
+     2.3488223627361748e-17,
+     -8.239936510889834e-18,
+     1.0000000000000062,
+     0.024999999999999946
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__shell_R_ankle_hood",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "shell_R_ankle_hood",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_ankle_hood.stl",
+   "mesh_file_sha256": "3d70ff9a1baa2386f37561b055ebfe045fc47881016353a1139f5ddf5ce25513",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.000000000000005,
+     2.787238767236457e-17,
+     2.775557561562899e-17,
+     2.914335439641036e-16
+    ],
+    [
+     2.787238767236457e-17,
+     1.000000000000005,
+     0.0,
+     -0.048
+    ],
+    [
+     2.775557561562899e-17,
+     0.0,
+     1.0000000000000053,
+     0.02499999999999978
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__shell_R_foot_lid",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "shell_R_foot_lid",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_foot_lid.stl",
+   "mesh_file_sha256": "81e9bab2fa8ff551de5477b15dc73419445826030cdcefea2e74a1b762945400",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000078,
+     2.4947319012996364e-18,
+     0.0,
+     5.551115123125783e-17
+    ],
+    [
+     2.4947319012996364e-18,
+     1.0000000000000075,
+     0.0,
+     -0.04800000000000006
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000075,
+     0.024999999999999738
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "geom": "right_ankle_roll_link__shell_R_insole",
+   "body": "right_ankle_roll_link",
+   "bone": "right_ankle_roll_joint",
+   "mesh": "shell_R_insole",
+   "mesh_file": "kobi20/mujoco/meshes/shell_R_insole.stl",
+   "mesh_file_sha256": "e36bef00a3634e1a698eb4f296ab1be664b0ad59e4e4128db831d1ece36f9bbc",
+   "rgba": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.949999988079071,
+    1.0
+   ],
+   "world_from_file": [
+    [
+     1.0000000000000082,
+     -2.5675393865796033e-20,
+     0.0,
+     7.979727989493313e-17
+    ],
+    [
+     -2.5675393865796033e-20,
+     1.0000000000000082,
+     0.0,
+     -0.04799999999999998
+    ],
+    [
+     0.0,
+     0.0,
+     1.0000000000000084,
+     0.025000000000000147
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  }
+ ],
+ "excluded_upstream_geoms": [],
+ "checks": {
+  "mesh_transform_max_deviation_m": 7.42769468153881e-09
+ },
+ "profile": "kobi20",
+ "index_meaning": "MJCF actuator index (ctrl order). No policy exists for this robot.",
+ "torque_limit_meaning": "upper end of the MJCF actuator forcerange (stall torque of the motor model), N*m",
+ "actuator_order": [
+  "left_hip_yaw_joint",
+  "left_hip_roll_joint",
+  "left_hip_pitch_joint",
+  "left_knee_joint",
+  "left_ankle_pitch_joint",
+  "left_ankle_roll_joint",
+  "right_hip_yaw_joint",
+  "right_hip_roll_joint",
+  "right_hip_pitch_joint",
+  "right_knee_joint",
+  "right_ankle_pitch_joint",
+  "right_ankle_roll_joint",
+  "neck_yaw_joint",
+  "neck_pitch_joint",
+  "left_shoulder_pitch_joint",
+  "left_shoulder_roll_joint",
+  "left_elbow_joint",
+  "right_shoulder_pitch_joint",
+  "right_shoulder_roll_joint",
+  "right_elbow_joint"
+ ]
+}

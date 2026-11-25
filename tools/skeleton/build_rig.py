@@ -5,13 +5,16 @@ Run (Blender 5.2, no GUI):
     /Applications/Blender.app/Contents/MacOS/Blender -b --factory-startup --python tools/skeleton/build_rig.py -- \
         --skeleton printed_face/skeleton/skeleton.json --repo-root . --out-dir printed_face/skeleton
 
-Outputs in --out-dir: kobi_rig.blend, kobi_rig.fbx, kobi_rig.glb, kobi_skeleton.bvh.
+Outputs in --out-dir: {prefix}_rig.blend, {prefix}_rig.fbx, {prefix}_rig.glb, {prefix}_skeleton.bvh
+(--name-prefix, default "kobi"; the 20-joint robot uses "kobi20", see kobi20/skeleton/README.md).
+The index stored on every bone is "action_index" (policy action, printed-face robot) or "actuator_index" (MJCF actuator, kobi20),
+whichever key the joints of skeleton.json carry.
 
 Rig conventions
-  * one bone per moving body, named after the joint that drives it; the root bone is "trunk";
+  * one bone per moving body, named after the joint that drives it; the root bone is named by skeleton.json ("trunk" or "pelvis");
   * bone head = joint anchor; the bone tail is perpendicular to the hinge axis and points to the child anchor;
   * EditBone.align_roll makes the hinge axis exactly the bone's local +Z axis, so rotation about local Z == joint angle;
-  * rest pose = every joint angle 0 (MuJoCo qpos0). The trunk bone's local axes equal the world axes.
+  * rest pose = every joint angle 0 (MuJoCo qpos0). The root bone's local axes equal the world axes.
 Only the redistributable visual meshes listed in skeleton.json ("mesh_geoms") are imported; the upstream meshes never are.
 """
 
@@ -33,6 +36,7 @@ MIN_BONE_LENGTH_M = 0.01
 FALLBACK_BONE_LENGTH_RANGE_M = (0.02, 0.08)
 COM_DIRECTION_MIN_M = 1e-3
 VERTEX_MERGE_QUANTUM_M = 1e-7
+DEFAULT_NAME_PREFIX = "kobi"
 ARMATURE_NAME = "Kobi_Armature"
 MESH_NAME = "Kobi_Mesh"
 ACTION_REST = "rest"
@@ -60,6 +64,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-export-triangles", type=int, default=DEFAULT_MAX_EXPORT_TRIANGLES,
                         help="if the mesh has more triangles, decimate a COPY for fbx/glb (0 = off)")
     parser.add_argument("--no-export", action="store_true", help="only build and save the .blend")
+    parser.add_argument("--glb-mesh-dir", type=Path, default=None,
+                        help="folder (relative to --repo-root) with decimated STL copies of the same file names; the GLB (only) "
+                             "is then built from them, .blend and .fbx keep the full meshes")
+    parser.add_argument("--name-prefix", default=DEFAULT_NAME_PREFIX, help="file name prefix: <prefix>_rig.blend/.fbx/.glb, <prefix>_skeleton.bvh")
     return parser.parse_args(argv)
 
 
@@ -145,7 +153,8 @@ def build_armature(skeleton: dict[str, Any]) -> bpy.types.Object:
         pose_bone.lock_location = (True, True, True)
         pose_bone.lock_rotation = (True, True, False)  # only local Z turns
         pose_bone.lock_scale = (True, True, True)
-        pose_bone["action_index"] = joint["action_index"]
+        index_key = "actuator_index" if "actuator_index" in joint else "action_index"
+        pose_bone[index_key] = joint[index_key]
         pose_bone["range_min_rad"] = joint["range"][0]
         pose_bone["range_max_rad"] = joint["range"][1]
         pose_bone["torque_limit_nm"] = joint["torque_limit_nm"]
@@ -171,11 +180,16 @@ def color_material(cache: dict[str, bpy.types.Material], rgba: list[float]) -> b
     return mat
 
 
-def load_geom_arrays(skeleton: dict[str, Any], repo_root: Path) -> list[dict[str, Any]]:
-    """Read every allowed STL, place it in the world at qpos0 and merge duplicate corners inside the geom."""
+def load_geom_arrays(skeleton: dict[str, Any], repo_root: Path, mesh_dir: Path | None = None) -> list[dict[str, Any]]:
+    """Read every allowed STL, place it in the world at qpos0 and merge duplicate corners inside the geom.
+
+    With mesh_dir (relative to repo_root) the STL of the same file name is read from that folder instead of the one named in
+    skeleton.json. It must hold decimated copies in the same file frame, so the stored world_from_file still places them.
+    """
     result = []
     for geom in skeleton["mesh_geoms"]:
-        tri = read_binary_stl(repo_root / geom["mesh_file"])
+        stl_path = repo_root / geom["mesh_file"] if mesh_dir is None else repo_root / mesh_dir / Path(geom["mesh_file"]).name
+        tri = read_binary_stl(stl_path)
         matrix = np.array(geom["world_from_file"])
         world = tri.reshape(-1, 3) @ matrix[:3, :3].T + matrix[:3, 3]
         keys = np.round(world / VERTEX_MERGE_QUANTUM_M).astype(np.int64)
@@ -186,9 +200,10 @@ def load_geom_arrays(skeleton: dict[str, Any], repo_root: Path) -> list[dict[str
     return result
 
 
-def build_mesh(skeleton: dict[str, Any], repo_root: Path, arm_obj: bpy.types.Object) -> bpy.types.Object:
+def build_mesh(skeleton: dict[str, Any], repo_root: Path, arm_obj: bpy.types.Object,
+               mesh_dir: Path | None = None) -> bpy.types.Object:
     """Join all allowed visual meshes into one object with one rigid vertex group per bone."""
-    arrays = load_geom_arrays(skeleton, repo_root)
+    arrays = load_geom_arrays(skeleton, repo_root, mesh_dir)
     materials: dict[str, bpy.types.Material] = {}
     all_verts, all_faces, face_mat, vert_bone = [], [], [], []
     offset = 0
@@ -395,6 +410,22 @@ def export_bvh(path: Path, skeleton: dict[str, Any], arm_obj: bpy.types.Object) 
     bpy.data.actions.remove(clip)
 
 
+def replace_by_reduced_mesh(skeleton: dict[str, Any], repo_root: Path, arm_obj: bpy.types.Object,
+                            full_obj: bpy.types.Object, mesh_dir: Path) -> bpy.types.Object:
+    """Drop the full-resolution mesh from the scene (the .blend and .fbx are already written) and build the skinned
+    mesh again from the decimated STL copies in mesh_dir, with the same name, bone groups, weights and materials."""
+    full_triangles = len(full_obj.data.polygons)
+    full_data = full_obj.data
+    bpy.data.objects.remove(full_obj, do_unlink=True)
+    bpy.data.meshes.remove(full_data)
+    for material in [m for m in bpy.data.materials if m.users == 0]:
+        bpy.data.materials.remove(material)  # so that the new mesh gets the same material names again
+    reduced = build_mesh(skeleton, repo_root, arm_obj, mesh_dir)
+    print(f"GLB mesh reduced: {full_triangles} -> {len(reduced.data.polygons)} triangles "
+          f"({len(reduced.data.vertices)} vertices), from {mesh_dir.as_posix()}")
+    return reduced
+
+
 def main() -> None:
     args = parse_args()
     skeleton = json.loads(args.skeleton.read_text(encoding="utf-8"))
@@ -409,7 +440,7 @@ def main() -> None:
     print(f"RIG bones={len(arm_obj.data.bones)} vertices={len(mesh_obj.data.vertices)} triangles={triangles}")
 
     scrub_paths()
-    blend_path = out_dir / "kobi_rig.blend"
+    blend_path = out_dir / f"{args.name_prefix}_rig.blend"
     # copy=True keeps bpy.data.filepath empty, so the FBX exporter does not write the .blend path into its header
     bpy.ops.wm.save_as_mainfile(filepath=str(blend_path), compress=True, relative_remap=True, copy=True)
     print(f"SAVED {blend_path.name}")
@@ -421,9 +452,11 @@ def main() -> None:
         export_mesh = decimated_copy(mesh_obj, arm_obj, args.max_export_triangles)
         mesh_obj.hide_set(True)
         print(f"EXPORT mesh decimated copy: {len(export_mesh.data.polygons)} triangles")
-    export_fbx(out_dir / "kobi_rig.fbx", arm_obj, export_mesh)
-    export_glb(out_dir / "kobi_rig.glb", arm_obj, export_mesh)
-    export_bvh(out_dir / "kobi_skeleton.bvh", skeleton, arm_obj)
+    export_fbx(out_dir / f"{args.name_prefix}_rig.fbx", arm_obj, export_mesh)
+    if args.glb_mesh_dir is not None:
+        export_mesh = replace_by_reduced_mesh(skeleton, args.repo_root.resolve(), arm_obj, export_mesh, args.glb_mesh_dir)
+    export_glb(out_dir / f"{args.name_prefix}_rig.glb", arm_obj, export_mesh)
+    export_bvh(out_dir / f"{args.name_prefix}_skeleton.bvh", skeleton, arm_obj)
     print("EXPORTS done")
 
 

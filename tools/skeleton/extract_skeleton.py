@@ -3,7 +3,15 @@
 Run (MuJoCo only, no project install; run tools/fetch_upstream_meshes.py once beforehand so the scene compiles):
 
     uv run --no-project --python 3.12 --with mujoco==3.14.0 --with numpy python -I \
-        tools/skeleton/extract_skeleton.py [--mjcf PATH] [--out PATH] [--fk-reference PATH]
+        tools/skeleton/extract_skeleton.py [--profile printed_face|kobi20] [--mjcf PATH] [--out PATH] [--fk-reference PATH]
+
+Profiles (the default "printed_face" reproduces the files that are already committed, byte for byte)
+  * printed_face: the 14-joint Open-Duck-based Kobi. Bone index = policy action index, torque limits = values used in training,
+    meshes that come from the unlicensed upstream repository are excluded.
+  * kobi20: the 20-joint Kobi (kobi20/mujoco/kobi20_v8.xml). There is no policy: the index is the MJCF ACTUATOR index, the torque
+    limit is the actuator force range of the MJCF, the root bone is the pelvis body (it carries the free joint itself), and all
+    meshes are our own, so none is excluded. The skeleton.json of this profile has "actuator_index" / "actuator_order" instead of
+    "action_index" / "action_order".
 
 What is written to skeleton.json
   * every body: parent, world pose at qpos0 (all hinge angles 0) and at the keyframe "home";
@@ -34,13 +42,21 @@ import mujoco
 import numpy as np
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_MJCF = REPO_ROOT / "printed_face" / "mujoco" / "kobi_scene.xml"
-DEFAULT_OUT = REPO_ROOT / "printed_face" / "skeleton" / "skeleton.json"
+PROFILE_PRINTED_FACE = "printed_face"
+PROFILE_KOBI20 = "kobi20"
+DEFAULT_MJCF = {
+    PROFILE_PRINTED_FACE: REPO_ROOT / "printed_face" / "mujoco" / "kobi_scene.xml",
+    PROFILE_KOBI20: REPO_ROOT / "kobi20" / "mujoco" / "kobi20_v8.xml",
+}
+DEFAULT_OUT = {
+    PROFILE_PRINTED_FACE: REPO_ROOT / "printed_face" / "skeleton" / "skeleton.json",
+    PROFILE_KOBI20: REPO_ROOT / "kobi20" / "skeleton" / "skeleton.json",
+}
+ROOT_BONE_NAMES = {PROFILE_PRINTED_FACE: "trunk", PROFILE_KOBI20: "pelvis"}
 FETCH_SCRIPT = REPO_ROOT / "tools" / "fetch_upstream_meshes.py"
 
 SCHEMA_VERSION = 1
 HOME_KEYFRAME = "home"
-ROOT_BONE_NAME = "trunk"
 VISUAL_GEOM_GROUP = 2  # class "visual" of the MJCF
 TORQUE_LIMIT_LEG_NECK_NM = 1.91  # tools/kobi_env_mirror.py: torque_limit_leg_neck
 TORQUE_LIMIT_SHOULDER_NM = 0.20  # tools/kobi_env_mirror.py: torque_limit_shoulder
@@ -51,7 +67,7 @@ MESH_CHECK_TOLERANCE_M = 1e-5
 DEFAULT_SAMPLES = 20
 DEFAULT_SEED = 20261103
 
-# Policy action order (README section 4). The MJCF actuator order must be identical.
+# Policy action order of the printed-face Kobi (README section 4). The MJCF actuator order must be identical.
 POLICY_ACTION_ORDER: tuple[str, ...] = (
     "left_hip_yaw", "left_hip_roll", "left_hip_pitch", "left_knee", "left_ankle",
     "right_hip_yaw", "right_hip_roll", "right_hip_pitch", "right_knee", "right_ankle",
@@ -112,11 +128,13 @@ def torque_limit_for(joint_name: str) -> float:
     return TORQUE_LIMIT_SHOULDER_NM if joint_name.startswith(SHOULDER_PREFIX) else TORQUE_LIMIT_LEG_NECK_NM
 
 
-def find_root_body(model: mujoco.MjModel) -> int:
-    """Return the body that is the child of the free-joint body (the trunk)."""
+def find_root_body(model: mujoco.MjModel, profile: str = PROFILE_PRINTED_FACE) -> int:
+    """Return the root body: the only child of the free-joint body (printed_face) or the free-joint body itself (kobi20)."""
     for j in range(model.njnt):
         if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE:
             free_body = int(model.jnt_bodyid[j])
+            if profile == PROFILE_KOBI20:
+                return free_body
             children = [b for b in range(model.nbody) if model.body_parentid[b] == free_body and b != free_body]
             if len(children) != 1:
                 raise RuntimeError("expected exactly one child below the free-joint body")
@@ -124,7 +142,8 @@ def find_root_body(model: mujoco.MjModel) -> int:
     raise RuntimeError("no free joint found")
 
 
-def build_bone_map(model: mujoco.MjModel, root_body: int) -> tuple[dict[int, str | None], dict[str, str | None]]:
+def build_bone_map(model: mujoco.MjModel, root_body: int,
+                   root_bone: str = "trunk") -> tuple[dict[int, str | None], dict[str, str | None]]:
     """Return (body id -> bone name, bone name -> parent bone name). Bodies without a hinge share their parent's bone."""
     hinge_of_body: dict[int, str] = {}
     for j in range(model.njnt):
@@ -134,8 +153,8 @@ def build_bone_map(model: mujoco.MjModel, root_body: int) -> tuple[dict[int, str
     bone_parent: dict[str, str | None] = {}
     for b in range(model.nbody):  # parents always have a smaller id than their children in MJCF order
         if b == root_body:
-            body_bone[b] = ROOT_BONE_NAME
-            bone_parent[ROOT_BONE_NAME] = None
+            body_bone[b] = root_bone
+            bone_parent[root_bone] = None
         elif b in hinge_of_body:
             name = hinge_of_body[b]
             parent_bone = body_bone.get(int(model.body_parentid[b]))
@@ -148,12 +167,26 @@ def build_bone_map(model: mujoco.MjModel, root_body: int) -> tuple[dict[int, str
     return body_bone, bone_parent
 
 
-def check_action_order(model: mujoco.MjModel) -> dict[str, int]:
-    """Check that the actuator order equals the policy action order and return joint name -> action index."""
+def check_action_order(model: mujoco.MjModel, profile: str = PROFILE_PRINTED_FACE) -> dict[str, int]:
+    """Return joint name -> index. printed_face: the actuator order must equal the policy action order.
+
+    kobi20 (no policy): the index is the MJCF actuator index; every hinge must be driven by exactly one actuator.
+    """
     names = tuple(model.joint(int(model.actuator_trnid[a][0])).name for a in range(model.nu))
+    if profile == PROFILE_KOBI20:
+        hinges = {model.joint(j).name for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_HINGE}
+        if len(set(names)) != len(names) or set(names) != hinges:
+            raise RuntimeError("every hinge joint must be driven by exactly one actuator")
+        return {name: i for i, name in enumerate(names)}
     if names != POLICY_ACTION_ORDER:
         raise RuntimeError(f"actuator order {names} differs from the policy action order")
     return {name: i for i, name in enumerate(names)}
+
+
+def actuator_torque_limits(model: mujoco.MjModel) -> dict[str, float]:
+    """Joint name -> torque limit (N*m) = upper actuator force range of the MJCF (kobi20 profile)."""
+    return {model.joint(int(model.actuator_trnid[a][0])).name: float(abs(model.actuator_forcerange[a][1]))
+            for a in range(model.nu)}
 
 
 def check_mesh_transform(model: mujoco.MjModel, data: mujoco.MjData, g: int, world_from_file: np.ndarray,
@@ -226,12 +259,16 @@ def collect_geoms(model: mujoco.MjModel, data: mujoco.MjData, body_bone: dict[in
     return kept, excluded, worst
 
 
-def extract(mjcf: Path) -> tuple[dict[str, Any], mujoco.MjModel]:
+def extract(mjcf: Path, profile: str = PROFILE_PRINTED_FACE) -> tuple[dict[str, Any], mujoco.MjModel]:
     """Build the skeleton dictionary for one MJCF."""
+    kobi20 = profile == PROFILE_KOBI20
+    root_bone = ROOT_BONE_NAMES[profile]
+    index_key = "actuator_index" if kobi20 else "action_index"
     model = mujoco.MjModel.from_xml_path(str(mjcf))
-    action_index = check_action_order(model)
-    root_body = find_root_body(model)
-    body_bone, bone_parent = build_bone_map(model, root_body)
+    action_index = check_action_order(model, profile)
+    torque_limits = actuator_torque_limits(model) if kobi20 else {}
+    root_body = find_root_body(model, profile)
+    body_bone, bone_parent = build_bone_map(model, root_body, root_bone)
     key_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_KEY, HOME_KEYFRAME)
     if key_id < 0:
         raise RuntimeError(f"keyframe {HOME_KEYFRAME!r} not found")
@@ -266,13 +303,13 @@ def extract(mjcf: Path) -> tuple[dict[str, Any], mujoco.MjModel]:
             "anchor_world": data0.xanchor[j].tolist(),
             "axis_world": data0.xaxis[j].tolist(),
             "range": model.jnt_range[j].tolist(),
-            "action_index": action_index[name],
-            "torque_limit_nm": torque_limit_for(name),
+            index_key: action_index[name],
+            "torque_limit_nm": torque_limits[name] if kobi20 else torque_limit_for(name),
             "home_angle": angle,
         })
-    joints.sort(key=lambda item: item["action_index"])
+    joints.sort(key=lambda item: item[index_key])
 
-    upstream = load_upstream_hashes(FETCH_SCRIPT)
+    upstream = {} if kobi20 else load_upstream_hashes(FETCH_SCRIPT)  # all kobi20 meshes are our own: nothing to exclude
     geoms, excluded, worst = collect_geoms(model, data0, body_bone, mjcf, upstream)
     free = next(j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE)
     adr = int(model.jnt_qposadr[free])
@@ -282,7 +319,7 @@ def extract(mjcf: Path) -> tuple[dict[str, Any], mujoco.MjModel]:
         "mujoco_version": mujoco.__version__,
         "units": {"length": "metre", "angle": "radian", "torque": "N*m"},
         "coordinate_system": "MuJoCo world: right-handed, x forward, y left, z up",
-        "root_bone": ROOT_BONE_NAME,
+        "root_bone": root_bone,
         "root_body": model.body(root_body).name,
         "action_order": list(POLICY_ACTION_ORDER),
         "home": {
@@ -298,14 +335,23 @@ def extract(mjcf: Path) -> tuple[dict[str, Any], mujoco.MjModel]:
         "excluded_upstream_geoms": excluded,
         "checks": {"mesh_transform_max_deviation_m": worst},
     }
+    if kobi20:
+        # no policy exists: replace the policy order by the MJCF actuator order and say what the index means
+        order = [joint["name"] for joint in joints]
+        result = {key: value for key, value in result.items() if key != "action_order"}
+        result["profile"] = PROFILE_KOBI20
+        result["index_meaning"] = "MJCF actuator index (ctrl order). No policy exists for this robot."
+        result["torque_limit_meaning"] = "upper end of the MJCF actuator forcerange (stall torque of the motor model), N*m"
+        result["actuator_order"] = order
     return result, model
 
 
-def fk_reference(model: mujoco.MjModel, skeleton: dict[str, Any], samples: int, seed: int) -> dict[str, Any]:
+def fk_reference(model: mujoco.MjModel, skeleton: dict[str, Any], samples: int, seed: int,
+                 profile: str = PROFILE_PRINTED_FACE) -> dict[str, Any]:
     """MuJoCo ground truth: joint anchors and axes for random in-range angles, plus the home pose."""
     rng = np.random.default_rng(seed)
     hinges = [j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_HINGE]
-    root_body = find_root_body(model)
+    root_body = find_root_body(model, profile)
 
     def record(label: str, qpos: np.ndarray) -> dict[str, Any]:
         data = kinematics(model, qpos)
@@ -334,22 +380,25 @@ def fk_reference(model: mujoco.MjModel, skeleton: dict[str, Any], samples: int, 
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--mjcf", type=Path, default=DEFAULT_MJCF)
-    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--profile", choices=(PROFILE_PRINTED_FACE, PROFILE_KOBI20), default=PROFILE_PRINTED_FACE)
+    parser.add_argument("--mjcf", type=Path, default=None, help="default: the MJCF of the chosen profile")
+    parser.add_argument("--out", type=Path, default=None, help="default: skeleton.json next to the rig files of the profile")
     parser.add_argument("--fk-reference", type=Path, default=None, help="also write MuJoCo FK ground truth JSON here")
     parser.add_argument("--samples", type=int, default=DEFAULT_SAMPLES)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     args = parser.parse_args(argv)
 
-    skeleton, model = extract(args.mjcf.resolve())
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(skeleton, indent=1) + "\n", encoding="utf-8")
-    print(f"wrote {args.out.name}: {len(skeleton['bodies'])} bodies, {len(skeleton['joints'])} hinges, "
+    mjcf = (args.mjcf or DEFAULT_MJCF[args.profile]).resolve()
+    out = args.out or DEFAULT_OUT[args.profile]
+    skeleton, model = extract(mjcf, args.profile)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(skeleton, indent=1) + "\n", encoding="utf-8")
+    print(f"wrote {out.name}: {len(skeleton['bodies'])} bodies, {len(skeleton['joints'])} hinges, "
           f"{len(skeleton['mesh_geoms'])} mesh geoms kept, {len(skeleton['excluded_upstream_geoms'])} upstream geoms excluded, "
           f"mesh check max {skeleton['checks']['mesh_transform_max_deviation_m']:.2e} m")
     if args.fk_reference is not None:
         args.fk_reference.parent.mkdir(parents=True, exist_ok=True)
-        args.fk_reference.write_text(json.dumps(fk_reference(model, skeleton, args.samples, args.seed)) + "\n", encoding="utf-8")
+        args.fk_reference.write_text(json.dumps(fk_reference(model, skeleton, args.samples, args.seed, args.profile)) + "\n", encoding="utf-8")
         print(f"wrote FK reference with {args.samples} random cases + home + rest")
     return 0
 

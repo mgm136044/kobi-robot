@@ -1,0 +1,286 @@
+{
+ "_comment": [
+  "Extra coupled-limit rule file (v7): the rule arm_wing, used together with config/coupled_limits_v7.json (all rules there stay in force). Angles in degrees, offsets from the rest pose, left-written joint names. Exact triangle distance >= 2.5 mm; tested by sampling, not proven.",
+  "v8 (20-joint Kobi, 2026-11-25): rule arm_wing with arm_yaw frozen at 0 (table cut at the node 0.0), made by scripts/make_coupled_limits_v8.py from coupled_limits_v7_armwing.json."
+ ],
+ "units": "degrees",
+ "rules": [
+  {
+   "id": "arm_wing",
+   "applies_to": "each arm, in every one of the seven arm boxes; left-written numbers, the right arm uses the same numbers (the shoulder and elbow axes of the right side are mirrored; the arm yaw is frozen at 0 and is not a joint of the 20-joint model)",
+   "joints": {
+    "L": [
+     "L_shoulder_pitch",
+     "L_shoulder_roll",
+     "L_elbow"
+    ],
+    "R": [
+     "R_shoulder_pitch",
+     "R_shoulder_roll",
+     "R_elbow"
+    ]
+   },
+   "not_in_rule": "waist_yaw (the arm chain and the wings both sit on the torso link, so the waist does not change their distance: relative transforms equal to 1e-13), neck (head and neck are not in the pair), wrist (measured at +-45 in the verification, the hand never came near); arm_yaw (frozen at 0 in the 20-joint edition: the table is the slice of the 25-joint table at the arm_yaw node 0.0)",
+   "inequality": "shoulder_pitch <= pitch_cap(shoulder_roll, elbow); arm_yaw is frozen at 0 (a node of the 25-joint table, whose slice at that node is this table); the old arm box of the roll still bounds the pitch from above, the stricter of the two holds",
+   "pitch_direction": "positive shoulder_pitch = arm swung backward",
+   "evaluation_order": [
+    "1. the pose must be inside the old arm box of its shoulder roll (a roll on a shared boundary: both boxes) and satisfy the other rules (arm_head, ...)",
+    "2. on each of the two axes (shoulder roll, elbow) take the nearest node at or below and the nearest node at or above the value (a value on a node: that node only; outside the node range: the end node)",
+    "3. pitch_cap = the smallest table value among those (up to 4) nodes",
+    "4. shoulder_pitch must be <= pitch_cap (a table value of 60 equals the end of every arm box: no limit beyond the box); rolls above the last roll node use the last node (no limit measured there)"
+   ],
+   "margin_deg": 1.0,
+   "rounding_deg": 0.5,
+   "table": {
+    "shoulder_roll_nodes": [
+     0.0,
+     1.0,
+     2.0,
+     3.0,
+     4.0,
+     5.0,
+     6.0,
+     7.0,
+     8.0,
+     9.0,
+     10.0
+    ],
+    "elbow_nodes": [
+     -43.0,
+     -30.0,
+     -20.0,
+     -10.0,
+     0.0,
+     10.0,
+     21.0
+    ],
+    "pitch_cap": [
+     [
+      53.5,
+      53.0,
+      53.0,
+      53.0,
+      53.0,
+      53.0,
+      53.0
+     ],
+     [
+      54.0,
+      54.0,
+      54.0,
+      54.0,
+      54.0,
+      54.0,
+      53.5
+     ],
+     [
+      55.0,
+      54.5,
+      54.5,
+      54.5,
+      54.5,
+      54.5,
+      54.0
+     ],
+     [
+      56.0,
+      55.5,
+      55.0,
+      55.0,
+      55.0,
+      55.0,
+      54.5
+     ],
+     [
+      56.5,
+      56.5,
+      56.0,
+      56.0,
+      56.0,
+      56.0,
+      55.5
+     ],
+     [
+      57.5,
+      57.0,
+      57.0,
+      57.0,
+      57.0,
+      57.0,
+      56.5
+     ],
+     [
+      60.0,
+      58.5,
+      58.0,
+      58.0,
+      58.0,
+      58.0,
+      57.0
+     ],
+     [
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      58.0
+     ],
+     [
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0
+     ],
+     [
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0
+     ],
+     [
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0,
+      60.0
+     ]
+    ]
+   },
+   "source_map": "map_fine_L.jsonl",
+   "pair": "arm chain parts (shoulder caps, upper sleeves, elbow ball, forearm sleeves, cuff band, mitten, brackets and servos of the arm links) against Wing_L and Wing_R, exact manifold3d min_gap >= 2.5 mm",
+   "tested_with": {
+    "note": "the table is the arm_yaw = 0 slice of the table measured for v7; the 20-joint poses are a subset of the poses measured there; not re-measured",
+    "v7_tested_with": {
+     "date": "2026-11-18",
+     "parts": "final v7 set (shell_v7/listing_light.json; arm 16o incl. hands; wings W2c4c; hardware results/shell_v6g/integration/hw_parts_v6)",
+     "pair": "every arm part (shells, brackets, servos of shoulder, upperarm, armyaw, forearm, hand) against Wing_L and Wing_R, exact manifold3d min_gap, search 6 mm",
+     "critical_pitch_map": {
+      "nodes_left_arm": 616,
+      "grid": "roll 0..10 step 1 x arm_yaw -15..20 step 5 x elbow -43,-30,-20,-10,0,10,21",
+      "bisection_tolerance_deg": 0.25,
+      "evaluations": 3744,
+      "nodes_with_a_limit_below_60": 391,
+      "right_arm_check_nodes": 45,
+      "right_arm_largest_difference_deg": 0.0,
+      "monotonic_check": {
+       "combos": 45,
+       "pitch_steps_1deg": "46..60",
+       "gap_recovers_above_2p5_after_being_under": 0
+      }
+     },
+     "old_boxes_alone_without_this_rule": {
+      "poses": 512,
+      "failing_under_2p5": 0,
+      "smallest_gap_mm": 3.5649,
+      "box_end_poses_just_inside_roll_2_and_5": {
+       "poses": 88,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 2.6517,
+       "worst": "roll 2.001, pitch 55, arm_yaw 20, elbow 21"
+      }
+     },
+     "with_this_rule": {
+      "random_in_boxes_obeying_arm_head_and_arm_wing": {
+       "poses": 450,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 4.5135
+      },
+      "rule_boundary_poses": {
+       "poses": 330,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 3.4675,
+       "effective_kind_smallest_gap_mm": 3.7834
+      },
+      "table_nodes_and_cell_centres": {
+       "poses": 690,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 3.4341
+      },
+      "box_end_or_rule_just_inside_roll_2_and_5": {
+       "poses": 88,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 3.4684
+      },
+      "wrist_plus_45_on_100_boundary_poses": {
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 3.505
+      },
+      "wrist_minus_45_on_100_boundary_poses": {
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 3.505
+      },
+      "cap_plus_1_degree": {
+       "poses": 300,
+       "failing_under_2p5": 0,
+       "smallest_gap_mm": 2.506
+      },
+      "cap_plus_3_degrees": {
+       "poses": 300,
+       "failing_under_2p5": 299,
+       "smallest_gap_mm": 0.0
+      }
+     },
+     "waist": {
+      "poses": 30,
+      "waist_values_deg": [
+       -6.75,
+       6.75
+      ],
+      "largest_gap_difference_mm": 1.95e-13,
+      "conclusion": "the waist does not change the arm-wing distance"
+     },
+     "against_arm_head": {
+      "uniform_samples_in_boxes": 100000,
+      "only_arm_head": 14869,
+      "only_arm_wing": 7,
+      "both": 0,
+      "region_grid_pitch_52_60_roll_2_10": {
+       "poses": 538992,
+       "only_arm_wing": 7486,
+       "only_arm_head": 0,
+       "both": 0,
+       "smallest_arm_head_roll_cap_in_region": 27.0
+      },
+      "holes": 0
+     },
+     "removal_from_old_boxes": {
+      "arm_near_body_roll2_5": "0.142 percent of the box volume (37.7 percent of the roll/yaw/elbow columns lose up to 1.0 degree of pitch)",
+      "arm_near_body_roll5_10": "0.015 percent (3.1 percent of the columns, up to 1.0 degree)",
+      "other_boxes": "0",
+      "without_the_1_degree_margin": "0 in every box"
+     },
+     "files": [
+      "results/shell_v7_armwing/README.md",
+      "results/shell_v7_armwing/README_corrections.md (only if written)",
+      "scripts/shell_v7_armwing_*.py and .sh",
+      "scratch/kobi_v6_build/armwing_rule/ (raw jsonl; temporary folder)"
+     ]
+    }
+   },
+   "frozen_joints_deg": {
+    "arm_yaw": 0.0
+   }
+  }
+ ],
+ "frozen_joints_deg": {
+  "waist_yaw": 0.0,
+  "L_arm_yaw": 0.0,
+  "R_arm_yaw": 0.0,
+  "L_wrist": 0.0,
+  "R_wrist": 0.0
+ },
+ "derived_from_v7": {
+  "file": "config/coupled_limits_v7_armwing.json",
+  "sha256": "1515835e77b904b621e3fc345b80a80fb8a67cf31d9d208341d526bcba24254b"
+ }
+}

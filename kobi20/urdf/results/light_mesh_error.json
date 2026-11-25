@@ -1,0 +1,819 @@
+{
+ "source_total_faces": 706334,
+ "ratio_for_big_parts": 0.1396,
+ "parts": {
+  "chassis_L_ankle_block.stl": {
+   "faces_before": 2414,
+   "faces_after": 336,
+   "dist_max_mm": 0.156,
+   "dist_p99_mm": 0.077,
+   "volume_change_percent": 0.06,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_armyaw_link.stl": {
+   "faces_before": 796,
+   "faces_after": 300,
+   "dist_max_mm": 0.152,
+   "dist_p99_mm": 0.042,
+   "volume_change_percent": 0.02,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_foot.stl": {
+   "faces_before": 2698,
+   "faces_after": 376,
+   "dist_max_mm": 0.267,
+   "dist_p99_mm": 0.078,
+   "volume_change_percent": 0.05,
+   "bounds_corner_change_mm": 0.023,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_forearm.stl": {
+   "faces_before": 914,
+   "faces_after": 298,
+   "dist_max_mm": 0.137,
+   "dist_p99_mm": 0.021,
+   "volume_change_percent": 0.01,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_hand_mount.stl": {
+   "faces_before": 1116,
+   "faces_after": 300,
+   "dist_max_mm": 0.088,
+   "dist_p99_mm": 0.055,
+   "volume_change_percent": -0.05,
+   "bounds_corner_change_mm": 0.004,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_hip_block.stl": {
+   "faces_before": 2416,
+   "faces_after": 336,
+   "dist_max_mm": 0.156,
+   "dist_p99_mm": 0.074,
+   "volume_change_percent": 0.06,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_hip_yaw_link.stl": {
+   "faces_before": 5892,
+   "faces_after": 820,
+   "dist_max_mm": 0.171,
+   "dist_p99_mm": 0.094,
+   "volume_change_percent": 0.19,
+   "bounds_corner_change_mm": 0.023,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_shank.stl": {
+   "faces_before": 7616,
+   "faces_after": 1062,
+   "dist_max_mm": 0.2,
+   "dist_p99_mm": 0.094,
+   "volume_change_percent": 0.21,
+   "bounds_corner_change_mm": 0.045,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_sho_link.stl": {
+   "faces_before": 2404,
+   "faces_after": 336,
+   "dist_max_mm": 0.133,
+   "dist_p99_mm": 0.093,
+   "volume_change_percent": 0.31,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_thigh.stl": {
+   "faces_before": 5074,
+   "faces_after": 708,
+   "dist_max_mm": 0.301,
+   "dist_p99_mm": 0.144,
+   "volume_change_percent": 0.07,
+   "bounds_corner_change_mm": 0.13,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_L_upperarm_link.stl": {
+   "faces_before": 1170,
+   "faces_after": 300,
+   "dist_max_mm": 0.103,
+   "dist_p99_mm": 0.045,
+   "volume_change_percent": 0.03,
+   "bounds_corner_change_mm": 0.019,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_ankle_block.stl": {
+   "faces_before": 2414,
+   "faces_after": 336,
+   "dist_max_mm": 0.152,
+   "dist_p99_mm": 0.077,
+   "volume_change_percent": 0.06,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_armyaw_link.stl": {
+   "faces_before": 796,
+   "faces_after": 300,
+   "dist_max_mm": 0.179,
+   "dist_p99_mm": 0.047,
+   "volume_change_percent": 0.02,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_foot.stl": {
+   "faces_before": 2698,
+   "faces_after": 376,
+   "dist_max_mm": 0.273,
+   "dist_p99_mm": 0.08,
+   "volume_change_percent": 0.05,
+   "bounds_corner_change_mm": 0.023,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_forearm.stl": {
+   "faces_before": 908,
+   "faces_after": 300,
+   "dist_max_mm": 0.124,
+   "dist_p99_mm": 0.02,
+   "volume_change_percent": 0.01,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_hand_mount.stl": {
+   "faces_before": 1116,
+   "faces_after": 300,
+   "dist_max_mm": 0.093,
+   "dist_p99_mm": 0.057,
+   "volume_change_percent": -0.04,
+   "bounds_corner_change_mm": 0.004,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_hip_block.stl": {
+   "faces_before": 2416,
+   "faces_after": 336,
+   "dist_max_mm": 0.272,
+   "dist_p99_mm": 0.072,
+   "volume_change_percent": 0.06,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_hip_yaw_link.stl": {
+   "faces_before": 5892,
+   "faces_after": 820,
+   "dist_max_mm": 0.179,
+   "dist_p99_mm": 0.091,
+   "volume_change_percent": 0.19,
+   "bounds_corner_change_mm": 0.023,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_shank.stl": {
+   "faces_before": 7616,
+   "faces_after": 1062,
+   "dist_max_mm": 0.219,
+   "dist_p99_mm": 0.098,
+   "volume_change_percent": 0.21,
+   "bounds_corner_change_mm": 0.045,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_sho_link.stl": {
+   "faces_before": 2404,
+   "faces_after": 336,
+   "dist_max_mm": 0.157,
+   "dist_p99_mm": 0.097,
+   "volume_change_percent": 0.31,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_thigh.stl": {
+   "faces_before": 5074,
+   "faces_after": 708,
+   "dist_max_mm": 0.358,
+   "dist_p99_mm": 0.145,
+   "volume_change_percent": 0.05,
+   "bounds_corner_change_mm": 0.045,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_R_upperarm_link.stl": {
+   "faces_before": 1170,
+   "faces_after": 300,
+   "dist_max_mm": 0.098,
+   "dist_p99_mm": 0.044,
+   "volume_change_percent": 0.03,
+   "bounds_corner_change_mm": 0.019,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_cam_bracket.stl": {
+   "faces_before": 1040,
+   "faces_after": 300,
+   "dist_max_mm": 0.17,
+   "dist_p99_mm": 0.022,
+   "volume_change_percent": 0.02,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_head_mount.stl": {
+   "faces_before": 1884,
+   "faces_after": 300,
+   "dist_max_mm": 0.271,
+   "dist_p99_mm": 0.103,
+   "volume_change_percent": 0.06,
+   "bounds_corner_change_mm": 0.022,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_head_plate.stl": {
+   "faces_before": 9822,
+   "faces_after": 1370,
+   "dist_max_mm": 0.305,
+   "dist_p99_mm": 0.133,
+   "volume_change_percent": 0.08,
+   "bounds_corner_change_mm": 0.034,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_neck_link.stl": {
+   "faces_before": 2888,
+   "faces_after": 402,
+   "dist_max_mm": 0.231,
+   "dist_p99_mm": 0.066,
+   "volume_change_percent": 0.03,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_pelvis.stl": {
+   "faces_before": 10752,
+   "faces_after": 1500,
+   "dist_max_mm": 0.238,
+   "dist_p99_mm": 0.114,
+   "volume_change_percent": 0.27,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_power_tray_0.stl": {
+   "faces_before": 4780,
+   "faces_after": 666,
+   "dist_max_mm": 0.206,
+   "dist_p99_mm": 0.084,
+   "volume_change_percent": 0.03,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_power_tray_1.stl": {
+   "faces_before": 4780,
+   "faces_after": 666,
+   "dist_max_mm": 0.255,
+   "dist_p99_mm": 0.086,
+   "volume_change_percent": 0.03,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "chassis_torso.stl": {
+   "faces_before": 23504,
+   "faces_after": 3280,
+   "dist_max_mm": 0.259,
+   "dist_p99_mm": 0.093,
+   "volume_change_percent": 0.15,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_A_HeadShell_L.stl": {
+   "faces_before": 40052,
+   "faces_after": 5590,
+   "dist_max_mm": 0.298,
+   "dist_p99_mm": 0.157,
+   "volume_change_percent": -0.14,
+   "bounds_corner_change_mm": 0.152,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_A_HeadShell_R.stl": {
+   "faces_before": 40200,
+   "faces_after": 5610,
+   "dist_max_mm": 0.432,
+   "dist_p99_mm": 0.158,
+   "volume_change_percent": -0.06,
+   "bounds_corner_change_mm": 0.118,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_cuff_band.stl": {
+   "faces_before": 7450,
+   "faces_after": 1038,
+   "dist_max_mm": 0.244,
+   "dist_p99_mm": 0.096,
+   "volume_change_percent": -0.49,
+   "bounds_corner_change_mm": 0.048,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_elbow_ball_inner.stl": {
+   "faces_before": 11760,
+   "faces_after": 1642,
+   "dist_max_mm": 0.181,
+   "dist_p99_mm": 0.105,
+   "volume_change_percent": -0.08,
+   "bounds_corner_change_mm": 0.06,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_elbow_ball_outer.stl": {
+   "faces_before": 10438,
+   "faces_after": 1456,
+   "dist_max_mm": 0.265,
+   "dist_p99_mm": 0.107,
+   "volume_change_percent": -0.08,
+   "bounds_corner_change_mm": 0.026,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_mitten.stl": {
+   "faces_before": 18000,
+   "faces_after": 2512,
+   "dist_max_mm": 0.31,
+   "dist_p99_mm": 0.106,
+   "volume_change_percent": -0.01,
+   "bounds_corner_change_mm": 0.036,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_shoulder_cap_lower.stl": {
+   "faces_before": 2068,
+   "faces_after": 300,
+   "dist_max_mm": 0.239,
+   "dist_p99_mm": 0.061,
+   "volume_change_percent": -0.11,
+   "bounds_corner_change_mm": 0.036,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_shoulder_cap_upper.stl": {
+   "faces_before": 1920,
+   "faces_after": 300,
+   "dist_max_mm": 0.201,
+   "dist_p99_mm": 0.061,
+   "volume_change_percent": -0.12,
+   "bounds_corner_change_mm": 0.018,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_sleeve_fore_inner.stl": {
+   "faces_before": 6172,
+   "faces_after": 862,
+   "dist_max_mm": 0.177,
+   "dist_p99_mm": 0.088,
+   "volume_change_percent": -0.15,
+   "bounds_corner_change_mm": 0.031,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_sleeve_fore_outer.stl": {
+   "faces_before": 4216,
+   "faces_after": 588,
+   "dist_max_mm": 0.216,
+   "dist_p99_mm": 0.091,
+   "volume_change_percent": -0.17,
+   "bounds_corner_change_mm": 0.131,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_sleeve_upper_back.stl": {
+   "faces_before": 3842,
+   "faces_after": 534,
+   "dist_max_mm": 0.329,
+   "dist_p99_mm": 0.098,
+   "volume_change_percent": -0.13,
+   "bounds_corner_change_mm": 0.013,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_L_sleeve_upper_front.stl": {
+   "faces_before": 3910,
+   "faces_after": 544,
+   "dist_max_mm": 0.209,
+   "dist_p99_mm": 0.094,
+   "volume_change_percent": -0.25,
+   "bounds_corner_change_mm": 0.019,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_cuff_band.stl": {
+   "faces_before": 7476,
+   "faces_after": 1044,
+   "dist_max_mm": 0.21,
+   "dist_p99_mm": 0.089,
+   "volume_change_percent": -0.48,
+   "bounds_corner_change_mm": 0.024,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_elbow_ball_inner.stl": {
+   "faces_before": 11760,
+   "faces_after": 1642,
+   "dist_max_mm": 0.176,
+   "dist_p99_mm": 0.104,
+   "volume_change_percent": -0.1,
+   "bounds_corner_change_mm": 0.048,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_elbow_ball_outer.stl": {
+   "faces_before": 10432,
+   "faces_after": 1456,
+   "dist_max_mm": 0.193,
+   "dist_p99_mm": 0.108,
+   "volume_change_percent": -0.02,
+   "bounds_corner_change_mm": 0.063,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_mitten.stl": {
+   "faces_before": 17992,
+   "faces_after": 2510,
+   "dist_max_mm": 0.298,
+   "dist_p99_mm": 0.123,
+   "volume_change_percent": 0.01,
+   "bounds_corner_change_mm": 0.05,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_shoulder_cap_lower.stl": {
+   "faces_before": 2058,
+   "faces_after": 300,
+   "dist_max_mm": 0.272,
+   "dist_p99_mm": 0.063,
+   "volume_change_percent": -0.24,
+   "bounds_corner_change_mm": 0.028,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_shoulder_cap_upper.stl": {
+   "faces_before": 1910,
+   "faces_after": 300,
+   "dist_max_mm": 0.225,
+   "dist_p99_mm": 0.066,
+   "volume_change_percent": -0.08,
+   "bounds_corner_change_mm": 0.022,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_sleeve_fore_inner.stl": {
+   "faces_before": 6138,
+   "faces_after": 856,
+   "dist_max_mm": 0.283,
+   "dist_p99_mm": 0.096,
+   "volume_change_percent": -0.17,
+   "bounds_corner_change_mm": 0.053,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_sleeve_fore_outer.stl": {
+   "faces_before": 4180,
+   "faces_after": 582,
+   "dist_max_mm": 0.242,
+   "dist_p99_mm": 0.098,
+   "volume_change_percent": -0.1,
+   "bounds_corner_change_mm": 0.145,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_sleeve_upper_back.stl": {
+   "faces_before": 3842,
+   "faces_after": 534,
+   "dist_max_mm": 0.283,
+   "dist_p99_mm": 0.102,
+   "volume_change_percent": -0.19,
+   "bounds_corner_change_mm": 0.022,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Arm_R_sleeve_upper_front.stl": {
+   "faces_before": 3906,
+   "faces_after": 544,
+   "dist_max_mm": 0.242,
+   "dist_p99_mm": 0.097,
+   "volume_change_percent": -0.17,
+   "bounds_corner_change_mm": 0.018,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Face_Blush_L.stl": {
+   "faces_before": 18596,
+   "faces_after": 2596,
+   "dist_max_mm": 0.248,
+   "dist_p99_mm": 0.123,
+   "volume_change_percent": -0.05,
+   "bounds_corner_change_mm": 0.028,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Face_Blush_R.stl": {
+   "faces_before": 18596,
+   "faces_after": 2596,
+   "dist_max_mm": 0.225,
+   "dist_p99_mm": 0.099,
+   "volume_change_percent": -0.05,
+   "bounds_corner_change_mm": 0.028,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Face_LCD_bezel_L.stl": {
+   "faces_before": 6062,
+   "faces_after": 886,
+   "dist_max_mm": 3.387,
+   "dist_p99_mm": 0.158,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.042,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_Face_LCD_bezel_R.stl": {
+   "faces_before": 6240,
+   "faces_after": 910,
+   "dist_max_mm": 2.678,
+   "dist_p99_mm": 1.014,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.019,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_Face_WhiteFace_L.stl": {
+   "faces_before": 15772,
+   "faces_after": 2202,
+   "dist_max_mm": 0.177,
+   "dist_p99_mm": 0.082,
+   "volume_change_percent": -0.13,
+   "bounds_corner_change_mm": 0.11,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Face_WhiteFace_R.stl": {
+   "faces_before": 15772,
+   "faces_after": 2202,
+   "dist_max_mm": 0.157,
+   "dist_p99_mm": 0.086,
+   "volume_change_percent": -0.06,
+   "bounds_corner_change_mm": 0.077,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Foot_L_cover_heel.stl": {
+   "faces_before": 4570,
+   "faces_after": 638,
+   "dist_max_mm": 0.17,
+   "dist_p99_mm": 0.058,
+   "volume_change_percent": -0.16,
+   "bounds_corner_change_mm": 0.016,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Foot_L_cover_toe.stl": {
+   "faces_before": 4840,
+   "faces_after": 676,
+   "dist_max_mm": 0.261,
+   "dist_p99_mm": 0.078,
+   "volume_change_percent": -0.22,
+   "bounds_corner_change_mm": 0.043,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Foot_R_cover_heel.stl": {
+   "faces_before": 4646,
+   "faces_after": 648,
+   "dist_max_mm": 0.239,
+   "dist_p99_mm": 0.059,
+   "volume_change_percent": -0.13,
+   "bounds_corner_change_mm": 0.04,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Foot_R_cover_toe.stl": {
+   "faces_before": 5112,
+   "faces_after": 714,
+   "dist_max_mm": 0.268,
+   "dist_p99_mm": 0.075,
+   "volume_change_percent": -0.18,
+   "bounds_corner_change_mm": 0.033,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Jacket_back.stl": {
+   "faces_before": 44010,
+   "faces_after": 6142,
+   "dist_max_mm": 0.36,
+   "dist_p99_mm": 0.078,
+   "volume_change_percent": -0.16,
+   "bounds_corner_change_mm": 0.046,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_Jacket_front.stl": {
+   "faces_before": 39816,
+   "faces_after": 5558,
+   "dist_max_mm": 0.49,
+   "dist_p99_mm": 0.079,
+   "volume_change_percent": -0.18,
+   "bounds_corner_change_mm": 0.076,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_L_ankle_hood.stl": {
+   "faces_before": 384,
+   "faces_after": 384,
+   "dist_max_mm": 0.157,
+   "dist_p99_mm": 0.037,
+   "volume_change_percent": 0.0,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_L_foot_lid.stl": {
+   "faces_before": 2480,
+   "faces_after": 346,
+   "dist_max_mm": 0.138,
+   "dist_p99_mm": 0.055,
+   "volume_change_percent": -0.02,
+   "bounds_corner_change_mm": 0.002,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_L_insole.stl": {
+   "faces_before": 496,
+   "faces_after": 496,
+   "dist_max_mm": 0.22,
+   "dist_p99_mm": 0.0,
+   "volume_change_percent": 0.0,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_L_shin_shell_back.stl": {
+   "faces_before": 44004,
+   "faces_after": 6192,
+   "dist_max_mm": 0.893,
+   "dist_p99_mm": 0.135,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.004,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_L_shin_shell_front.stl": {
+   "faces_before": 6360,
+   "faces_after": 901,
+   "dist_max_mm": 1.29,
+   "dist_p99_mm": 0.069,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.018,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_L_thigh_tube_back.stl": {
+   "faces_before": 7768,
+   "faces_after": 1085,
+   "dist_max_mm": 0.235,
+   "dist_p99_mm": 0.011,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.018,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_L_thigh_tube_front.stl": {
+   "faces_before": 9998,
+   "faces_after": 1399,
+   "dist_max_mm": 1.392,
+   "dist_p99_mm": 0.007,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.002,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_Neck_cap.stl": {
+   "faces_before": 3840,
+   "faces_after": 536,
+   "dist_max_mm": 0.17,
+   "dist_p99_mm": 0.081,
+   "volume_change_percent": -0.13,
+   "bounds_corner_change_mm": 0.051,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_R_ankle_hood.stl": {
+   "faces_before": 408,
+   "faces_after": 408,
+   "dist_max_mm": 0.185,
+   "dist_p99_mm": 0.046,
+   "volume_change_percent": 0.0,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_R_foot_lid.stl": {
+   "faces_before": 2388,
+   "faces_after": 332,
+   "dist_max_mm": 0.153,
+   "dist_p99_mm": 0.062,
+   "volume_change_percent": -0.02,
+   "bounds_corner_change_mm": 0.047,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_R_insole.stl": {
+   "faces_before": 344,
+   "faces_after": 344,
+   "dist_max_mm": 0.076,
+   "dist_p99_mm": 0.0,
+   "volume_change_percent": 0.0,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": true,
+   "watertight_after": true
+  },
+  "shell_R_shin_shell_back.stl": {
+   "faces_before": 42834,
+   "faces_after": 6037,
+   "dist_max_mm": 0.929,
+   "dist_p99_mm": 0.133,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.008,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_R_shin_shell_front.stl": {
+   "faces_before": 6158,
+   "faces_after": 870,
+   "dist_max_mm": 1.346,
+   "dist_p99_mm": 0.194,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.017,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_R_thigh_tube_back.stl": {
+   "faces_before": 9386,
+   "faces_after": 1320,
+   "dist_max_mm": 0.531,
+   "dist_p99_mm": 0.014,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.001,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_R_thigh_tube_front.stl": {
+   "faces_before": 9996,
+   "faces_after": 1406,
+   "dist_max_mm": 1.402,
+   "dist_p99_mm": 1.35,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.0,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_Wing_L.stl": {
+   "faces_before": 15636,
+   "faces_after": 2212,
+   "dist_max_mm": 0.31,
+   "dist_p99_mm": 0.075,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.025,
+   "watertight_before": false,
+   "watertight_after": false
+  },
+  "shell_Wing_R.stl": {
+   "faces_before": 15636,
+   "faces_after": 2212,
+   "dist_max_mm": 0.246,
+   "dist_p99_mm": 0.072,
+   "volume_change_percent": null,
+   "bounds_corner_change_mm": 0.025,
+   "watertight_before": false,
+   "watertight_after": false
+  }
+ },
+ "output_total_faces": 101822,
+ "output_total_bytes": 5097904,
+ "worst_dist_max_mm": 3.387
+}
